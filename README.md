@@ -1,4 +1,4 @@
-# limpeza-do-ubuntu
+# Limpeza-do-Ubuntu
 Tata-se de um Script para realizar comandos automaticos como:
 Limpar a arquivos temporarios
 Excluir cache do sistema
