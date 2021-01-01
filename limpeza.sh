@@ -1,5 +1,6 @@
 #!/bin/bash
-#Limpeza do ubuntu
+echo "Limpeza e atualização"
+
 read -s -n1 -p "O que deseja fazer?
   (L)=limpar
   (A)=Atualizar e Reparar
