@@ -21,6 +21,7 @@ case "${resposta}" in
     echo "Atualizando e reparando o Sistema."
     echo "Digite a senha de usuário para continuar"
     sudo apt update && sudo apt full-upgrade -y
+    sudo apt install -f -y
     sudo dpkg --configure -a
   ;;
   s|S)
