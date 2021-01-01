@@ -1,6 +1,6 @@
 # Limpeza-do-Ubuntu
 
-Trata-se de um Script para realizar comandos automatiamente como:
+Trata-se de um Script (pessoal) para realizar comandos automatiamente como:
 Limpar a arquivos temporarios ,
 Excluir cache do sistema ,
 Excluir programas e arquivos obsoletos do sistema ,
@@ -11,7 +11,12 @@ Reparar pacotes quebrados ,
 #Como executa-lo:
 
 Após o download do arquivo vai até o diretório onde ele for salvo,
-em um local vazio na pasta clique com o botão direito do mouse e celecione ( abrir terminal aqui )
-após abrir o terminal digite: ./limpeza-do-ubuntu.sh 
-depois (ENTER) vai pedir senha do usuário , digite e (ENTER) ,
-selecione a opção desejada  para  a execução.
+em um local vazio na pasta clique com o botão direito do mouse e celecione:
+
+ ( abrir terminal aqui )
+
+após abrir o terminal digite: ./limpeza.sh  e depois (ENTER)
+ 
+selecione a opção desejada para a execução,
+
+Vai pedir senha do usuário para continuar , digite e depois (ENTER).
