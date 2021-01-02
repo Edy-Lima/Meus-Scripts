@@ -1,0 +1,37 @@
+
+Coonfigurando o Compton => ( xfce / lxqt );
+
+
+Abra um terminal e digite:
+
+sudo apt-get install compton compton-conf
+
+Agora crie o arquivo local no seu /home:
+
+sudo touch ~/.compton.conf
+
+Agora crie o arquivo "composite.desktop" com seu Editor de Texto Preferido:
+caso use o (gedit)
+
+sudo gedit composite.desktop
+
+E cole o testo abaixo:
+
+
+[Desktop Entry]
+Name=Composite
+Comment=Composite
+Exec=compton --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc --shadow-exclude "! name~=''" --config ~/.compton.conf -b
+Terminal=false
+Type=Application
+
+
+
+Agora no termonal rode os comandos abaixo,na ordem:
+
+
+sudo chown root.root composite.desktop
+sudo chmod 644 composite.desktop
+sudo mv composite.desktop /etc/xdg/autostart
+
+Reinicie o PC e pronto.
