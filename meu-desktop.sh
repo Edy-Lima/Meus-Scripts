@@ -34,8 +34,7 @@ sudo apt update && sudo apt upgrade -y
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
     
-    ;;
-    
+    ;;   
     4|4)
     echo "(Instalando inkskape)"
     echo "Digite sua senha de usuário para continuar"
@@ -92,21 +91,19 @@ sudo apt upgrade libreoffice -y
     
     ;;
     m|M)
-    echo "(Manual do Compton => copie e cole em um bloco de notas)"
-    echo "Coonfigurando o Compton;
+    echo "( Manual do Compton => copie e cole em um bloco de notas )"
+echo ""
+echo ""
 
+#Coonfigurando o Compton
 
-Abra um terminal e digite:
+echo "Crie o arquivo local no seu /home:
 
-sudo apt-get install compton compton-conf
-
-Agora crie o arquivo local no seu /home:
-
-touch ~/.compton.conf
+sudo touch ~/.compton.conf
 
 Agora crie o arquivo ( composite.desktop ) com seu Editor de Texto Preferido:
 
-gedit composite.desktop
+sudo gedit composite.desktop
 
 E cole o testo abaixo:
 
@@ -122,11 +119,11 @@ Type=Application
 
 Agora rode os comandos abaixo, na ordem:
 
-UBUNTU E DERIVADAS
 
 sudo chown root.root composite.desktop
 sudo chmod 644 composite.desktop
 sudo mv composite.desktop /etc/xdg/autostart
+
 
 Reinicie o PC e pronto."  
    
