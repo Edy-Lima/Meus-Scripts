@@ -20,3 +20,7 @@ após abrir o terminal digite: ./limpeza.sh  e depois (ENTER)
 selecione a opção desejada para a execução,
 
 Vai pedir senha do usuário para continuar , digite e depois (ENTER).
+
+#Obs: sobre o script ( meu-desktop.sh ):
+
+Ele pode ser executado com os mesmos procedimentos.
