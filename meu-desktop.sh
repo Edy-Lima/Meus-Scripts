@@ -95,7 +95,7 @@ sudo apt upgrade libreoffice -y
 echo ""
 echo ""
 
-#Coonfigurando o Compton
+#Configurando o Compton:
 
 echo "Crie o arquivo local no seu /home:
 

@@ -1,4 +1,4 @@
-# Limpeza-Ubuntu/derivados
+# Limpeza para Ubuntu/derivados
 
 Trata-se de um Script (pessoal) para realizar comandos automatiamente como:
 Limpar a arquivos temporarios ,
