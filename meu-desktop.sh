@@ -3,12 +3,18 @@
 #Meu-Desktop
 echo "Lista de programas"
 read -s -n1 -p "O que deseja instalar?
-  (1)=Instalar Intel Graphics Driver     (7)=Instalar AnyDesk
-  (2)=Instalar (Kisak-mesa) Driver       (8)=Instalar Git-GgitHub
-  (3)=Instalar Google-Chrome             (9)=Instalar prelink e preload
-  (4)=Instalar inkskape                  (0)=Instalar compton
-  (5)=Instalar Cubic                     (A)=Atualizar LibreOffice
-  (6)=Instalar UNetbootin                (M)=Manual do Compton
+  (1)=Instalar Intel Graphics Driver     
+  (2)=Instalar (Kisak-mesa) Driver       
+  (3)=Instalar Google-Chrome             
+  (4)=Instalar inkskape                  
+  (5)=Instalar Cubic                     
+  (6)=Instalar UNetbootin
+  (7)=Instalar AnyDesk
+  (8)=Instalar Git-GgitHub
+  (9)=Instalar prelink e preload
+  (0)=Instalar compton
+  (A)=Atualizar LibreOffice                
+  (M)=Manual do Compton
   (S)=Sair                               
 Digite => " resposta                                                                 
 
