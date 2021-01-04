@@ -14,7 +14,10 @@ case "${resposta}" in
     sudo rm -rf /var/tmp/*
     sudo apt clean -y
     sudo apt autoremove && sudo apt autoclean -y
-    sudo rm -rf ${HOME}/.local/share/Trash/*    
+    sudo rm -rf ${HOME}/.local/share/Trash/*
+    sudo du -sh /var/cache/apt
+    du -sh ~/.cache/thumbnails
+echo "Tudo Limpo!"    
   ;;
 
   a|A)
