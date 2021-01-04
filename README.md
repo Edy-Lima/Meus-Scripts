@@ -1,12 +1,11 @@
 # Limpeza para Ubuntu/derivados
 
 Trata-se de um Script (pessoal) para realizar comandos automatiamente como:
-Limpar a arquivos temporarios ,
+Limpar arquivos temporarios ,
 Excluir cache do sistema ,
 Excluir programas e arquivos obsoletos do sistema ,
 Excluir arquivos duplicados ,
-Limpar a lixeira ,
-Reparar pacotes quebrados ,
+Limpar a lixeira.
 
 #Como executa-lo:
 
