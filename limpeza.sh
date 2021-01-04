@@ -12,25 +12,24 @@ Digite => " resposta
 
 case "${resposta}" in
   1|1|"")
-    echo "Instalando deborphan:"
+    echo "(Instalando deborphan:)"
     echo "Digite a senha de usuário pra continuar"
     sudo apt install deborphan -y
 
   ;;
   2|2)
     echo "Limpando o Sistema com (deborphan)"
-    echo "Digite a senha de usuário para continuar"
-    sudo du -h /var/cache/apt/archives  
+    echo "Digite a senha de usuário para continuar" 
     sudo rm -rf /var/tmp/*
     sudo apt clean -y
     sudo apt autoclean -y
 echo "Executando ( deborphan )"
     sudo deborphan -s
-echo "Primeira execuão aguarde..."
+echo "(Primeira execuão aguarde...)"
     sudo apt remove $(deborphan)
-echo "Segunda execução aguarde..."
+echo "(Segunda execução aguarde...)"
     sudo apt remove $(deborphan)
-echo "Ultima execução aguarde..."
+echo "(Ultima execução aguarde...)"
     sudo apt remove $(deborphan)
     sudo apt autoremove --purge -y
     sudo rm -rf ${HOME}/.local/share/Trash/* 
@@ -39,9 +38,8 @@ echo "Tudo Limpo!"
         
    ;;
    3|3)
-    echo "Limpeza normal do Sistema)"
-    echo "Digite a senha de usuário para continuar"
-    sudo du -h /var/cache/apt/archives  
+    echo "(Limpeza normal do Sistema)"
+    echo "Digite a senha de usuário para continuar" 
     sudo rm -rf /var/tmp/*
     sudo apt clean -y
     sudo apt autoclean -y
@@ -53,7 +51,11 @@ echo "Tudo Limpo!"
    ;;
    m|M)
 echo "Manual (doberphan)"
-echo "O deborphan pesquisa pacotes órfãos em seu sistema. Ele determina quais pacotes não são dependência de nenhum outro pacote na sua instalação e mostra a lista desses pacotes. Isso é bastante útil para encontrar bibliotecas, mas pode ser utilizado em pacotes de todas as seções."
+echo "O deborphan pesquisa pacotes órfãos em seu sistema. 
+Ele determina quais pacotes não são dependência de nenhum outro pacote 
+na sua instalação e mostra a lista desses pacotes. 
+Isso é bastante útil para encontrar bibliotecas, 
+mas pode ser utilizado em pacotes de todas as seções."
     
   ;;
   s|S)
