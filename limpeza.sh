@@ -13,7 +13,8 @@ case "${resposta}" in
     echo "Digite a senha de usuário para continuar"
     sudo rm -rf /var/tmp/*
     sudo apt clean -y
-    sudo apt autoremove && sudo apt autoclean -y
+    sudo apt autoclean -y
+    sudo apt autoremove --purge -y
     sudo rm -rf ${HOME}/.local/share/Trash/*
     sudo du -sh /var/cache/apt
     du -sh ~/.cache/thumbnails
