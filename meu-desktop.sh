@@ -99,9 +99,8 @@ sudo apt upgrade libreoffice -y
     m|M)
     echo "( Manual do Compton => copie e cole em um bloco de notas )"
 echo ""
-echo ""
 
-#Configurando o Compton:
+# onfigurando o Compton:
 
 echo "Crie o arquivo local no seu /home:
 
@@ -122,14 +121,11 @@ Terminal=false
 Type=Application
 
 
-
 Agora rode os comandos abaixo, na ordem:
-
 
 sudo chown root.root composite.desktop
 sudo chmod 644 composite.desktop
 sudo mv composite.desktop /etc/xdg/autostart
-
 
 Reinicie o PC e pronto."  
    
