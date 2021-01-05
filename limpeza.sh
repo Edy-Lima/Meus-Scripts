@@ -25,12 +25,9 @@ case "${resposta}" in
     sudo apt autoclean -y
 echo "Executando ( deborphan )"
     sudo deborphan -s
-echo "(Primeira execuão aguarde...)"
+echo "(Verificando aguarde...)"
     sudo apt remove $(deborphan)
-echo "(Segunda execução aguarde...)"
-    sudo apt remove $(deborphan)
-echo "(Ultima execução aguarde...)"
-    sudo apt remove $(deborphan)
+echo "(Limpando)"
     sudo apt autoremove --purge -y
     sudo rm -rf ${HOME}/.local/share/Trash/* 
     sudo du -h /var/cache/apt/archives
