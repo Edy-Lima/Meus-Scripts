@@ -22,7 +22,7 @@ Vai pedir senha do usuário para continuar , digite e depois (ENTER).
 
 # Obs: sobre o script ( meu-desktop.sh ):
 
-Trata-se de um script pessoal , mas pode ser usado em qualquer distro baseada em Ubuntu e derivados,
+Trata-se de um script (pessoal) , mas pode ser usado em qualquer distro baseada em Ubuntu e derivados,
 criado para instalar alguns programas pós formatação.
 
 Obs: Ele pode ser executado com os mesmos procedimentos.
