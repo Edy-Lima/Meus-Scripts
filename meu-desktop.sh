@@ -11,7 +11,7 @@ read -s -n1 -p "O que deseja instalar?
   (F)=Instalar UNetbootin
   (G)=Instalar AnyDesk
   (H)=Instalar Git-GgitHub
-  (I)=Instalar prelink e preload
+  (I)=Instalar prelink e preload (2)=Manual prelink
   (J)=Instalar compton
   (L)=Atualizar LibreOffice                
   (M)=Manual do Compton
@@ -83,6 +83,30 @@ sudo apt update && sudo apt install git -y
     echo "Digite sua senha de usuário para continuar"
 sudo rm /var/lib/dpkg/lock-frontend; sudo rm /var/cache/apt/archives/lock ;
 sudo apt install preload prelink -y
+
+;;
+2|2)
+echo "(=> Manual pelinl <=)"
+echo "
+==============================================================================
+configuração do Prelink:
+
+sudo gedit /etc/default/prelink
+
+Procure a linha:
+
+PRELINKING=unknown
+
+E mude para:
+
+PRELINKING=yes
+
+Agora execute o Prelink para que ele possa linkar as bibliotecas dos programas:
+
+sudo /etc/cron.daily/prelink
+
+==============================================================================
+"
  
     ;;
     j|J)
