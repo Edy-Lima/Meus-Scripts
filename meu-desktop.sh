@@ -3,52 +3,53 @@
 #Meu-Desktop
 echo "Lista de programas"
 read -s -n1 -p "O que deseja instalar?
-  (1)=Instalar Intel Graphics Driver     
-  (2)=Instalar (Kisak-mesa) Driver       
-  (3)=Instalar Google-Chrome             
-  (4)=Instalar inkskape                  
-  (5)=Instalar Cubic                     
-  (6)=Instalar UNetbootin
-  (7)=Instalar AnyDesk
-  (8)=Instalar Git-GgitHub
-  (9)=Instalar prelink e preload
-  (0)=Instalar compton
-  (A)=Atualizar LibreOffice                
+  (A)=Instalar Intel Graphics Driver     
+  (B)=Instalar (Kisak-mesa) Driver       
+  (C)=Instalar Google-Chrome             
+  (D)=Instalar inkskape                  
+  (E)=Instalar Cubic                     
+  (F)=Instalar UNetbootin
+  (G)=Instalar AnyDesk
+  (H)=Instalar Git-GgitHub
+  (I)=Instalar prelink e preload
+  (J)=Instalar compton
+  (L)=Atualizar LibreOffice                
   (M)=Manual do Compton
+  (N)=Instalar vs-code
   (S)=Sair                               
 Digite => " resposta                                                                 
 
 
 case "${resposta}" in
-  1|1|"")
+  a|A|"")
     echo "( Instalando Intel Graphics Driver )"
     echo "Digite sua senha de usuário para continhar"
 sudo add-apt-repository ppa: ubuntu-x-swat / intel-graphics-updates -y
 sudo apt update && sudo apt upgrade -y     
   ;;
 
-  2|2)
+  b|B)
     echo "( Instalando Driver Kisak-mesa )"
     echo "Digite sua senha de usuário para continuar"
 sudo apt-add-repository ppa:kisak/kisak-mesa -y
 sudo apt update && sudo apt upgrade -y
 
   ;;
-  3|3)
+  c|C)
     echo "Instalando Gogle-Crome"
     echo "Digite sua senha de usuário para continuar"
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
     
     ;;   
-    4|4)
+    d|D)
     echo "(Instalando inkskape)"
     echo "Digite sua senha de usuário para continuar"
 sudo add-apt-repository ppa:inkscape.dev/stable -y
 sudo apt update && sudo apt install inkscape -y
 
     ;;
-    5|5)
+    e|E)
     echo "(Instalando Cubic)"
     echo "Digite sua senha de usuário para continuar"
 sudo apt-add-repository ppa:cubic-wizard/release -y
@@ -56,41 +57,41 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6494C6D6997C215E
 sudo apt update && sudo apt install cubic curl -y
 
     ;;
-    6|6)
+    f|F)
     echo "(Instalando UNetbootin)"
     echo "Digite sua senha de usuário para continuar"
 sudo add-apt-repository ppa:gezakovacs/ppa -y
 sudo apt update && sudo apt install unetbootin -y
 
     ;;
-    7|7)
+    g|G)
     echo "(Instalando AnyDesk)"
     echo "Digite sua senha de usuário para continuar"
 sudo wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -
 echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list 
     
     ;;
-    8|8)
+    h|H)
     echo "(Instalando Git-GgitHub)"
     echo "Digite sua senha de usuário para continuar"
 sudo add-apt-repository ppa:git-core/ppa -y
 sudo apt update && sudo apt install git -y  
    
     ;;
-    9|9)
+    i|I)
     echo "(Instalando prelink e preload)"
     echo "Digite sua senha de usuário para continuar"
 sudo rm /var/lib/dpkg/lock-frontend; sudo rm /var/cache/apt/archives/lock ;
 sudo apt install preload prelink -y
  
     ;;
-    0|0)
+    j|J)
     echo "(Instalando compton)"
     echo "Digite sua senha de usuário para continuar"
 sudo apt install compton-conf -y 
     
     ;;
-    a|A)
+    l|L)
     echo "(Atualizando LibreOffice)"
     echo "Digite sua senha de usuário para continuar"
 sudo apt upgrade libreoffice -y
@@ -127,7 +128,17 @@ sudo chown root.root composite.desktop
 sudo chmod 644 composite.desktop
 sudo mv composite.desktop /etc/xdg/autostart
 
-Reinicie o PC e pronto."  
+Reinicie o PC e pronto."
+
+;;
+n|N)
+   echo "(Instalando vs-code)"
+   echo "Digite sua senha de usuário para continuar" 
+sudo apt update
+sudo apt install software-properties-common apt-transport-https wget -y
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+sudo apt install code -y 
    
   ;;
   s|S)
