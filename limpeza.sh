@@ -26,11 +26,12 @@ case "${resposta}" in
 echo "Executando ( deborphan )"
     sudo deborphan -s
 echo "(Verificando aguarde...)"
-    sudo apt remove $(deborphan)
+    sudo apt remove $(deborphan) -y
+echo "(Aguarde...)"
+    sudo apt remove $(deborphan) -y
 echo "(Limpando)"
     sudo apt autoremove --purge -y
     sudo rm -rf ${HOME}/.local/share/Trash/* 
-    sudo du -h /var/cache/apt/archives
 echo "Tudo Limpo!"
         
    ;;
@@ -42,7 +43,6 @@ echo "Tudo Limpo!"
     sudo apt autoclean -y
     sudo apt autoremove --purge -y
     sudo rm -rf ${HOME}/.local/share/Trash/* 
-    sudo du -h /var/cache/apt/archives
 echo "Tudo Limpo!"
 
    ;;
