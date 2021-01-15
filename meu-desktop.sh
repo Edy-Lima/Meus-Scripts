@@ -31,7 +31,7 @@ sudo apt update && sudo apt upgrade -y
   b|B)
     echo "( Instalando Driver Kisak-mesa )"
     echo "Digite sua senha de usuário para continuar"
-sudo apt-add-repository ppa:kisak/kisak-mesa -y
+sudo add-apt-repository ppa:kisak/kisak-mesa -y
 sudo apt update && sudo apt upgrade -y
 
   ;;
@@ -52,7 +52,7 @@ sudo apt update && sudo apt install inkscape -y
     e|E)
     echo "(Instalando Cubic)"
     echo "Digite sua senha de usuário para continuar"
-sudo apt-add-repository ppa:cubic-wizard/release -y
+sudo add-apt-repository ppa:cubic-wizard/release -y
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6494C6D6997C215E
 sudo apt update && sudo apt install cubic curl -y
 
