@@ -17,6 +17,7 @@ sudo apt remove xfburn* atril* firefox* thunderbird* pidgin* -y
 sudo apt autoremove -y
 echo ""
    echo "(Vamos agora remover o swap)"
+#Desativa e remove o swapfile!
 sudo sed -i.bak '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab && sudo swapoff -a && sudo rm -f -r /swapfile
    echo "Swap removido"
 echo ""
