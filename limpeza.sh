@@ -5,7 +5,7 @@ read -s -n1 -p "O que deseja fazer?
   Leia o menu com atenção!   
   (M)=Manual deborphan 
   (1)=Instalar o (deborphan)
-  (2)=limpeza com (deborphan)
+  (2)=limpeza completa com (deborphan)
   (3)=Limpeza normal  
   (S)=Sair 
 Digite => " resposta
