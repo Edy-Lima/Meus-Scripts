@@ -14,7 +14,7 @@ em um local vazio na pasta clique com o botão direito do mouse e celecione:
 
  ( abrir terminal aqui )
 
-após abrir o terminal digite: ./limpeza.sh  e depois (ENTER)
+após abrir o terminal digite: ./nome do arquivo.sh  e depois (ENTER)
  
 selecione a opção desejada para a execução,
 
@@ -32,4 +32,5 @@ do meu jeito , ele remove algumas funções as quais não uso como:
 (gnome-keyring , snap e swapfile) e instala alguns outros programas para 
 meu uso diário. 
 
-#Obs: todos os script,s podem ser executados com os mesmos procedimentos.
+Obs: todos os script,s podem ser executados com os mesmos procedimentos ,
+sendo que basta usar o comando ./nome do arquivo.sh e depois (ENTER) 
