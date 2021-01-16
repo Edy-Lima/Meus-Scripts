@@ -20,9 +20,16 @@ selecione a opção desejada para a execução,
 
 Vai pedir senha do usuário para continuar , digite e depois (ENTER).
 
-# Obs: sobre o script ( meu-desktop.sh ):
+# sobre o script ( meu-desktop.sh ):
 
 Trata-se de um script (pessoal) , mas pode ser usado em qualquer distro baseada em Ubuntu e derivados,
 criado para instalar alguns programas pós formatação.
 
-Obs: Ele pode ser executado com os mesmos procedimentos.
+# Sobre o script (meu-desktop-config.sh)
+
+Trata-se tambem de um cript (pessoal) que programei para deixar o (Xubuntu) 
+do meu jeito , ele remove algumas funções as quais não uso como:
+(gnome-keyring , snap e swapfile) e instala alguns outros programas para 
+meu uso diário. 
+
+#Obs: todos os script,s podem ser executados com os mesmos procedimentos.
