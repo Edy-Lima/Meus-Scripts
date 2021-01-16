@@ -33,4 +33,4 @@ do meu jeito , ele remove algumas funções as quais não uso como:
 meu uso diário. 
 
 Obs: todos os script,s podem ser executados com os mesmos procedimentos ,
-sendo que basta usar o comando ./nome do arquivo.sh e depois (ENTER) 
+sendo que basta usar o comando: ./nome do arquivo.sh e depois (ENTER) 
