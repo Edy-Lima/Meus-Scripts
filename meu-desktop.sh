@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#
 #Meu-Desktop
 echo "Lista de programas"
 read -s -n1 -p "O que deseja instalar?
