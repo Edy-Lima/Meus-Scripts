@@ -11,10 +11,10 @@ read -s -n1 -p "O que deseja instalar?
   (F)=Instalar UNetbootin
   (G)=Instalar AnyDesk
   (H)=Instalar Git-GgitHub
-  (I)=Instalar prelink e preload (2)=Manual prelink
-  (J)=Instalar compton
-  (L)=Atualizar LibreOffice                
-  (M)=Manual do Compton
+  (I)=Instalar prelink e preload 
+  (J)=Manual prelink
+  (L)=Instalar compton
+  (M)=Manual compton                
   (N)=Instalar vs-code
   (S)=Sair                               
 Digite => " resposta                                                                 
@@ -85,7 +85,7 @@ sudo rm /var/lib/dpkg/lock-frontend; sudo rm /var/cache/apt/archives/lock ;
 sudo apt install preload prelink -y
 
 ;;
-2|2)
+j|J)
 echo "(=> Manual pelinl <=)"
 echo "
 ==============================================================================
@@ -109,17 +109,11 @@ sudo /etc/cron.daily/prelink
 "
  
     ;;
-    j|J)
+    l|L)
     echo "(Instalando compton)"
     echo "Digite sua senha de usuário para continuar"
 sudo apt install compton-conf -y 
-    
-    ;;
-    l|L)
-    echo "(Atualizando LibreOffice)"
-    echo "Digite sua senha de usuário para continuar"
-sudo apt upgrade libreoffice -y
-    
+      
     ;;
     m|M)
     echo "( Manual do Compton => copie e cole em um bloco de notas )"
