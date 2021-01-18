@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-#Meu-Desktop
-echo "Lista de programas"
+# Script pessoal (Meu-Desktop)
+    echo "(Lista de programas)"
 read -s -n1 -p "O que deseja instalar?
   (A)=Instalar Intel Graphics Driver     
   (B)=Instalar (Kisak-mesa) Driver       
