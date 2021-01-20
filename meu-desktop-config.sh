@@ -33,7 +33,7 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6494C6D6997C215E
 sudo apt update && sudo apt install cubic curl -y
 echo ""
    echo "(Instalando programas extras)"
-sudo apt install gnome-disk-utility exfat-fuse exfat-utils default-jre xfce4-appmenu-plugin appmenu-gtk2-module appmenu-gtk3-module htop screenfetch neofetch gdebi gufw plank pitivi synaptic kazam evince gtk2-engines-murrine gtk2-engines-pixbuf winff gedit guvcview curl -y
+sudo apt install gnome-disk-utility exfat-fuse exfat-utils default-jre xfce4-appmenu-plugin appmenu-gtk2-module appmenu-gtk3-module htop screenfetch neofetch gdebi gufw plank pitivi synaptic kazam evince gtk2-engines-murrine gtk2-engines-pixbuf winff gedit guvcview curl bleachbit -y
 echo ""
    echo "(Instalando Google Chrome)"
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
