@@ -19,7 +19,8 @@ case "${resposta}" in
   ;;
   2|2)
     echo "Limpando o Sistema com (deborphan)"
-    echo "Digite a senha de usuário para continuar" 
+    echo "Digite a senha de usuário para continuar"
+    sudo du -h /var/cache/apt/archives/ 
     sudo rm -rf /var/tmp/*
     sudo apt clean -y
     sudo apt autoclean -y
@@ -32,17 +33,20 @@ echo "(Aguarde...)"
 echo "(Limpando)"
     sudo apt autoremove --purge -y
     sudo rm -rf ${HOME}/.local/share/Trash/* 
+    sudo du -h /var/cache/apt/archives/ 
 echo "Tudo Limpo!"
         
    ;;
    3|3)
     echo "(Limpeza normal do Sistema)"
-    echo "Digite a senha de usuário para continuar" 
+    echo "Digite a senha de usuário para continuar"
+    sudo du -h /var/cache/apt/archives/ 
     sudo rm -rf /var/tmp/*
     sudo apt clean -y
     sudo apt autoclean -y
     sudo apt autoremove --purge -y
     sudo rm -rf ${HOME}/.local/share/Trash/* 
+    sudo du -h /var/cache/apt/archives/ 
 echo "Tudo Limpo!"
 
    ;;
