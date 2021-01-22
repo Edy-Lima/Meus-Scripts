@@ -60,6 +60,13 @@ sudo add-apt-repository ppa:nilarimogard/webupd8 -y
 sudo apt update
 sudo apt install android-tools-adb android-tools-fastboot -y
 echo ""
+   echo "(Instalando vs-code)"
+sudo apt update
+sudo apt install software-properties-common apt-transport-https wget -y
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+sudo apt install code -y
+echo "" 
    echo "(Vamos instalar o prelink e preload)"
 sudo rm /var/lib/dpkg/lock-frontend; sudo rm /var/cache/apt/archives/lock ;
 sudo apt install preload prelink -y
