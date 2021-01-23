@@ -32,5 +32,13 @@ do meu jeito , ele remove algumas funções as quais não uso como:
 (gnome-keyring , snap e swapfile) e instala alguns outros programas para 
 meu uso diário. 
 
-Obs: todos os script,s podem ser executados com os mesmos procedimentos , sendo que basta usar 
-o comando: ./nome do arquivo.sh e depois (ENTER) 
+# Sobre o Script ( config-meu-desktop.sh )
+
+Foram unidos os scripts ( limpeza.sh e meu-desktop-config.sh )
+para que eu tenha as duas funções em um só arquivo , ele foi criado para 
+uso pessoal pós formatação , 
+mas pode ser usado em qualquer sistema (Linux)baseado em (Ubuntu)
+ 
+
+# Obs: todos os script,s podem ser executados com os mesmos procedimentos , sendo que basta usar o comando:
+ ./nome do arquivo.sh e depois (ENTER) 
