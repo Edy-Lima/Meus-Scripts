@@ -9,8 +9,8 @@ Limpar a lixeira.
 
 # Como executa-lo:
 
-Após o download do arquivo vai até o diretório onde ele for salvo,
-em um local vazio na pasta clique com o botão direito do mouse e celecione:
+Após o download do "arquivo.zip" vá até o diretório onde ele foi baixado,
+Após extrair abra a basta e em um local vazio clique com o botão direito do mouse e celecione:
 
  ( abrir terminal aqui )
 
@@ -18,7 +18,7 @@ após abrir o terminal digite: ./nome do arquivo.sh  e depois (ENTER)
  
 selecione a opção desejada para a execução,
 
-Vai pedir senha do usuário para continuar , digite e depois (ENTER).
+Vai pedir a senha do usuário para continuar , digite e depois (ENTER).
 
 # sobre o script ( meu-desktop.sh ):
 
