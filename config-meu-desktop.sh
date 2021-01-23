@@ -24,6 +24,7 @@ echo ""
 7-Thunderbird
 8-Firefox
 9-Swapfile
+10-LibreOffice
 ========================================
 ***Digite ( ./meu-desktop-config.sh + ENTER para voltar ao inicio)***
 "
@@ -77,7 +78,7 @@ sudo apt remove --purge snapd gnome-software-plugin-snap -y
 sudo rm -rf /var/cache/snapd
 sudo rm -rf ~/snap
 sudo apt remove --purge apport apport-gtk apport-symptoms -y
-sudo apt remove xfburn* atril* firefox* thunderbird* pidgin* -y
+sudo apt remove xfburn* atril* firefox* libreoffice* thunderbird* pidgin* -y
 sudo apt autoremove -y
 echo ""
       echo "(Vamos agora remover o swap)"
