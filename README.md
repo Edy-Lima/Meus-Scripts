@@ -40,5 +40,4 @@ uso pessoal pós formatação ,
 mas pode ser usado em qualquer sistema (Linux)baseado em (Ubuntu)
  
 
-# Obs: todos os script,s podem ser executados com os mesmos procedimentos , sendo que basta usar o comando:
- ./nome do arquivo.sh e depois (ENTER) 
+# Obs: todos os script,s podem ser executados com os mesmos procedimentos descritos em (Como executa-lo).
