@@ -73,37 +73,8 @@ sudo /etc/cron.daily/prelink
     ;;
     d|D)
 echo ""
-      echo "***Manual Compton***
-
-1-Crie o arquivo local no seu /home:
-
-sudo touch ~/.compton.conf
-
-2-Agora crie o arquivo ( composite.desktop ) com seu Editor de Texto Preferido:
-
-sudo gedit composite.desktop
-
-E cole o testo abaixo:
-
-
-[Desktop Entry]
-Name=Composite
-Comment=Composite
-Exec=compton --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc --shadow-exclude "! name~=''" --config ~/.compton.conf -b
-Terminal=false
-Type=Application
-
-
-3-Agora rode os comandos abaixo, na ordem:
-
-sudo chown root.root composite.desktop
-sudo chmod 644 composite.desktop
-sudo mv composite.desktop /etc/xdg/autostart
-
-Reinicie o PC e pronto.
-
-***Digite ( ./meu-desktop-config.sh + ENTER para voltar ao inicio)***"
-    echo "" 
+      echo "***Manual compton no link abaixo***"
+echo "https://edylimatutoriais.blogspot.com/2021/01/instalando-e-configurando-o-compton-no.html" 
 
     ;;
     e|E)
