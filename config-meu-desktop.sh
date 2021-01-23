@@ -49,24 +49,10 @@ echo ""
     ;;
     c|C)
 echo ""
-      echo "***Manual Prelink***
-===================================================
-configuração do Prelink:
+      echo "***Manual Prelink no link abaixo***
 
-sudo gedit /etc/default/prelink
+https://docs.google.com/document/d/1KycI0m4pqoNLN_8XjM318o0gsLGzIeDgYaWvnN4Vo8g/edit?usp=sharing
 
-Procure a linha:
-
-PRELINKING=unknown
-
-E mude para:
-
-PRELINKING=yes
-
-Agora execute o Prelink:
-
-sudo /etc/cron.daily/prelink 
-====================================================
 ***Digite ( ./meu-desktop-config.sh + ENTER para voltar ao inicio)***
 "
 
