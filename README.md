@@ -40,4 +40,5 @@ uso pessoal pós formatação ,
 mas pode ser usado em qualquer sistema (Linux)baseado em (Ubuntu)
  
 
-# Obs: todos os script,s podem ser executados com os mesmos procedimentos descritos em (Como executa-lo).
+# Obs: 
+todos os script,s podem ser executados com os mesmos procedimentos descritos em (Como executa-lo).
