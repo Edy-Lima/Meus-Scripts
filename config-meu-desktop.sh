@@ -96,11 +96,15 @@ sudo add-apt-repository ppa:cubic-wizard/release -y
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6494C6D6997C215E
 sudo apt update && sudo apt install cubic -y
 echo ""
-      echo "(Instalando programas extras)"
-sudo apt install gnome-disk-utility exfat-fuse exfat-utils default-jre -y 
+      echo "(Instalando utilitários)"
+sudo apt install gnome-disk-utility exfat-fuse exfat-utils default-jre -y
+echo ""
+      echo "(Instalando App-menu-plugin)" 
 sudo apt install xfce4-appmenu-plugin appmenu-gtk2-module appmenu-gtk3-module -y
 sudo xfconf-query -c xsettings -p /Gtk/ShellShowsMenubar -n -t bool -s true
 sudo xfconf-query -c xsettings -p /Gtk/ShellShowsAppmenu -n -t bool -s true
+echo ""
+      echo "(Instalando ferramentas)"
 sudo apt install screenfetch neofetch gdebi gufw plank pitivi synaptic kazam evince htop -y 
 sudo apt install gtk2-engines-murrine gtk2-engines-pixbuf winff gedit guvcview curl bleachbit -y
 echo ""
