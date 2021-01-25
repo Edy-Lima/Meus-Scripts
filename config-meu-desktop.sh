@@ -8,7 +8,7 @@ read -s -n1 -p"****O que deseja fazer?****
 (E)=>Configurar meu desktop
 (F)=>Limpar meu desktop
 (S)=>Sair
-Digite =>"resposta
+Digite =>" resposta
 case "$resposta" in
     a|A|"")
 echo ""
@@ -159,11 +159,9 @@ echo ""
 clear
 echo ""
       echo "Tudo pronto!"
-sleep 2
-sudo ./meu-desktop-config.sh
+
     ;;
     f|F)
-echo ""
       echo "Limpando seu desktop aguarde..."
       echo "Digite a senha de usuário para continuar"
 sudo du -h /var/cache/apt/archives/ 
@@ -174,9 +172,6 @@ sudo apt autoremove --purge -y
 sudo rm -rf ${HOME}/.local/share/Trash/* 
 sudo du -h /var/cache/apt/archives/ 
       echo "Tudo Limpo!"
-sleep 2
-sudo ./meu-desktop-config.sh
-
 
     ;;
     s|S)
