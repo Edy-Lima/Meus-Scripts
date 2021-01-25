@@ -8,8 +8,7 @@ read -s -n1 -p"****O que deseja fazer?****
 (E)=>Configurar meu desktop
 (F)=>Limpar meu desktop
 (S)=>Sair
-Digite =>"
-read resposta
+Digite =>"resposta
 case "$resposta" in
     a|A|"")
 echo ""
