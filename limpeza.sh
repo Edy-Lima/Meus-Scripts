@@ -3,9 +3,9 @@ echo "Limpeza"
 read -s -n1 -p "O que deseja fazer?
 
   Leia o menu com atenção!   
-  (M)=Manual deborphan 
-  (1)=Instalar o (deborphan)
-  (2)=limpeza completa com (deborphan)
+  (M)=Manual Deborphan 
+  (1)=Instalar o (Deborphan)
+  (2)=limpeza completa com (Deborphan)
   (3)=Limpeza normal  
   (S)=Sair 
 Digite => " resposta
@@ -18,13 +18,13 @@ case "${resposta}" in
 
   ;;
   2|2)
-    echo "Limpando o Sistema com (deborphan)"
+    echo "Limpando o Sistema com (Deborphan)"
     echo "Digite a senha de usuário para continuar"
     sudo du -h /var/cache/apt/archives/ 
     sudo rm -rf /var/tmp/*
     sudo apt clean -y
     sudo apt autoclean -y
-echo "Executando ( deborphan )"
+echo "Executando ( Deborphan )"
     sudo deborphan -s
 echo "(Verificando aguarde...)"
     sudo apt remove $(deborphan) -y
