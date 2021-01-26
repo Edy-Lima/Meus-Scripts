@@ -25,8 +25,8 @@ echo ""
 9-Swapfile
 10-LibreOffice
 ========================================
-***Digite ( ./meu-desktop-config.sh + ENTER para voltar ao inicio)***
-"
+***Digite ( ./meu-desktop-config.sh + ENTER para voltar ao inicio)***"
+
     ;;
     b|B)
 echo ""
@@ -38,13 +38,12 @@ echo ""
 4-default-jre (Java)          14-UNetbootin
 5-xfce4-appmenu-plugin        15-AnyDesk
 6-Htop                        16-Git-GitHub
-7-Neofetch                    17-ADB-fastboot
+7-Neofetch                    17-Compton
 8-Gdebi                       18-vs-code
 9-Gufw                        19-prelink e preload
-10-Guvcview                   20-Compton
+10-Guvcview                   
 ===================================================
-***Digite ( ./meu-desktop-config.sh + ENTER para voltar ao inicio)***
-"
+***Digite ( ./meu-desktop-config.sh + ENTER para voltar ao inicio)***"
 
     ;;
     c|C)
@@ -53,8 +52,7 @@ echo ""
 
 https://docs.google.com/document/d/1KycI0m4pqoNLN_8XjM318o0gsLGzIeDgYaWvnN4Vo8g/edit?usp=sharing
 
-***Digite ( ./meu-desktop-config.sh + ENTER para voltar ao inicio)***
-"
+***Digite ( ./meu-desktop-config.sh + ENTER para voltar ao inicio)***"
 
     ;;
     d|D)
@@ -65,7 +63,7 @@ echo "https://edylimatutoriais.blogspot.com/2021/01/instalando-e-configurando-o-
     ;;
     e|E)
 echo ""
-      echo "Configurando seu desktop..."
+      echo "***Configurando seu desktop***"
       echo "Digite a senha de usuário para continuar"
 sudo systemctl enable fstrim.timer
       echo "TRIM ativado!"
@@ -128,11 +126,6 @@ echo ""
 sudo add-apt-repository ppa:git-core/ppa -y
 sudo apt update && sudo apt install git -y 
 echo ""
-      echo "(Vamos instalar o ADB para voçê)"
-sudo add-apt-repository ppa:nilarimogard/webupd8 -y
-sudo apt update
-sudo apt install android-tools-adb android-tools-fastboot -y
-echo ""
       echo "(Instalando vs-code)"
 sudo apt update
 sudo apt install software-properties-common apt-transport-https wget -y
@@ -145,6 +138,7 @@ sudo rm /var/lib/dpkg/lock-frontend; sudo rm /var/cache/apt/archives/lock ;
 sudo apt install preload prelink -y
 echo ""
       echo " (Vamos instalar o compton)"
+sudo apt update
 sudo apt install compton-conf -y
 clear
 echo ""
