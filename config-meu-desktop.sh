@@ -50,7 +50,7 @@ echo ""
 echo ""
       echo "***Manual Prelink no link abaixo***
 
-https://docs.google.com/document/d/1KycI0m4pqoNLN_8XjM318o0gsLGzIeDgYaWvnN4Vo8g/edit?usp=sharing
+https://drive.google.com/file/d/1_8q_J90faC7kdVO-Z4mo1blsHzRVxXsL/view?usp=sharing
 
 ***Digite ( ./meu-desktop-config.sh + ENTER para voltar ao inicio)***"
 
