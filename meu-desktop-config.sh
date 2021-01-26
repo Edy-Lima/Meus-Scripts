@@ -23,7 +23,7 @@ sudo sed -i.bak '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab && sudo swapoff -a && sud
 echo ""
    echo "(Aguarde! vamos instalar alguns programas.)"
 echo ""
-   echo "(Instalando inkskape)"
+   echo "(Instalando inkscape)"
 sudo add-apt-repository ppa:inkscape.dev/stable -y
 sudo apt update && sudo apt install inkscape -y
 echo ""
@@ -33,7 +33,13 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6494C6D6997C215E
 sudo apt update && sudo apt install cubic -y
 echo ""
    echo "(Instalando programas extras)"
-sudo apt install gnome-disk-utility exfat-fuse exfat-utils default-jre xfce4-appmenu-plugin appmenu-gtk2-module appmenu-gtk3-module htop screenfetch neofetch gdebi gufw plank pitivi synaptic kazam evince gtk2-engines-murrine gtk2-engines-pixbuf winff gedit guvcview curl bleachbit -y
+sudo apt update
+sudo apt install sassc libcanberra-gtk-module libglib2.0-dev -y
+sudo apt install gnome-disk-utility exfat-fuse exfat-utils default-jre -y 
+sudo apt install xfce4-appmenu-plugin appmenu-gtk2-module appmenu-gtk3-module -y
+sudo apt update
+sudo apt install htop screenfetch neofetch gdebi gufw plank pitivi synaptic kazam evince -y 
+sudo apt install gtk2-engines-murrine gtk2-engines-pixbuf winff gedit guvcview curl -y
 echo ""
    echo "(Instalando Google Chrome)"
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -54,11 +60,6 @@ echo ""
    echo "(Instalando Git-GitHub)"
 sudo add-apt-repository ppa:git-core/ppa -y
 sudo apt update && sudo apt install git -y 
-echo ""
-   echo "(Vamos instalar o ADB para voçê)"
-sudo add-apt-repository ppa:nilarimogard/webupd8 -y
-sudo apt update
-sudo apt install android-tools-adb android-tools-fastboot -y
 echo ""
    echo "(Instalando vs-code)"
 sudo apt update
