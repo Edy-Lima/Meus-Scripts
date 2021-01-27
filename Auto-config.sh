@@ -36,6 +36,7 @@ case $opcao in
                 ;;
         4)
                 echo Limpando sistema + Lixeira...
+                sleep $TIME
                 sudo du -h /var/cache/apt/archives/ 
                 sudo rm -rf /var/tmp/*
                 sudo apt clean
