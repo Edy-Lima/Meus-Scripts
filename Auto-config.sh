@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #MEU NOVO SCRIPT PESSOAL.
-TIME=2
+TIME=1
 clear
 while true;do
 echo " "
@@ -37,18 +37,19 @@ case $opcao in
         4)
                 echo Limpando sistema + Lixeira...
                 sleep $TIME
-                sudo du -h /var/cache/apt/archives/ 
+                sudo du -sh /var/cache/apt/archives/ 
                 sudo rm -rf /var/tmp/*
                 sudo apt clean
                 sudo apt autoclean
                 sudo apt autoremove --purge -y
                 sudo rm -rf ${HOME}/.local/share/Trash/* 
-                sudo du -h /var/cache/apt/archives/ 
+                sudo du -sh /var/cache/apt/archives/ 
                 ;;
         5)
                 echo Removendo pacotes desnecessários do sistema...
                 sleep $TIME
                 sudo apt autoremove -y
+                sudo apt autoremove --purge -y
                 ;;
         6)
                 echo Configuração do meu desktop...
