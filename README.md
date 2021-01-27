@@ -1,4 +1,5 @@
-# Limpeza para Ubuntu & derivados
+# Limpeza.sh
+Limpeza para Ubuntu & derivados
 
 Trata-se de um Script (pessoal) para realizar comandos automatiamente como:
 Limpar arquivos temporarios ,
@@ -25,19 +26,12 @@ Vai pedir a senha do usuário para continuar , digite e depois (ENTER).
 Trata-se de um script (pessoal) , mas pode ser usado em qualquer distro baseada em Ubuntu e derivados,
 criado para instalar alguns programas pós formatação.
 
-# Sobre o script (meu-desktop-config.sh)
+# Sobre o Script ( Auto-config.sh )
 
-Trata-se tambem de um cript (pessoal) que programei para deixar o (Xubuntu) 
-do meu jeito , ele remove algumas funções as quais não uso como:
-(gnome-keyring , snap e swapfile) e instala alguns outros programas para 
-meu uso diário. 
-
-# Sobre o Script ( config-meu-desktop.sh )
-
-Foram unidos os scripts ( limpeza.sh e meu-desktop-config.sh )
-para que eu tenha as duas funções em um só arquivo , ele foi criado para 
-uso pessoal pós formatação , 
-mas pode ser usado em qualquer sistema (Linux)baseado em (Ubuntu)
+Trata-se de um Script (pessoal) , ele reune algumas atividades rotineiras,
+Atualizar repositório , atualizar sistema e pacotes , limpeza do sistema ,
+e conta com uma configuração automática para meu "desktop",
+mas ele pode ser usado em qualquer distro baseada em "Ubuntu".
  
 
 # Obs: 
