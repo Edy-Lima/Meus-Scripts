@@ -1,12 +1,6 @@
-# Limpeza.sh
-Limpeza para Ubuntu & derivados
-
-Trata-se de um Script (pessoal) para realizar comandos automatiamente como:
-Limpar arquivos temporarios ,
-Excluir cache do sistema ,
-Excluir programas e arquivos obsoletos do sistema ,
-Excluir arquivos duplicados ,
-Limpar a lixeira.
+# Auto-config.sh
+Trata-se de um script ( pessoal ),
+Que tem a finalidade de automatizar as configurações em meud desktop.
 
 # Como executa-lo:
 
@@ -21,18 +15,3 @@ selecione a opção desejada para a execução,
 
 Vai pedir a senha do usuário para continuar , digite e depois (ENTER).
 
-# sobre o script ( meu-desktop.sh ):
-
-Trata-se de um script (pessoal) , mas pode ser usado em qualquer distro baseada em Ubuntu e derivados,
-criado para instalar alguns programas que requer o uso do "terminal"
-
-# Sobre o Script ( Auto-config.sh )
-
-Trata-se de um Script (pessoal) , ele reune algumas atividades rotineiras,
-Atualizar repositório , atualizar sistema e pacotes , limpeza do sistema ,
-e conta com uma configuração automática para meu "desktop",
-mas ele pode ser usado em qualquer distro baseada em "Ubuntu".
- 
-
-# Obs: 
-todos os script,s podem ser executados com os mesmos procedimentos descritos em (Como executa-lo).
