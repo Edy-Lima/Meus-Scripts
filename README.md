@@ -1,6 +1,6 @@
 # Auto-config.sh
 Trata-se de um script ( pessoal ),
-Que tem a finalidade de automatizar as configurações em meud desktop.
+Que tem a finalidade de automatizar as configurações em meu desktop.
 
 # Como executa-lo:
 
