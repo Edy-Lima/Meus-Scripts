@@ -66,7 +66,7 @@ case $opcao in
                 sudo apt remove --purge apport apport-gtk apport-symptoms -y
                 sudo apt remove xfburn* atril* firefox* thunderbird* pidgin* -y          
                 echo Vamos agora remover o swap...
-                #Desativa e remove o swapfile!
+                # Desativa e remove o swapfile!.
                 sudo sed -i.bak '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab && sudo swapoff -a && sudo rm -f -r /swapfile
                 echo Swap removido!
                 echo ""
@@ -84,6 +84,7 @@ case $opcao in
                 sudo apt install xfce4-appmenu-plugin appmenu-gtk2-module appmenu-gtk3-module htop screenfetch -y 
                 sudo apt install neofetch gdebi gufw plank pitivi synaptic kazam evince -y 
                 sudo apt install gtk2-engines-murrine gtk2-engines-pixbuf winff gedit guvcview curl -y
+                sudo apt install sassc libcanberra-gtk-module libglib2.0-dev -y
                 echo Instalação do Google Chrome...
                 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
                 sudo dpkg -i google-chrome-stable_current_amd64.deb
@@ -95,7 +96,7 @@ case $opcao in
                 echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list
                 sudo apt update
                 sudo apt install anydesk -y
-                #Desabilita a inicialização do Anydesk com o sistema!
+                # Desabilita a inicialização do Anydesk com o sistema!.
                 sudo systemctl disable anydesk.service
                 echo Instalação do Git-GitHub...
                 sudo add-apt-repository ppa:git-core/ppa -y
@@ -111,6 +112,7 @@ case $opcao in
                 sudo apt install preload prelink -y
                 echo Instalação do compton...
                 sudo apt install compton-conf -y
+                sudo apt install libconfig-dev libqt4-dev qt4-qmake cmake make -y
                 clear
                 echo Reparando pacotes quebrados...
                 sudo apt -f install && sudo dpkg --configure -a
