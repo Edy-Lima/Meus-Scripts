@@ -8,51 +8,15 @@ echo "SEJA BEM VINDO AO $0 DO UBUNTU!"
 echo " "
 echo "Escolha uma opção abaixo para começar!
       
-      1 - Verificar repositório do sistema
-      2 - Mostrar atualizações do sistema
-      3 - Instalar atualizações do sistema
-      4 - Limpar o sistema + Lixeira
-      5 - Remover pacotes não necessários
-      6 - Configurar Xubuntu-desktop sem snap
-      7 - Configurar Xubuntu-desktop com snap
+      1 - Configurar Xubuntu-desktop sem snap
+      2 - Configurar Xubuntu-desktop com snap
       0 - Sair do sistema"
 echo " "
 echo -n "Opção escolhida: "
 read opcao
 case $opcao in
+
         1)
-                echo Verificando o sistema por atualizações...
-                sleep $TIME
-                sudo apt update
-                ;;
-        2)
-                echo Mostrando as atualizações do sistema...
-                sleep $TIME
-                sudo apt list --upgradable
-                ;;
-        3)
-                echo Instalando atualizações do sistema...
-                sleep $TIME
-                sudo apt full-upgrade -y
-                ;;
-        4)
-                echo Limpando sistema + Lixeira...
-                sleep $TIME
-                sudo du -sh /var/cache/apt/archives/ 
-                sudo rm -rf /var/tmp/*
-                sudo apt clean
-                sudo apt autoclean
-                sudo apt autoremove --purge -y
-                sudo rm -rf ${HOME}/.local/share/Trash/* 
-                sudo du -sh /var/cache/apt/archives/ 
-                ;;
-        5)
-                echo Removendo pacotes desnecessários do sistema...
-                sleep $TIME
-                sudo apt autoremove -y
-                sudo apt autoremove --purge -y
-                ;;
-        6)
                 echo Configurando desktop sem snap e swap...
                 sleep $TIME
                 echo Ativação do TRIM
@@ -125,7 +89,7 @@ case $opcao in
                 clear
                 echo Tudo pronto!
                 ;;
-        7)
+        2)
                 echo Configurando seu destop com snap...
                 sleep $TIME
                 echo Ativação do TRIM
