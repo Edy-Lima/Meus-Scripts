@@ -2,7 +2,7 @@
 Trata-se de um script ( pessoal ),
 Que tem a finalidade de automatizar as configurações em meu desktop.
 
-# Edy-Lima-posinstall-Xubuntu.sh
+# pos-install-Xubuntu.sh
 Trata-se de um script ( pessoal ),
 tem as mesmas caractrísticas de (Auto-config.sh) 
 Adicionando apenas as opções de configurar com ou sem ( snap ).
