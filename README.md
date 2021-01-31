@@ -1,11 +1,10 @@
-# Auto-config.sh
-Trata-se de um script ( pessoal ),
-Que tem a finalidade de automatizar as configurações em meu desktop.
-
 # pos-install-Xubuntu.sh
 Trata-se de um script ( pessoal ),
-tem as mesmas caractrísticas de (Auto-config.sh) 
-Adicionando apenas as opções de configurar com ou sem ( snap ).
+sua finalidade é comfigurar meu desktop entre romever e instalar alguns programas , para deixa-lo pronto para meu trabalho,sendo que pode ser usado em quanquer distro baseada em "Ubuntu e Debian.
+
+# UPDATE-LIMPEZA.sh
+Trata-se de um script ( pessoal )
+sua fimalidade é facilitar o uso do terminal nas execuções de limpeza do sistema "Ubuntu e Debian.
 
 # Como executa-lo:
 
