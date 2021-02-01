@@ -40,11 +40,11 @@ case $opcao in
                 echo 
                 echo Instalação do inkskape...
                 sudo add-apt-repository ppa:inkscape.dev/stable -y
-                sudo apt update && sudo apt install inkscape -y
+                sudo apt install inkscape -y
                 echo Instalação do Cubic...
                 sudo add-apt-repository ppa:cubic-wizard/release -y
                 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6494C6D6997C215E
-                sudo apt update && sudo apt install cubic -y
+                sudo apt install cubic -y
                 echo Instalando programas extras...
                 sudo apt install gnome-disk-utility exfat-fuse exfat-utils default-jre -y 
                 sudo apt install xfce4-appmenu-plugin appmenu-gtk2-module appmenu-gtk3-module htop screenfetch -y 
@@ -56,7 +56,7 @@ case $opcao in
                 sudo dpkg -i google-chrome-stable_current_amd64.deb
                 echo Instalação do UNetbootin...
                 sudo add-apt-repository ppa:gezakovacs/ppa -y
-                sudo apt update && sudo apt install unetbootin -y
+                sudo apt install unetbootin -y
                 echo Instalação do AnyDesk...
                 sudo wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -
                 echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list
@@ -66,9 +66,8 @@ case $opcao in
                 sudo systemctl disable anydesk.service
                 echo Instalação do Git-GitHub...
                 sudo add-apt-repository ppa:git-core/ppa -y
-                sudo apt update && sudo apt install git -y 
+                sudo apt install git -y 
                 echo Instalação do vs-code...
-                sudo apt update
                 sudo apt install software-properties-common apt-transport-https wget -y
                 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
                 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
