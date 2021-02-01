@@ -45,6 +45,7 @@ case $opcao in
                 sudo add-apt-repository ppa:cubic-wizard/release -y
                 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6494C6D6997C215E
                 sudo apt install cubic -y
+                # Instalar alguns programas extras.
                 echo Instalando programas extras...
                 sudo apt install gnome-disk-utility exfat-fuse exfat-utils default-jre -y 
                 sudo apt install xfce4-appmenu-plugin appmenu-gtk2-module appmenu-gtk3-module htop screenfetch -y 
@@ -72,6 +73,7 @@ case $opcao in
                 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
                 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
                 sudo apt install code -y
+                # Melhorar o desempenho do sistema.
                 echo Instalação do prelink e preload...
                 sudo rm /var/lib/dpkg/lock-frontend; sudo rm /var/cache/apt/archives/lock ;
                 sudo apt install preload prelink -y
@@ -113,6 +115,7 @@ case $opcao in
                 sudo add-apt-repository ppa:cubic-wizard/release -y
                 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6494C6D6997C215E
                 sudo apt install cubic -y
+                # Instalar alguns programas extras.
                 echo Instalando programas extras...
                 sudo apt install gnome-disk-utility exfat-fuse exfat-utils default-jre -y 
                 sudo apt install xfce4-appmenu-plugin appmenu-gtk2-module appmenu-gtk3-module htop screenfetch -y 
@@ -139,6 +142,7 @@ case $opcao in
                 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
                 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
                 sudo apt install code -y
+                # Melhorar o desempenho do sistema.
                 echo Instalação do prelink e preload...
                 sudo rm /var/lib/dpkg/lock-frontend; sudo rm /var/cache/apt/archives/lock ;
                 sudo apt install preload prelink -y
