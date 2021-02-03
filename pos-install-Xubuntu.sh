@@ -78,8 +78,7 @@ case $opcao in
                 sudo rm /var/lib/dpkg/lock-frontend; sudo rm /var/cache/apt/archives/lock ;
                 sudo apt install preload prelink -y
                 echo Instalação do compton...
-                sudo apt install compton-conf -y
-                sudo apt install libconfig-dev libqt4-dev qt4-qmake cmake make -y
+                sudo apt install compton compton-conf -y
                 clear
                 echo Reparando pacotes quebrados...
                 sudo apt -f install && sudo dpkg --configure -a
@@ -147,8 +146,7 @@ case $opcao in
                 sudo rm /var/lib/dpkg/lock-frontend; sudo rm /var/cache/apt/archives/lock ;
                 sudo apt install preload prelink -y
                 echo Instalação do compton...
-                sudo apt install compton-conf -y
-                sudo apt install libconfig-dev libqt4-dev qt4-qmake cmake make -y
+                sudo apt install compton compton-conf -y
                 clear
                 echo Reparando pacotes quebrados...
                 sudo apt -f install && sudo dpkg --configure -a
