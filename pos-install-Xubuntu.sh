@@ -60,7 +60,7 @@ case $opcao in
                 sudo apt install unetbootin -y
                 echo Instalação do AnyDesk...
                 sudo wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -
-                echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list
+                sudo echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list
                 sudo apt update
                 sudo apt install anydesk -y
                 # Desabilita a inicialização do Anydesk com o sistema!.
@@ -129,7 +129,7 @@ case $opcao in
                 sudo apt install unetbootin -y
                 echo Instalação do AnyDesk...
                 sudo wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -
-                echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list
+                sudo echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list
                 sudo apt install anydesk -y
                 # Desabilita a inicialização do Anydesk com o sistema!.
                 sudo systemctl disable anydesk.service
