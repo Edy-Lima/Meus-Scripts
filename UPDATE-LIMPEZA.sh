@@ -31,7 +31,7 @@ case $opcao in
         3)
                 echo Instalando atualizações do sistema...
                 sleep $TIME
-                sudo apt upgrade -y
+                sudo apt full-upgrade -y
                 ;;
         4)
                 echo Limpando o sistema...
