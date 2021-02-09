@@ -49,7 +49,7 @@ case $opcao in
                 echo Instalando programas extras...
                 sudo apt install gnome-disk-utility exfat-fuse exfat-utils default-jre -y 
                 sudo apt install xfce4-appmenu-plugin appmenu-gtk2-module appmenu-gtk3-module htop screenfetch -y 
-                sudo apt install neofetch gdebi gufw plank pitivi synaptic kazam evince -y 
+                sudo apt install neofetch gufw plank pitivi synaptic kazam evince -y 
                 sudo apt install gtk2-engines-murrine gtk2-engines-pixbuf winff gedit guvcview curl -y
                 sudo apt install sassc libcanberra-gtk-module libglib2.0-dev -y
                 echo Instalação do Google Chrome...
@@ -99,7 +99,6 @@ case $opcao in
                 # Remove alguns softwares e o gnome-keyring.
                 sudo apt remove gnome-keyring -y
                 sudo apt remove --auto-remove gnome-keyring -y
-                sudo apt remove --purge snapd gnome-software-plugin-snap -y
                 sudo apt remove --purge apport apport-gtk apport-symptoms -y
                 sudo apt remove xfburn* atril* firefox* thunderbird* pidgin* -y          
                 echo Vamos agora remover o swap...
@@ -118,7 +117,7 @@ case $opcao in
                 echo Instalando programas extras...
                 sudo apt install gnome-disk-utility exfat-fuse exfat-utils default-jre -y 
                 sudo apt install xfce4-appmenu-plugin appmenu-gtk2-module appmenu-gtk3-module htop screenfetch -y 
-                sudo apt install neofetch gdebi gufw plank pitivi synaptic kazam evince -y 
+                sudo apt install neofetch gufw plank pitivi synaptic kazam evince -y 
                 sudo apt install gtk2-engines-murrine gtk2-engines-pixbuf winff gedit guvcview curl -y
                 sudo apt install sassc libcanberra-gtk-module libglib2.0-dev -y
                 echo Instalação do Google Chrome...
