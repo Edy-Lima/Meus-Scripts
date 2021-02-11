@@ -49,7 +49,7 @@ case $opcao in
                 echo Instalando programas extras...
                 sudo apt install gnome-disk-utility exfat-fuse exfat-utils default-jre -y 
                 sudo apt install xfce4-appmenu-plugin appmenu-gtk2-module appmenu-gtk3-module htop screenfetch -y 
-                sudo apt install neofetch gufw plank pitivi synaptic kazam evince -y 
+                sudo apt install neofetch gufw plank pitivi synaptic simplescreenrecorder evince -y 
                 sudo apt install gtk2-engines-murrine gtk2-engines-pixbuf winff gedit guvcview curl -y
                 sudo apt install sassc libcanberra-gtk-module libglib2.0-dev -y
                 echo Instalação do Google Chrome...
@@ -117,7 +117,7 @@ case $opcao in
                 echo Instalando programas extras...
                 sudo apt install gnome-disk-utility exfat-fuse exfat-utils default-jre -y 
                 sudo apt install xfce4-appmenu-plugin appmenu-gtk2-module appmenu-gtk3-module htop screenfetch -y 
-                sudo apt install neofetch gufw plank pitivi synaptic kazam evince -y 
+                sudo apt install neofetch gufw plank pitivi synaptic simplescreenrecorder evince -y 
                 sudo apt install gtk2-engines-murrine gtk2-engines-pixbuf winff gedit guvcview curl -y
                 sudo apt install sassc libcanberra-gtk-module libglib2.0-dev -y
                 echo Instalação do Google Chrome...
