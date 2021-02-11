@@ -30,7 +30,7 @@ case $opcao in
                 sudo rm -rf /var/cache/snapd
                 sudo rm -rf ~/snap
                 sudo apt remove --purge apport apport-gtk apport-symptoms -y
-                sudo apt remove xfburn* atril* firefox* thunderbird* pidgin* -y          
+                sudo apt autoremove --purge libreoffice* xfburn* atril* firefox* thunderbird* pidgin* -y          
                 echo Vamos agora remover o swap...
                 # Desativa e remove o swapfile!.
                 sudo sed -i.bak '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab && sudo swapoff -a && sudo rm -f -r /swapfile
@@ -100,7 +100,7 @@ case $opcao in
                 sudo apt remove gnome-keyring -y
                 sudo apt remove --auto-remove gnome-keyring -y
                 sudo apt remove --purge apport apport-gtk apport-symptoms -y
-                sudo apt autoremove --purge xfburn* atril* firefox* thunderbird* pidgin* -y          
+                sudo apt autoremove --purge libreoffice* xfburn* atril* firefox* thunderbird* pidgin* -y          
                 echo Vamos agora remover o swap...
                 # Desativa e remove o swapfile.
                 sudo sed -i.bak '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab && sudo swapoff -a && sudo rm -f -r /swapfile
