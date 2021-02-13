@@ -47,7 +47,7 @@ case $opcao in
                 sudo apt install cubic -y
                 # Instalar alguns programas extras.
                 echo Instalando programas extras...
-                sudo apt install gnome-disk-utility exfat-fuse exfat-utils default-jre -y 
+                sudo apt install gnome-disk-utility exfat-fuse exfat-utils default-jre usb-creator-gtk -y 
                 sudo apt install xfce4-appmenu-plugin appmenu-gtk2-module appmenu-gtk3-module htop screenfetch -y 
                 sudo apt install neofetch gufw plank pitivi synaptic simplescreenrecorder evince -y 
                 sudo apt install gtk2-engines-murrine gtk2-engines-pixbuf winff gedit guvcview curl -y
@@ -115,7 +115,7 @@ case $opcao in
                 sudo apt install cubic -y
                 # Instalar alguns programas extras.
                 echo Instalando programas extras...
-                sudo apt install gnome-disk-utility exfat-fuse exfat-utils default-jre -y 
+                sudo apt install gnome-disk-utility exfat-fuse exfat-utils default-jre usb-creator-gtk -y 
                 sudo apt install xfce4-appmenu-plugin appmenu-gtk2-module appmenu-gtk3-module htop screenfetch -y 
                 sudo apt install neofetch gufw plank pitivi synaptic simplescreenrecorder evince -y 
                 sudo apt install gtk2-engines-murrine gtk2-engines-pixbuf winff gedit guvcview curl -y
