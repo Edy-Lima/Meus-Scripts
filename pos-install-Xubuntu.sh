@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#MEU NOVO SCRIPT PESSOAL.
+#MEU SCRIPT PESSOAL.
 TIME=1
 clear
 while true;do
@@ -61,7 +61,6 @@ case $opcao in
                 echo Instalação do AnyDesk...
                 sudo wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -
                 sudo echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list
-                sudo apt update
                 sudo apt install anydesk -y
                 # Desabilita a inicialização do Anydesk com o sistema!.
                 sudo systemctl disable anydesk.service
