@@ -55,6 +55,9 @@ case $opcao in
                 echo Instalação do Google Chrome...
                 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
                 sudo dpkg -i google-chrome-stable_current_amd64.deb
+                echo Instalação do teamviewer...
+                wget https://dl.teamviewer.com/linux/direct/teamviewer_current_amd64.deb
+                sudo dpkg -i teamviewer_current_amd64.deb 
                 echo Instalação do UNetbootin...
                 sudo add-apt-repository ppa:gezakovacs/ppa -y
                 sudo apt install unetbootin -y
@@ -122,6 +125,9 @@ case $opcao in
                 echo Instalação do Google Chrome...
                 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
                 sudo dpkg -i google-chrome-stable_current_amd64.deb
+                echo Instalação do teamviewer...
+                wget https://dl.teamviewer.com/linux/direct/teamviewer_current_amd64.deb
+                sudo dpkg -i teamviewer_current_amd64.deb
                 echo Instalação do UNetbootin...
                 sudo add-apt-repository ppa:gezakovacs/ppa -y
                 sudo apt install unetbootin -y
