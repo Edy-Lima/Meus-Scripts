@@ -2,9 +2,12 @@
 Trata-se de um script ( pessoal ),
 sua finalidade é comfigurar meu desktop entre romever e instalar alguns programas , para deixa-lo pronto para meu trabalho,sendo que pode ser usado em quanquer distro baseada em "Ubuntu e Debian.
 
-# UPDATE-LIMPEZA.sh
+# (UP-LIMP) UPDATE-LIMPEZA
 Trata-se de um script ( pessoal )
 sua fimalidade é facilitar o uso do terminal nas execuções de limpeza do sistema "Ubuntu e Debian.
+
+Obs: Para melhor execução basta mover mara o diretório:(/usr/bin),
+agora basta abrir o terminal e chamar o script digitando apena UP-LIMP + ENTER.
 
 # Como executa-lo:
 
