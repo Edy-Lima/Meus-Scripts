@@ -18,7 +18,4 @@ selecione a opção desejada para a execução,
 
 Vai pedir a senha do usuário para continuar , digite e depois (ENTER).
 
-# Obs:
-Ambas as opções incluem a remoção do (Swapfile)
-caso não queiram remove-lo basta comentar os comandos com ( # ).
 
