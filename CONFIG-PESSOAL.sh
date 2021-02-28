@@ -113,7 +113,7 @@ case $opcao in
                 ;;
         6)
                 echo Removendo pacotes obsoletos do sistema...
-                sleep $TOME
+                sleep $TIME
                 sudo apt autoremove -y
                 sudo apt autoremove --purge -y
                 echo OK!
