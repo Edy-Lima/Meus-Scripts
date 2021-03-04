@@ -71,7 +71,7 @@ case $opcao in
                 echo Instalação do AnyDesk...
                 wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -
                 sudo echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list
-                sudo apt install anydesk -y
+                sudo apt update && sudo apt install anydesk -y
                 # Desabilita a inicialização do Anydesk com o sistema!.
                 sudo systemctl disable anydesk.service
                 echo Instalação do Git-GitHub...
