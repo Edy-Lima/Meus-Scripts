@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #MEU NOVO SCRIPT.
-TIME=2
+TIME=1
 clear
 while true;do
 echo " "
