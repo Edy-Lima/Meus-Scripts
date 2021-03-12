@@ -17,6 +17,7 @@ Lista de programas que serão excluidos:
 3-Firefox
 4-Thunderbird
 5-Pidigin
+6-LibreOffice
 
 # Como executa-los facilmente:
 
