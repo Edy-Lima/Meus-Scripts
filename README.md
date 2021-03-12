@@ -9,6 +9,15 @@ agora basta abrir o terminal e chamar o script digitando apena UP-LIMP + ENTER.
 Trata-se de um script para meu uso (pessoal)
 mas pode ser usado em qualquer distros baseadas em "Ubuntu".
 
+Atenção! 
+Lista de programas que serão excluidos:
+
+1-XfBurn
+2-Atril
+3-Firefox
+4-Thunderbird
+5-Pidigin
+
 # Como executa-los facilmente:
 
 Após o download do "arquivo.zip" vá até o diretório onde ele foi baixado,
