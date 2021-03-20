@@ -61,7 +61,7 @@ case $opcao in
                 sudo apt install xfce4-appmenu-plugin appmenu-gtk2-module appmenu-gtk3-module htop screenfetch -y 
                 sudo apt install neofetch gufw plank pitivi synaptic simplescreenrecorder evince testdisk -y 
                 sudo apt install gtk2-engines-murrine gtk2-engines-pixbuf winff gedit guvcview curl p7zip-rar -y
-                sudo apt install sassc libcanberra-gtk-module libglib2.0-dev gamemode steam -y
+                sudo apt install sassc libcanberra-gtk-module libglib2.0-dev gamemode ubuntu-restricted-extras -y
                 echo Instalação do Google Chrome...
                 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
                 sudo dpkg -i google-chrome-stable_current_amd64.deb
@@ -69,8 +69,11 @@ case $opcao in
                 sudo add-apt-repository ppa:gezakovacs/ppa -y
                 sudo apt install unetbootin -y
                 echo Instalação do AnyDesk...
-                wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -
+                # Adicionar chave de repositório à lista de fornecedores de software confiáveis:
+                sudo wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -
+                # Adicionar o repositório:
                 sudo echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list
+                # Atualizar o cache do apt e instalar o Anydesk:
                 sudo apt update && sudo apt install anydesk -y
                 # Desabilita a inicialização do Anydesk com o sistema!.
                 sudo systemctl disable anydesk.service
