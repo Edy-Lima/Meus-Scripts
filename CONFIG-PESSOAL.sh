@@ -62,6 +62,9 @@ case $opcao in
                 sudo apt install neofetch gufw plank pitivi synaptic simplescreenrecorder evince testdisk -y 
                 sudo apt install gtk2-engines-murrine gtk2-engines-pixbuf winff gedit guvcview curl p7zip-rar -y
                 sudo apt install sassc libcanberra-gtk-module libglib2.0-dev gamemode ubuntu-restricted-extras -y
+                echo Configurando plank...
+                # Adiciona o plank para iniciar com o sistema:
+                sudo cp -v /usr/share/applications/plank.desktop /etc/xdg/autostart/
                 echo Instalação do Google Chrome...
                 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
                 sudo dpkg -i google-chrome-stable_current_amd64.deb
