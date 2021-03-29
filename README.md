@@ -6,7 +6,7 @@ Obs: Para melhor execução basta mover mara o diretório:(/usr/bin),
 agora basta abrir o terminal e chamar o script digitando apena UP-LIMP + ENTER.
 
 
-# Como executa-lo facilmente:
+# Como executa-lo :
 
 Após o download do "arquivo.zip" vá até o diretório onde ele foi baixado,
 Após extrair abra a basta e em um local vazio clique com o botão direito do mouse e celecione:
