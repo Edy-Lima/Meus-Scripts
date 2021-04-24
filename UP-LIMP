@@ -12,7 +12,7 @@ echo "Escolha uma opção abaixo para começar!
       2 - Mostrar atualizações do sistema
       3 - Instalar atualizações do sistema
       4 - Limpar o sistema
-      5 - Remover pacotes não necessários
+      5 - Remover pacotes desnecessários do sistema
       0 - Sair do sistema"
 echo " "
 echo -n "Opção escolhida: "
