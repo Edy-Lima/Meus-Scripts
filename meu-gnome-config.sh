@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 #
 echo "Atualizar o sistema:"
     sudo apt update && sudo apt dist-upgrade -y
