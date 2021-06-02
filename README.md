@@ -5,6 +5,10 @@ sua finalidade é facilitar o uso do terminal nas execuções de limpeza e atual
 Obs: Para melhor execução basta mover mara o diretório:(/usr/bin),
 agora basta abrir o terminal e chamar o script digitando apena UP-LIMP + ENTER.
 
+# (meu-gnome-config)
+Trata-se de um Script ( pessoal ) 
+para configurar meu o desktop Ubuntu pós formatação.
+
 
 # Como executa-lo :
 
