@@ -32,17 +32,17 @@ echo "Instalando prelink e preload..."
 echo " instalando Git-GitHub"
   # Este comando adiciona o PPA e instala o Git.
     sudo add-apt-repository ppa:git-core/ppa -y
-    sudo apt install git -y
+    sudo apt update && sudo apt install git -y
 echo "Instalando vs-code..."
   # Estes comandos instala o vs-code.
     sudo apt install software-properties-common apt-transport-https wget -y
     wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
     sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-    sudo apt install code -y
+    sudo apt update && sudo apt install code -y
 echo "instalando Mainline..."
   # Estes comandos adiciona o PPA e instala o mainline.
     sudo apt-add-repository -y ppa:cappelikan/ppa
-    sudo apt install mainline -y
+    sudo apt update && sudo apt install mainline -y
     clear
 echo "Buscando e instalando atualizações..."
     sudo apt update && sudo apt dist-upgrade -y
