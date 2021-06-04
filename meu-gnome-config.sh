@@ -1,26 +1,34 @@
 #!/usr/bin/env bash
 #
-echo "Atualizar o sistema:"
+echo "Atualizando o sistema..."
+  # Estes comandos atualiza o seu sistema Ubuntu.
     sudo apt update && sudo apt dist-upgrade -y
-echo "Removendo Snap"
+    clear
+echo "Tudo pronto gora vamos começar..."
+echo ""
+echo "Removendo Swap-file..."
+  # Este comando desativa e remove o Swap-file.
+    sudo sed -i.bak '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab && sudo swapoff -a && sudo rm -f -r /swapfile
+echo Swap removido!
+echo "Removendo Snap..."
   # Este comando remove o suporte ao Snap.
     sudo apt remove --purge snapd gnome-software-pluguin-snap -y
     sudo rm -rf /var/cache/snapd
     sudo rm -rf ~/snap
-echo "Removendo Libreoffice"
+echo "Removendo Libreoffice..."
   # Este comando remove todo o pacote Libreoffice.
     sudo apt remove --purge libreoffice*
 echo "personalizar-gnome:"
   # Este comando instala alguns plugins.
     sudo apt install gnome-tweak-tool gnome-shell gnome-shell-extension dconf-editor -y
-echo "instalando Kdenlive"
+echo "instalando Kdenlive..."
   # Este comando adiciona o PPA e instala o Kdenlive.
     sudo add-apt-repository ppa: kdenlive / kdenlive-stable -y
     sudo apt update && sudo apt install kdenlive -y
 echo "Instalar tema Dark do Kdenlive:"
   # Este comando instala o tema breeeze no Kdenlive
     sudo apt install kde-style-breeze -y
-echo "instalando google-chrome"
+echo "instalando google-chrome..."
   # Este comando vai baixar e instalar o google-chrome.
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     sudo dpkg -i google-chrome-stable_current_amd64.deb
@@ -29,7 +37,7 @@ echo "Instalando prelink e preload..."
   # Este comando instala o prelink e o preload.
     sudo rm /var/lib/dpkg/lock-frontend; sudo rm /var/cache/apt/archives/lock ;
     sudo apt install preload prelink -y
-echo " instalando Git-GitHub"
+echo " instalando Git-GitHub..."
   # Este comando adiciona o PPA e instala o Git.
     sudo add-apt-repository ppa:git-core/ppa -y
     sudo apt update && sudo apt install git -y
@@ -45,7 +53,7 @@ echo "instalando Mainline..."
     sudo apt update && sudo apt install mainline -y
     clear
 echo "Buscando e instalando atualizações..."
-    sudo apt update && sudo apt dist-upgrade -y
+    sudo apt update && sudo apt full-upgrade -y
     clear
 echo "Tudo pronto!"           
 
