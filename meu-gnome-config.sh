@@ -49,7 +49,7 @@ echo "Instalando vs-code..."
     sudo apt update && sudo apt install code -y
 echo "instalando Mainline..."
   # Estes comandos adiciona o PPA e instala o mainline.
-    sudo apt-add-repository -y ppa:cappelikan/ppa
+    sudo apt-add-repository -y ppa:cappelikan/ppa -y
     sudo apt update && sudo apt install mainline -y
     clear
 echo "Buscando e instalando atualizações..."
