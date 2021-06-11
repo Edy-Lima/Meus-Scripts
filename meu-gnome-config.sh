@@ -9,18 +9,22 @@ echo ""
 echo "Removendo Swap-file..."
   # Este comando desativa e remove o Swap-file.
     sudo sed -i.bak '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab && sudo swapoff -a && sudo rm -f -r /swapfile
+    clear
 echo Swap removido!
 echo "Removendo Snap..."
   # Este comando remove o suporte ao Snap.
     sudo apt remove --purge snapd gnome-software-pluguin-snap -y
     sudo rm -rf /var/cache/snapd
     sudo rm -rf ~/snap
+    clear
 echo "Removendo Libreoffice..."
   # Este comando remove todo o pacote Libreoffice.
     sudo apt remove --purge libreoffice*
+    clear
 echo "personalizar-gnome:"
   # Este comando instala alguns plugins.
-    sudo apt install gnome-tweak-tool gnome-shell gnome-shell-extension dconf-editor -y
+    sudo apt install gnome-tweak-tool gnome-shell gnome-shell-plugins dconf-editor -y
+    clear
 echo "instalando Kdenlive..."
   # Este comando adiciona o PPA e instala o Kdenlive.
     sudo add-apt-repository ppa: kdenlive / kdenlive-stable -y
@@ -28,32 +32,43 @@ echo "instalando Kdenlive..."
 echo "Instalar tema Dark do Kdenlive:"
   # Este comando instala o tema breeeze no Kdenlive
     sudo apt install kde-style-breeze -y
+    clear
 echo "instalando google-chrome..."
   # Este comando vai baixar e instalar o google-chrome.
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     sudo dpkg -i google-chrome-stable_current_amd64.deb
     sudo apt install -f -y
+    clear
 echo "Instalando prelink e preload..."
   # Este comando instala o prelink e o preload.
     sudo rm /var/lib/dpkg/lock-frontend; sudo rm /var/cache/apt/archives/lock ;
     sudo apt install preload prelink -y
+    clear
 echo " instalando Git-GitHub..."
   # Este comando adiciona o PPA e instala o Git.
     sudo add-apt-repository ppa:git-core/ppa -y
     sudo apt update && sudo apt install git -y
+    clear
 echo "Instalando vs-code..."
   # Estes comandos instala o vs-code.
     sudo apt install software-properties-common apt-transport-https wget -y
     wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
     sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
     sudo apt update && sudo apt install code -y
+    clear
 echo "instalando Mainline..."
   # Estes comandos adiciona o PPA e instala o mainline.
     sudo apt-add-repository -y ppa:cappelikan/ppa -y
     sudo apt update && sudo apt install mainline -y
     clear
-echo "Buscando e instalando atualizações..."
+echo "Instalando OBS-Studio..."
+# Este comando adiciona o PPA e instala o OBS-Studio.
+    sudo add-apt-repository ppa:obsproject/obs-studio -y
+    sudo apt update && sudo apt install obs-studio -y
+    clear
+echo "Buscando atualizações e limpando o sistema..."
     sudo apt update && sudo apt full-upgrade -y
+    sudo apt autoremove -y
     clear
 echo "Tudo pronto!"           
 
