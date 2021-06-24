@@ -21,7 +21,7 @@ echo "Escolha uma opção abaixo para começar!
       12- Instalar compton * 13- Manual compton
       14- Instalar kdenlive
       15- Instalar SimpleScreenRecorder
-      16- Instalar Lutris
+      16- Instalar OBS-Studio
       17- Instalar Ubuntu Mainline Kernel Installer
       0 - Sair do sistema"
 echo " "
@@ -123,9 +123,9 @@ case $opcao in
                 sudo apt install simplescreenrecorder -y
                 ;;
         16)
-                echo Instalando Lutris...
-                sudo add-apt-repository ppa:lutris-team/lutris -y
-                sudo apt install lutris -y
+                echo Instalando OBS-Studio...
+                sudo add-apt-repository ppa:obsproject/obs-studio -y
+                sudo apt update && sudo apt install obs-studio -y
                 ;;
         17)
                 echo instalando Mainline...
