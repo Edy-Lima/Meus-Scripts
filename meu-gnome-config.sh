@@ -25,14 +25,6 @@ echo "personalizar-gnome:"
   # Este comando instala alguns plugins.
     sudo apt install gnome-tweak-tool gnome-shell gnome-shell-plugins dconf-editor -y
     clear
-echo "instalando Kdenlive..."
-  # Este comando adiciona o PPA e instala o Kdenlive.
-    sudo add-apt-repository ppa: kdenlive / kdenlive-stable -y
-    sudo apt update && sudo apt install kdenlive -y
-echo "Instalar tema Dark do Kdenlive:"
-  # Este comando instala o tema breeeze no Kdenlive
-    sudo apt install kde-style-breeze -y
-    clear
 echo "instalando google-chrome..."
   # Este comando vai baixar e instalar o google-chrome.
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -49,14 +41,7 @@ echo " instalando Git-GitHub..."
     sudo add-apt-repository ppa:git-core/ppa -y
     sudo apt update && sudo apt install git -y
     clear
-echo "Instalando vs-code..."
-  # Estes comandos instala o vs-code.
-    sudo apt install software-properties-common apt-transport-https wget -y
-    wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-    sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-    sudo apt update && sudo apt install code -y
-    clear
-echo "instalando Mainline..."
+echo "instalando Ubuntu-Mainline..."
   # Estes comandos adiciona o PPA e instala o mainline.
     sudo apt-add-repository -y ppa:cappelikan/ppa -y
     sudo apt update && sudo apt install mainline -y
