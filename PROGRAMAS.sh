@@ -110,7 +110,9 @@ case $opcao in
                 echo Instalando kdenlive...
                 sleep $TIME 
                 sudo add-apt-repository ppa: kdenlive / kdenlive-stable -y
-                sudo apt install kdenlive -y     
+                sudo apt install kdenlive -y
+                # Este comando instala o tema breeeze no Kdenlive
+                sudo apt install kde-style-breeze -y  
                 ;;
         15)
                 echo Instalando  SimpleScreenRecorder...
@@ -125,7 +127,7 @@ case $opcao in
                 ;;
         17)
                 echo instalando Mainline...
-                sudo apt-add-repository -y ppa:cappelikan/ppa
+                sudo apt-add-repository -y ppa:cappelikan/ppa -y
                 sudo apt install mainline -y
                 ;;
         0)
