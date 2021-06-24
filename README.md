@@ -23,4 +23,8 @@ selecione a opção desejada para a execução,
 
 Vai pedir a senha do usuário para continuar , digite e depois (ENTER).
 
+# Sobre o script: ( PROGRAMAS.sh ):
+
+Trata-se de um script (pessoal) , mas pode ser usado em qualquer distro baseada em (Ubuntu*),
+criado para instalar alguns programas que requer o uso do "terminal".
 
