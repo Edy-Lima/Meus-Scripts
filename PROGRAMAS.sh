@@ -8,8 +8,8 @@ echo "SEJA BEM VINDO AO $0 PARA UBUNTU!"
 echo " "
 echo "Escolha uma opção abaixo para começar!
       
-      1 - Instalar Intel Graphics Driver | 11- Manual prelink
-      2 - Instalar (Kisak-mesa) Driver   | 13- Manual compton
+      1 - Instalar Intel Graphics Driver | 16- Instalar OBS-Studio
+      2 - Instalar (Kisak-mesa) Driver   | 17- Instalar Ubuntu Mainline
       3 - Instalar Google-Chrome         |
       4 - Instalar inkskape              |
       5 - Instalar Cubic                 | 
@@ -18,11 +18,11 @@ echo "Escolha uma opção abaixo para começar!
       8 - Instalar Git-GitHub            |
       9 - Instalar vs-code               |
       10- Instalar prelink e preload     |
+      11- Manual prelink                 |
       12- Instalar compton               |
+      13- Manual compton                 |
       14- Instalar kdenlive              |
       15- Instalar SimpleScreenRecorder  |
-      16- Instalar OBS-Studio            |
-      17- Instalar Ubuntu Mainline       |
       0 - Sair do sistema"
 echo " "
 echo -n "Opção escolhida: "
