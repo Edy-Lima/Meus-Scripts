@@ -48,6 +48,7 @@ case $opcao in
                 ;;
         4)
                 echo Instalando inkskape...
+                sleep $TIME
                 sudo add-apt-repository ppa:inkscape.dev/stable -y
                 sudo apt install inkscape -y
                 ;;
@@ -124,11 +125,13 @@ case $opcao in
                 ;;
         16)
                 echo Instalando OBS-Studio...
+                sleep $TIME
                 sudo add-apt-repository ppa:obsproject/obs-studio -y
                 sudo apt update && sudo apt install obs-studio -y
                 ;;
         17)
                 echo instalando Mainline...
+                sleep $TIME
                 sudo apt-add-repository -y ppa:cappelikan/ppa -y
                 sudo apt install mainline -y
                 ;;
