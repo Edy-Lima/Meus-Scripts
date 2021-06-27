@@ -11,7 +11,7 @@ echo "Escolha uma opção abaixo para começar!
       1 - Instalar Intel Graphics Driver | 16- Instalar OBS-Studio
       2 - Instalar (Kisak-mesa) Driver   | 17- Instalar Ubuntu Mainline
       3 - Instalar Google-Chrome         |
-      4 - Instalar inkskape              |
+      4 - Instalar inkscape              |
       5 - Instalar Cubic                 | 
       6 - Instalar UNetbootin            |
       7 - Instalar AnyDesk               |
@@ -47,7 +47,7 @@ case $opcao in
                 sudo dpkg -i google-chrome-stable_current_amd64.deb
                 ;;
         4)
-                echo Instalando inkskape...
+                echo Instalando inkscape...
                 sleep $TIME
                 sudo add-apt-repository ppa:inkscape.dev/stable -y
                 sudo apt install inkscape -y
