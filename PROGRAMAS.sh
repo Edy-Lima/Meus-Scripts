@@ -10,19 +10,19 @@ echo "Escolha uma opção abaixo para começar!
       
       1 - Instalar Intel Graphics Driver | 16- Instalar OBS-Studio
       2 - Instalar (Kisak-mesa) Driver   | 17- Instalar Ubuntu Mainline
-      3 - Instalar Google-Chrome         |
-      4 - Instalar inkscape              |
-      5 - Instalar Cubic                 | 
-      6 - Instalar UNetbootin            |
-      7 - Instalar AnyDesk               |
-      8 - Instalar Git-GitHub            |
-      9 - Instalar vs-code               |
-      10- Instalar prelink e preload     |
-      11- Manual prelink                 |
-      12- Instalar compton               |
-      13- Manual compton                 |
-      14- Instalar kdenlive              |
-      15- Instalar SimpleScreenRecorder  |
+      3 - Instalar Google-Chrome         | 18-
+      4 - Instalar inkscape              | 19-
+      5 - Instalar Cubic                 | 20-
+      6 - Instalar UNetbootin            | 21-
+      7 - Instalar AnyDesk               | 22-
+      8 - Instalar Git-GitHub            | 23-
+      9 - Instalar vs-code               | 24-
+      10- Instalar prelink e preload     | 25-
+      11- Manual prelink                 | 26-
+      12- Instalar compton               | 27-
+      13- Manual compton                 | 28-
+      14- Instalar kdenlive              | 29-
+      15- Instalar SimpleScreenRecorder  | 30-
       0 - Sair do sistema"
 echo " "
 echo -n "Opção escolhida: "
@@ -134,6 +134,71 @@ case $opcao in
                 sleep $TIME
                 sudo apt-add-repository -y ppa:cappelikan/ppa -y
                 sudo apt install mainline -y
+                ;;
+        18)
+                echo
+                sleep $TIME
+
+                ;;
+        19)
+                echo
+                sleep $TIME
+
+                ;;
+        20)
+                echo
+                sleep $TIME
+
+                ;;
+        21)
+                echo
+                sleep $TIME
+
+                ;;
+        22)
+                echo
+                sleep $TIME
+
+                ;;
+        23)
+                echo
+                sleep $TIME
+
+                ;;
+        24)
+                echo
+                sleep $TIME
+
+                ;;
+        25)
+                echo
+                sleep $TIME
+
+                ;;
+        26)
+                echo
+                Sleep $TIME
+
+                ;;
+        27)
+                echo
+                sleep $TIME
+
+                ;;
+        28)
+                echo
+                sleep $TIME
+
+                ;;
+        29)
+                echo
+                sleep $TIME
+
+                ;;
+        30)
+                echo
+                sleep $TIME
+
                 ;;
         0)
                 echo Saindo do sistema...
