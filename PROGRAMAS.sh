@@ -10,7 +10,7 @@ echo "Escolha uma opção abaixo para começar!
       
       1 - Instalar Intel Graphics Driver | 16- Instalar OBS-Studio
       2 - Instalar (Kisak-mesa) Driver   | 17- Instalar Ubuntu Mainline
-      3 - Instalar Google-Chrome         | 18-
+      3 - Instalar Google-Chrome         | 18- Instalar uGet
       4 - Instalar inkscape              | 19-
       5 - Instalar Cubic                 | 20-
       6 - Instalar UNetbootin            | 21-
@@ -136,8 +136,11 @@ case $opcao in
                 sudo apt install mainline -y
                 ;;
         18)
-                echo
+                echo instalando uGet...
                 sleep $TIME
+                sudo add-apt-repository ppa:plushuang-tw/uget-stable -y
+                sudo apt update
+                sudo apt install uget aria2 -y
 
                 ;;
         19)
