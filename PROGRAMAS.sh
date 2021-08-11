@@ -11,7 +11,7 @@ echo "Escolha uma opção abaixo para começar!
       1 - Instalar Intel Graphics Driver | 16- Instalar OBS-Studio
       2 - Instalar (Kisak-mesa) Driver   | 17- Instalar Ubuntu Mainline
       3 - Instalar Google-Chrome         | 18- Instalar uGet
-      4 - Instalar inkscape              | 19-
+      4 - Instalar inkscape              | 19- Instalar OpenShot
       5 - Instalar Cubic                 | 20-
       6 - Instalar UNetbootin            | 21-
       7 - Instalar AnyDesk               | 22-
@@ -146,7 +146,8 @@ case $opcao in
         19)
                 echo
                 sleep $TIME
-
+                sudo add-apt-repository ppa:openshot.developers/ppa -y
+                sudo apt-get update && sudo apt-get install openshot-qt -y
                 ;;
         20)
                 echo
