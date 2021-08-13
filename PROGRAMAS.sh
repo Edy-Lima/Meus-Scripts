@@ -20,9 +20,9 @@ echo "Escolha uma opção abaixo para começar!
       10- Instalar prelink e preload     | 25-
       11- Manual prelink                 | 26-
       12- Instalar compton               | 27-
-      13- Manual compton                 | 28-
-      14- Instalar kdenlive              | 29-
-      15- Instalar SimpleScreenRecorder  | 30-
+      13- Manual compton                 | 28- Desativar e remover Swap-file
+      14- Instalar kdenlive              | 29- Buscar e instalar atualizações
+      15- Instalar SimpleScreenRecorder  | 30- Limpeza geral do sistema
       0 - Sair do sistema"
 echo " "
 echo -n "Opção escolhida: "
@@ -190,19 +190,29 @@ case $opcao in
 
                 ;;
         28)
-                echo
+                echo Desativando Swap-file....
                 sleep $TIME
-
+                sudo sed -i.bak '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab && sudo swapoff -a && sudo rm -f -r /swapfile
                 ;;
         29)
-                echo
+                echo Buscando atualizaçõe....
                 sleep $TIME
-
+                sudo apt update && sudo apt full-upgrade -y
                 ;;
         30)
-                echo
+                echo Limpando o Sistema....
                 sleep $TIME
-
+                sudo du -sh /var/cache/apt/archives/ 
+                sudo rm -rf /var/tmp/*
+                sudo rm -vfr ~/.thumbnails/normal/*
+                sudo rm -f ~/.cache/thumbnails/normal/*
+                sudo apt clean
+                sudo apt autoclean
+                sudo rm -rf ${HOME}/.local/share/Trash/* 
+                sudo du -sh /var/cache/apt/archives/
+                echo Removendo pacotes desnecessários do sistema....
+                sudo apt autoremove -y
+                sudo apt autoremove --purge -y
                 ;;
         0)
                 echo Saindo do sistema...
