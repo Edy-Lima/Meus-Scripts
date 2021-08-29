@@ -144,7 +144,7 @@ case $opcao in
 
                 ;;
         19)
-                echo
+                echo instalando OpenShot....
                 sleep $TIME
                 sudo add-apt-repository ppa:openshot.developers/ppa -y
                 sudo apt-get update && sudo apt-get install openshot-qt -y
