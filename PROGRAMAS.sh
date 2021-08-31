@@ -19,7 +19,7 @@ echo "Escolha uma opção abaixo para começar!
       9 - Instalar vs-code               | 24-
       10- Instalar prelink e preload     | 25-
       11- Manual prelink                 | 26-
-      12- Instalar compton               | 27-
+      12- Instalar compton               | 27- Ativar suporte a ExFat no Ubuntu
       13- Manual compton                 | 28- Desativar e remover Swap-file
       14- Instalar kdenlive              | 29- Buscar e instalar atualizações
       15- Instalar SimpleScreenRecorder  | 30- Limpeza geral do sistema
@@ -185,9 +185,9 @@ case $opcao in
 
                 ;;
         27)
-                echo
+                echo Ativando ExFat....
                 sleep $TIME
-
+                sudo apt-get update && sudo apt-get install fuse-exfat exfat-utils
                 ;;
         28)
                 echo Desativando Swap-file....
