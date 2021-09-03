@@ -18,7 +18,7 @@ echo "Escolha uma opção abaixo para começar!
       8 - Instalar Git-GitHub            | 23-
       9 - Instalar vs-code               | 24-
       10- Instalar prelink e preload     | 25-
-      11- Manual prelink                 | 26-
+      11- Manual prelink                 | 26- Remover suporte ao Snap
       12- Instalar compton               | 27- Ativar suporte a ExFat no Ubuntu
       13- Manual compton                 | 28- Desativar e remover Swap-file
       14- Instalar kdenlive              | 29- Buscar e instalar atualizações
@@ -179,9 +179,11 @@ case $opcao in
 
                 ;;
         26)
-                echo
+                echo Removendo suporte a Snap....
                 Sleep $TIME
-
+                sudo rm -rf /var/cache/snapd/
+                sudo apt autoremove --purge snapd gnome-software-plugin-snap -y
+                sudo rm -fr ~/snap
                 ;;
         27)
                 echo Ativando ExFat....
