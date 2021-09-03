@@ -141,13 +141,12 @@ case $opcao in
                 sudo add-apt-repository ppa:plushuang-tw/uget-stable -y
                 sudo apt update
                 sudo apt install uget aria2 -y
-
                 ;;
         19)
                 echo instalando OpenShot....
                 sleep $TIME
-                sudo add-apt-repository ppa:openshot.developers/ppa -y
-                sudo apt-get update && sudo apt-get install openshot-qt -y
+                sudo add-apt-repository ppa:openshot.developers/libopenshot-daily -y
+                sudo apt-get update && sudo apt-get install openshot-qt python3-openshot -y
                 ;;
         20)
                 echo
