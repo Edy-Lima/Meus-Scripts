@@ -29,59 +29,64 @@ echo -n "Opção escolhida: "
 read opcao
 case $opcao in
         1)
-                echo Instalando Intel Graphics Driver...
+        echo Instalando Intel Graphics Driver...
                 sleep $TIME
                 sudo add-apt-repository ppa: ubuntu-x-swat / intel-graphics-updates -y
                 sudo apt upgrade -y 
                 ;;
         2)
-                echo Instalando Kisak-mesa Driver...
+        echo Instalando Kisak-mesa Driver...
                 sleep $TIME
                 sudo add-apt-repository ppa:kisak/kisak-mesa -y
                 sudo apt upgrade -y
                 ;;
         3)
-                echo Instalando Google Chrome...
+        echo Instalando Google Chrome....
+              # Este comando faz o download e instala o google-chrome em seu desktop.
                 sleep $TIME
                 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
                 sudo dpkg -i google-chrome-stable_current_amd64.deb
                 ;;
         4)
-                echo Instalando inkscape...
+        echo Instalando inkscape....
+              # Este comando instala o inkscape.
                 sleep $TIME
                 sudo add-apt-repository ppa:inkscape.dev/stable -y
                 sudo apt install inkscape -y
                 ;;
         5)
-                echo Instalando Cubic...
+        echo Instalando Cubic....
+              # Este comando instala o Cubic,poderoso editor de ISO
                 sleep $TIME
                 sudo add-apt-repository ppa:cubic-wizard/release -y
                 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6494C6D6997C215E
                 sudo apt install cubic curl -y
                 ;;
         6)
-                echo Instalando UNetbootin...
+        echo Instalando UNetbootin....
+              # Este comando instala o Criador de pendrive bootavél.
                 sleep $TIME
                 sudo add-apt-repository ppa:gezakovacs/ppa -y
                 sudo apt install unetbootin -y
                 ;;
         7)
-                echo Instalando AnyDesk...
+        echo Instalando AnyDesk....
+              # Este comando instala o Anydesk em seu desktop.
                 sleep $TIME
                 sudo wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -
                 sudo echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list
                 sudo apt update && sudo apt install anydesk -y
-                # Desabilita a inicialização do Anydesk com o sistema!.
+              # Desabilita a inicialização do Anydesk com o sistema!.
                 sudo systemctl disable anydesk.service
                 ;;
         8)
-                echo Instalando Git-GgitHub...
+        echo Instalando Git-GgitHub...
                 sleep $TIME
                 sudo add-apt-repository ppa:git-core/ppa -y
                 sudo apt install git -y 
                 ;;
         9)
-                echo Instalando vs-code...
+        echo Instalando vs-code...
                 sleep $TIME
                 sudo apt install software-properties-common apt-transport-https wget -y
                 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
@@ -89,28 +94,28 @@ case $opcao in
                 sudo apt install code -y 
                 ;;
         10)
-                echo Instalando prelink e preload...
+        echo Instalando prelink e preload...
                 sleep $TIME
                 sudo rm /var/lib/dpkg/lock-frontend; sudo rm /var/cache/apt/archives/lock ;
                 sudo apt install preload prelink -y
                 ;;
         11)
-                echo ***Manual prelink no link abaixo***
+        echo ***Manual prelink no link abaixo***
                 sleep $TIME
                 x-www-browser https://drive.google.com/file/d/1_8q_J90faC7kdVO-Z4mo1blsHzRVxXsL/view?usp=sharing
                 ;;
         12)
-                echo Instalando compton...
+        echo Instalando compton...
                 sleep $TIME
                 sudo apt install compton compton-conf -y 
                 ;;
         13)
-                echo ***Manual compton no link abaixo***
+        echo ***Manual compton no link abaixo***
                 sleep $TIME
                 x-www-browser https://drive.google.com/file/d/1iDIrYXoDQzBOM2rGj-JbQG2e2yuS12u1/view?usp=sharing
                 ;;
         14)
-                echo Instalando kdenlive...
+        echo Instalando kdenlive...
                 sleep $TIME 
                 sudo add-apt-repository ppa: kdenlive / kdenlive-stable -y
                 sudo apt install kdenlive -y
@@ -118,90 +123,90 @@ case $opcao in
                 sudo apt install kde-style-breeze -y  
                 ;;
         15)
-                echo Instalando  SimpleScreenRecorder...
+        echo Instalando  SimpleScreenRecorder...
                 sleep $TIME
                 sudo add-apt-repository ppa:maarten-baert/simplescreenrecorder -y
                 sudo apt install simplescreenrecorder -y
                 ;;
         16)
-                echo Instalando OBS-Studio...
+        echo Instalando OBS-Studio...
                 sleep $TIME
                 sudo add-apt-repository ppa:obsproject/obs-studio -y
                 sudo apt update && sudo apt install obs-studio -y
                 ;;
         17)
-                echo instalando Mainline...
+        echo instalando Mainline...
                 sleep $TIME
                 sudo apt-add-repository -y ppa:cappelikan/ppa -y
                 sudo apt install mainline -y
                 ;;
         18)
-                echo instalando uGet...
+        echo instalando uGet...
                 sleep $TIME
                 sudo add-apt-repository ppa:plushuang-tw/uget-stable -y
                 sudo apt update
                 sudo apt install uget aria2 -y
                 ;;
         19)
-                echo instalando OpenShot....
+        echo instalando OpenShot....
                 sleep $TIME
                 sudo add-apt-repository ppa:openshot.developers/libopenshot-daily -y
                 sudo apt-get update && sudo apt-get install openshot-qt python3-openshot -y
                 ;;
         20)
-                echo
+        echo
                 sleep $TIME
 
                 ;;
         21)
-                echo
+        echo
                 sleep $TIME
 
                 ;;
         22)
-                echo
+        echo
                 sleep $TIME
 
                 ;;
         23)
-                echo
+        echo
                 sleep $TIME
 
                 ;;
         24)
-                echo
+        echo
                 sleep $TIME
 
                 ;;
         25)
-                echo
+        echo
                 sleep $TIME
 
                 ;;
         26)
-                echo Removendo suporte a Snap....
+        echo Removendo suporte a Snap....
                 Sleep $TIME
                 sudo rm -rf /var/cache/snapd/
                 sudo apt autoremove --purge snapd gnome-software-plugin-snap -y
                 sudo rm -fr ~/snap
                 ;;
         27)
-                echo Ativando ExFat....
+        echo Ativando ExFat....
                 sleep $TIME
                 sudo apt-get update && sudo apt-get install fuse-exfat exfat-utils
                 ;;
         28)
-                echo Desativando Swap-file....
+        echo Desativando Swap-file....
                 sleep $TIME
                 sudo sed -i.bak '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab && sudo swapoff -a && sudo rm -f -r /swapfile
                 ;;
         29)
-                echo Buscando atualizaçõe....
+        echo Buscando atualizaçõe....
                 sleep $TIME
                 sudo apt update && sudo apt full-upgrade -y
                 ;;
         30)
-                echo Limpando o Sistema....
+        echo Limpando o Sistema....
                 sleep $TIME
                 sudo du -sh /var/cache/apt/archives/ 
                 sudo rm -rf /var/tmp/*
@@ -211,17 +216,17 @@ case $opcao in
                 sudo apt autoclean
                 sudo rm -rf ${HOME}/.local/share/Trash/* 
                 sudo du -sh /var/cache/apt/archives/
-                echo Removendo pacotes desnecessários do sistema....
+        echo Removendo pacotes desnecessários do sistema....
                 sudo apt autoremove -y
                 sudo apt autoremove --purge -y
                 ;;
         0)
-                echo Saindo do sistema...
+        echo Saindo do sistema...
                 sleep $TIME
                 exit 0
                 ;;
         *)
-                echo Opção inválida, tente novamente!
+        echo Opção inválida, tente novamente!
                 ;;
 esac
 done
