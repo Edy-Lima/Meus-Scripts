@@ -12,7 +12,7 @@ echo "Escolha uma opção abaixo para começar!
       2 - Instalar (Kisak-mesa) Driver   | 17- Instalar Ubuntu Mainline
       3 - Instalar Google-Chrome         | 18- Instalar uGet
       4 - Instalar inkscape              | 19- Instalar OpenShot
-      5 - Instalar Cubic                 | 20-
+      5 - Instalar Cubic                 | 20- Instalar LibreOffice
       6 - Instalar UNetbootin            | 21-
       7 - Instalar AnyDesk               | 22-
       8 - Instalar Git-GitHub            | 23-
@@ -87,6 +87,7 @@ case $opcao in
                 ;;
         9)
         echo Instalando vs-code...
+              # Estes comandos instala o VSCode na versão mais recente
                 sleep $TIME
                 sudo apt install software-properties-common apt-transport-https wget -y
                 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
@@ -154,9 +155,11 @@ case $opcao in
                 sudo apt-get update && sudo apt-get install openshot-qt python3-openshot -y
                 ;;
         20)
-        echo
+        echo Instalando LibreOffice....
                 sleep $TIME
-
+                sudo add-apt-repository -y ppa:libreoffice/ppa -y
+                sudo apt-get update
+                sudo apt-get install libreoffice libreoffice-style-breeze -y
                 ;;
         21)
         echo
