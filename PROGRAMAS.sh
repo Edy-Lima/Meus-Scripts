@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 #PROGRAMAS.
+# Criado por EdyLima (edivaldolima603@gmail.com)
 TIME=1
 clear
 while true;do
@@ -197,7 +198,7 @@ case $opcao in
         echo Ativando ExFat....
                 sleep $TIME
                 sudo add-apt-repository universe -y
-                sudo update && sudo apt install exfat-fuse exfat-utils -y
+                sudo apt update && sudo apt install exfat-fuse exfat-utils -y
                 ;;
         28)
         echo Desativando Swap-file....
