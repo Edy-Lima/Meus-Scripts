@@ -196,7 +196,8 @@ case $opcao in
         27)
         echo Ativando ExFat....
                 sleep $TIME
-                sudo apt-get update && sudo apt-get install fuse-exfat exfat-utils
+                sudo add-apt-repository universe -y
+                sudo update && sudo apt install exfat-fuse exfat-utils -y
                 ;;
         28)
         echo Desativando Swap-file....
