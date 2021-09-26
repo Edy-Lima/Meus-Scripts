@@ -47,6 +47,7 @@ case $opcao in
               # Estes comandos instalam o Inkscape em seu desktop.
                 sudo add-apt-repository ppa:inkscape.dev/stable -y
                 sudo apt install inkscape -y
+                clear
         echo Instalando AnyDesk....
               # Estes comandos instala o Anydessk em seu desktop.
                 sudo wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -
