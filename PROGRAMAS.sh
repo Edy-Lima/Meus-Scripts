@@ -7,8 +7,7 @@ while true;do
 echo " "
 echo "SEJA BEM VINDO AO $0 PARA UBUNTU!"
 echo " "
-echo "Escolha uma opção abaixo para começar!
-      
+echo "Escolha uma opção abaixo para começar!    
 1 - Instalar Intel Graphics Driver 
 2 - Instalar (Kisak-mesa) Driver             
 Opção (1 e 2) apenas para hardwares Mais antigos!
