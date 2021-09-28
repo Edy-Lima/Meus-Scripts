@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #MEU SCRIPT PESSOAL.
-# Este Shell-Script fi criado para uso pessoal,podendo tambem ser usado em qualquer distro baseada em Ubuntu/Debian. 
+# Este Shell-Script foi criado para uso pessoal,podendo tambem ser usado em qualquer distro baseada em Ubuntu/Debian. 
 # Todos os direitos reservados a (Edy Lima)Blog: https://edylimatutoriais.blogspot.com/
 TIME=1
 clear
@@ -30,6 +30,7 @@ case $opcao in
         echo Removendo Suporte ao Snap....
               # Este comando irá excluir todo suporte a Snap.
                 sleep $TIME
+                sudo apt install gnome-software -y
                 sudo rm -rf /var/cache/snapd/
                 sudo apt autoremove --purge snapd gnome-software-plugin-snap -y
                 sudo rm -fr ~/snap
@@ -90,7 +91,7 @@ case $opcao in
                 clear
         echo Instalando programar adicionais...
               # Este comando instala alguns programas extras em seu desktop.
-                sudo apt install htop neofetch gufw testdisk default-jre default-jdk -y
+                sudo apt install htop neofetch gufw testdisk glabels default-jre default-jdk -y
                 clear
                 ;;
         4)
