@@ -9,22 +9,26 @@ echo "SEJA BEM VINDO AO $0 PARA UBUNTU!"
 echo " "
 echo "Escolha uma opção abaixo para começar!
       
-      1 - Instalar Intel Graphics Driver | 16- Instalar OBS-Studio
-      2 - Instalar (Kisak-mesa) Driver   | 17- Instalar Ubuntu Mainline
-      3 - Instalar Google-Chrome         | 18- Instalar uGet
-      4 - Instalar inkscape              | 19- Instalar OpenShot
-      5 - Instalar Cubic                 | 20- Atualizar LibreOffice
-      6 - Instalar UNetbootin            | 21-
-      7 - Instalar AnyDesk               | 22-
-      8 - Instalar Git-GitHub            | 23-
-      9 - Instalar vs-code               | 24-
-      10- Instalar prelink e preload     | 25-
-      11- Manual prelink                 | 26- Remover suporte ao Snap
-      12- Instalar compton               | 27- Ativar suporte a ExFat no Ubuntu
-      13- Manual compton                 | 28- Desativar e remover Swap-file
-      14- Instalar kdenlive              | 29- Buscar e instalar atualizações
-      15- Instalar SimpleScreenRecorder  | 30- Limpeza geral do sistema
-      0 - Sair do sistema"
+1 - Instalar Intel Graphics Driver 
+2 - Instalar (Kisak-mesa) Driver             
+Opção (1 e 2) apenas para hardwares Mais antigos!
+-------------------------------------------------
+3 - Instalar Google-Chrome         | 18- Instalar uGet                    
+4 - Instalar inkscape              | 19- Instalar OpenShot                
+5 - Instalar Cubic                 | 20- Atualizar LibreOffice            
+6 - Instalar UNetbootin            | 21-                                  
+7 - Instalar AnyDesk               | 22-                                  
+8 - Instalar Git-GitHub            | 23-                                  
+9 - Instalar vs-code               | 24-                                  
+10- Instalar prelink e preload     | 25-                                  
+11- Manual prelink                 | 26- Remover suporte ao Snap          
+12- Instalar compton               | 27- Ativar suporte a ExFat no Ubuntu 
+13- Manual compton                 | 28- Desativar e remover Swap-file   
+14- Instalar kdenlive              | 29- Buscar e instalar atualizações   
+15- Instalar SimpleScreenRecorder  | 30- Limpeza geral do sistema         
+16- Instalar OBS-Studio            |                                
+17- Instalar Ubuntu Mainline       | OBS:Pesquise antes todos os comandos!                                     
+0 - Sair do sistema"                 
 echo " "
 echo -n "Opção escolhida: "
 read opcao
