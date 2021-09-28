@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 #PROGRAMAS.
-# Criado por EdyLima (edivaldolima603@gmail.com)
+# Criado por EdyLima (edivaldolima603@gmail.com), pode ser usado em qualquer distro baseada em (Ubuntu).
+# OBS: o script faz uso de PPA,s, use-o por sua conta e risco.
 TIME=1
 clear
 while true;do
@@ -15,7 +16,7 @@ Opção (1 e 2) apenas para hardwares Mais antigos!
 3 - Instalar Google-Chrome         | 18- Instalar uGet                    
 4 - Instalar inkscape              | 19- Instalar OpenShot                
 5 - Instalar Cubic                 | 20- Atualizar LibreOffice            
-6 - Instalar UNetbootin            | 21-                                  
+6 - Instalar UNetbootin            | 21- Instalar codecs de multimídia                               
 7 - Instalar AnyDesk               | 22-                                  
 8 - Instalar Git-GitHub            | 23-                                  
 9 - Instalar vs-code               | 24-                                  
@@ -26,7 +27,8 @@ Opção (1 e 2) apenas para hardwares Mais antigos!
 14- Instalar kdenlive              | 29- Buscar e instalar atualizações   
 15- Instalar SimpleScreenRecorder  | 30- Limpeza geral do sistema         
 16- Instalar OBS-Studio            |                                
-17- Instalar Ubuntu Mainline       | OBS:Pesquise antes todos os comandos!                                     
+17- Instalar Ubuntu Mainline       | OBS:Foram adicionados PPA,s
+                                   | Usem por sua conta e risco                                     
 0 - Sair do sistema"                 
 echo " "
 echo -n "Opção escolhida: "
@@ -166,9 +168,9 @@ case $opcao in
                 sudo apt-get install libreoffice libreoffice-style-breeze -y
                 ;;
         21)
-        echo
+        echo Instalando codecs de multimídia....
                 sleep $TIME
-
+                sudo apt install ubuntu-restricted-extras -y
                 ;;
         22)
         echo
