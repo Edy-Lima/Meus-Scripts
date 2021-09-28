@@ -13,7 +13,7 @@ echo "Escolha uma opção abaixo para começar!
       2 - Instalar (Kisak-mesa) Driver   | 17- Instalar Ubuntu Mainline
       3 - Instalar Google-Chrome         | 18- Instalar uGet
       4 - Instalar inkscape              | 19- Instalar OpenShot
-      5 - Instalar Cubic                 | 20- Instalar LibreOffice
+      5 - Instalar Cubic                 | 20- Atualizar LibreOffice
       6 - Instalar UNetbootin            | 21-
       7 - Instalar AnyDesk               | 22-
       8 - Instalar Git-GitHub            | 23-
