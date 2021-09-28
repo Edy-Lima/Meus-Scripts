@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #MEU SCRIPT PESSOAL.
 # Este Shell-Script foi criado para uso pessoal,podendo tambem ser usado em qualquer distro baseada em Ubuntu/Debian. 
-# Todos os direitos reservados a (Edy Lima)Blog: https://edylimatutoriais.blogspot.com/
+# (Edy Lima) Blog: https://edylimatutoriais.blogspot.com/
 TIME=1
 clear
 while true;do
@@ -14,6 +14,7 @@ echo "Escolha uma opção abaixo para começar!
       2 - Remover suporte ao Snap
       3 - Configurar o Sistema
       4 - Atualizar o Sistema
+      5 - Limpeza do Sistema
       0 - Sair do sistema"
 echo " "
 echo -n "Opção escolhida: "
@@ -100,7 +101,23 @@ case $opcao in
                 sudo sudo apt update && sudo apt full-upgrade && sudo apt dist-upgrade -y
                 clear
                 ;;
-                
+        5)
+        echo Limpando o Sistema aguarde....
+                sleep $TIME
+                sudo du -sh /var/cache/apt/archives/ 
+                sudo rm -rf /var/tmp/*
+                sudo rm -vfr ~/.thumbnails/normal/*
+                sudo rm -f ~/.cache/thumbnails/normal/*
+                sudo apt clean
+                sudo apt autoclean
+                sudo rm -rf ${HOME}/.local/share/Trash/* 
+                sudo du -sh /var/cache/apt/archives/
+                clear
+        echo Removendo pacotes desnecessários do sistema....
+                sudo apt autoremove -y
+                sudo apt autoremove --purge -y
+                clear
+                ;;
         0)
         echo Saindo do Sistema...
                 sleep $TIME
