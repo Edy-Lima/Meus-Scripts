@@ -93,6 +93,7 @@ case $opcao in
         echo Instalando programar adicionais...
               # Este comando instala alguns programas extras em seu desktop.
                 sudo apt install htop neofetch mousepad blender synaptic gufw testdisk glabels default-jre default-jdk -y
+                sudo apt install git p7zip-full python3-pip python3-wxgtk4.0 grub2-common -y
                 clear
                 ;;
         4)
