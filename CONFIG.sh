@@ -92,7 +92,7 @@ case $opcao in
                 clear
         echo Instalando programar adicionais...
               # Este comando instala alguns programas extras em seu desktop.
-                sudo apt install htop neofetch gufw testdisk glabels default-jre default-jdk -y
+                sudo apt install htop neofetch mousepad blender synaptic gufw testdisk glabels default-jre default-jdk -y
                 clear
                 ;;
         4)
