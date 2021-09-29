@@ -16,7 +16,7 @@ Opção (1 e 2) apenas para hardwares Mais antigos!
 3 - Instalar Google-Chrome         | 18- Instalar uGet                    
 4 - Instalar inkscape              | 19- Instalar OpenShot                
 5 - Instalar Cubic                 | 20- Atualizar LibreOffice            
-6 - Instalar UNetbootin            | 21- Instalar codecs de multimídia                               
+6 - Instalar Krita            | 21- Instalar codecs de multimídia                               
 7 - Instalar AnyDesk               | 22-                                  
 8 - Instalar Git-GitHub            | 23-                                  
 9 - Instalar vs-code               | 24-                                  
@@ -69,11 +69,15 @@ case $opcao in
                 sudo apt install cubic curl -y
                 ;;
         6)
-        echo Instalando UNetbootin....
+        echo Instalando Krita....
               # Este comando instala o Criador de pendrive bootavél.
                 sleep $TIME
-                sudo add-apt-repository ppa:gezakovacs/ppa -y
-                sudo apt install unetbootin -y
+                sudo add-apt-repository ppa: kritalime / ppa -y
+                sudo apt-get update && sudo apt-get install krita -y
+        echo instalar traduções....
+              # Este comando instala pacote de tradução
+                sudo apt-get install krita-l10n -y
+
                 ;;
         7)
         echo Instalando AnyDesk....
