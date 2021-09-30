@@ -22,7 +22,7 @@ Vai pedir a senha do usuário para continuar , digite e depois (ENTER).
 
 # 🟢 OBS: o script faz uso de PPA,s, use-o por sua conta e risco.
 
-🌎 https://edylimatutoriais.blogspot.com/
+🌎 Blog: https://edylimatutoriais.blogspot.com/
 
 
 
