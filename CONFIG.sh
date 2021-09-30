@@ -125,7 +125,7 @@ case $opcao in
                 clear
                 ;;
         0)
-        echo Saindo do Sistema...
+        echo Saindo....
                 sleep $TIME
                 exit 0
                 ;;
