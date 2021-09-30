@@ -98,6 +98,7 @@ case $opcao in
         echo Instalando codecs multimidias....
               # Este comando instala o Ubuntu-restricted-extra em seu desktop.
                 sudo apt install ubuntu-restricted-extras -y
+                sudo apt install ffmpeg libavcodec-extra -y
                 clear
                 ;;
         4)
