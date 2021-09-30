@@ -175,6 +175,7 @@ case $opcao in
         echo Instalando codecs de multimídia....
                 sleep $TIME
                 sudo apt install ubuntu-restricted-extras -y
+                sudo apt install ffmpeg libavcodec-extra -y
                 ;;
         22)
         echo
