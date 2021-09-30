@@ -12,7 +12,7 @@ echo "Escolha uma opção abaixo para começar!
 1 - Instalar Intel Graphics Driver 
 2 - Instalar (Kisak-mesa) Driver             
 Opção (1 e 2) apenas para hardwares Mais antigos!
--------------------------------------------------
+--------------------------------------------------------------------------
 3 - Instalar Google-Chrome         | 18- Instalar uGet                    
 4 - Instalar inkscape              | 19- Instalar OpenShot                
 5 - Instalar Cubic                 | 20- Atualizar LibreOffice            
