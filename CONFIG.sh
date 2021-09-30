@@ -10,12 +10,12 @@ echo "SEJA BEM VINDO AO $0 PARA UBUNTU!"
 echo " "
 echo "Escolha uma opção abaixo para começar!
       
-      1 - Desativar e excluir Swap
-      2 - Remover suporte ao Snap
-      3 - Configurar o Sistema
-      4 - Atualizar o Sistema
-      5 - Limpeza do Sistema
-      0 - Sair do sistema"
+      1 - Excluir Swap
+      2 - Remover Snap
+      3 - Configurar Desktop
+      4 - Atualizar Sistema
+      5 - Limpeza Sistema
+      0 - Sair"
 echo " "
 echo -n "Opção escolhida: "
 read opcao
