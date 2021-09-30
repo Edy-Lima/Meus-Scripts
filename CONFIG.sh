@@ -96,7 +96,7 @@ case $opcao in
                 sudo apt install git p7zip-full python3-pip python3-wxgtk4.0 grub2-common -y
                 clear
         echo Instalando codecs multimidias....
-              # Este comando instala o Ubuntu restricted-extra em seu desktop.
+              # Este comando instala o Ubuntu-restricted-extra em seu desktop.
                 sudo apt install ubuntu-restricted-extras -y
                 clear
                 ;;
