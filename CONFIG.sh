@@ -99,7 +99,7 @@ case $opcao in
         4)
         echo Instalando atualizações do Sistema...
               # Comandos para atualizar o Siatema Ubuntu.
-                sudo sudo apt update && sudo apt full-upgrade && sudo apt dist-upgrade -y
+                sudo apt update && sudo apt dist-upgrade -y
                 clear
                 ;;
         5)
