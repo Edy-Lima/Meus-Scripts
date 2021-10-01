@@ -70,7 +70,7 @@ case $opcao in
                 ;;
         6)
         echo Instalando Krita....
-              # Este comando instala o Criador de pendrive bootavél.
+              # Este comando instala o krita em seu desktop.
                 sleep $TIME
                 sudo add-apt-repository ppa: kritalime / ppa -y
                 sudo apt-get update && sudo apt-get install krita -y
@@ -106,6 +106,7 @@ case $opcao in
                 ;;
         10)
         echo Instalando prelink e preload...
+              # Este comando instala o prelink em seu desktop
                 sleep $TIME
                 sudo rm /var/lib/dpkg/lock-frontend; sudo rm /var/cache/apt/archives/lock ;
                 sudo apt install preload prelink -y
@@ -117,6 +118,7 @@ case $opcao in
                 ;;
         12)
         echo Instalando compton...
+              # Este comando instala o Compositor de janelas em seu desktop (XFCE)
                 sleep $TIME
                 sudo apt install compton compton-conf -y 
                 ;;
@@ -127,6 +129,7 @@ case $opcao in
                 ;;
         14)
         echo Instalando kdenlive...
+              # Estes comandos adicionam PPA e instala o Kdenlive editor de video em seu desktop.
                 sleep $TIME 
                 sudo add-apt-repository ppa: kdenlive / kdenlive-stable -y
                 sudo apt install kdenlive -y
