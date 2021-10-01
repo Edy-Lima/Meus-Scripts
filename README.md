@@ -10,6 +10,8 @@ Trata-se de um "Shell-Script" (pessoal) que possibilita a auto-configuração em
 que tambem pode ser usado em qualquer outra distro baseada ,
 sendo que o "script" foi criado baseado em "minhas nescessidades".
 
+![alt text](https://photos.google.com/photo/AF1QipPtAW-ydHwfj_jCKRwjCepWZZVfqHa2jqHXG5cu)
+
 # 🟢 Como executa-lo :
 Após o download do "arquivo.zip" vá até o diretório onde ele foi baixado,
 Após extrair abra a basta e em um local vazio clique com o botão direito do mouse e celecione:
