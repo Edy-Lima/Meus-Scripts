@@ -11,7 +11,7 @@ que tambem pode ser usado em qualquer outra distro baseada ,
 sendo que o "script" foi criado baseado em "minhas nescessidades".
 
 Inline-style: 
-![alt text](https://photos.google.com/photo/AF1QipPtAW-ydHwfj_jCKRwjCepWZZVfqHa2jqHXG5cu "Logo Title Text 1")
+![alt text](https://photos.google.com/photo/AF1QipPtAW-ydHwfj_jCKRwjCepWZZVfqHa2jqHXG5cu.png "Logo Title Text 1")
 
 # 🟢 Como executa-lo :
 Após o download do "arquivo.zip" vá até o diretório onde ele foi baixado,
