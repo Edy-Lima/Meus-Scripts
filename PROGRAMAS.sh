@@ -17,8 +17,8 @@ Opção (1 e 2) apenas para hardwares Mais antigos!
 4 - Instalar inkscape              | 19- Instalar OpenShot                
 5 - Instalar Cubic                 | 20- Atualizar LibreOffice            
 6 - Instalar Krita                 | 21- Instalar codecs de multimídia                               
-7 - Instalar AnyDesk               | 22-                                  
-8 - Instalar Git-GitHub            | 23-                                  
+7 - Instalar AnyDesk               | 22- Instalar o Lutris Ubuntu                                
+8 - Instalar Git-GitHub            | 23- Instalar Wine Ubuntu                                
 9 - Instalar vs-code               | 24-                                  
 10- Instalar prelink e preload     | 25-                                  
 11- Manual prelink                 | 26- Remover suporte ao Snap          
@@ -181,13 +181,17 @@ case $opcao in
                 sudo apt install ffmpeg libavcodec-extra -y
                 ;;
         22)
-        echo
+        echo Instalando o Ltris....
                 sleep $TIME
-
+                sudo add-apt-repository ppa:lutris-team/lutris -y
+                sudo apt update && sudo apt install lutris -y
+                
                 ;;
         23)
-        echo
+        echo Instalando Wine....
                 sleep $TIME
+                sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main' -y
+                sudo apt-get update && sudo apt-get install wine-stable -y
 
                 ;;
         24)
