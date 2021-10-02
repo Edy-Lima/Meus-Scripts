@@ -13,22 +13,22 @@ echo "Escolha uma opção abaixo para começar!
 2 - Instalar (Kisak-mesa) Driver             
 Opção (1 e 2) apenas para hardwares Mais antigos!
 --------------------------------------------------------------------------
-3 - Instalar Google-Chrome         | 18- Instalar uGet                    
-4 - Instalar inkscape              | 19- Instalar OpenShot                
-5 - Instalar Cubic                 | 20- Atualizar LibreOffice            
-6 - Instalar Krita                 | 21- Instalar codecs de multimídia                               
-7 - Instalar AnyDesk               | 22- Instalar o Lutris Ubuntu                                
-8 - Instalar Git-GitHub            | 23- Instalar Wine Ubuntu                                
-9 - Instalar vs-code               | 24-                                  
-10- Instalar prelink e preload     | 25-                                  
-11- Manual prelink                 | 26- Remover suporte ao Snap          
-12- Instalar compton               | 27- Ativar suporte a ExFat no Ubuntu 
-13- Manual compton                 | 28- Desativar e remover Swap-file   
-14- Instalar kdenlive              | 29- Buscar e instalar atualizações   
-15- Instalar SimpleScreenRecorder  | 30- Limpeza geral do sistema         
-16- Instalar OBS-Studio            |                                
+3 - Instalar Google-Chrome         | 18- Instalar uGet
+4 - Instalar inkscape              | 19- Instalar OpenShot
+5 - Instalar Cubic                 | 20- Atualizar LibreOffice
+6 - Instalar Krita                 | 21- Instalar codecs de multimídia                        
+7 - Instalar AnyDesk               | 22- Instalar o Lutris Ubuntu
+8 - Instalar Git-GitHub            | 23- Instalar Wine Ubuntu              
+9 - Instalar vs-code               | 24-
+10- Instalar prelink e preload     | 25- 
+11- Manual prelink                 | 26- Remover suporte ao Snap
+12- Instalar compton               | 27- Ativar suporte a ExFat no Ubuntu
+13- Manual compton                 | 28- Desativar e remover Swap-file
+14- Instalar kdenlive              | 29- Buscar e instalar atualizações
+15- Instalar SimpleScreenRecorder  | 30- Limpeza geral do sistema
+16- Instalar OBS-Studio            |
 17- Instalar Ubuntu Mainline       | OBS:Foram adicionados PPA,s
-                                   | Usem por sua conta e risco                                     
+                                   | Usem por sua conta e risco                            
 0 - Sair do sistema"                 
 echo " "
 echo -n "Opção escolhida: "
