@@ -3,7 +3,7 @@
 # MEU SCRIPT PESSOAL.
 # Este Shell-Script foi criado para uso pessoal,podendo tambem ser usado em qualquer distro baseada em Ubuntu. 
 # (Edy Lima) Blog: https://edylimatutoriais.blogspot.com/
-TIME=1
+TIME=2
 clear
 while true;do
 echo " "

@@ -2,7 +2,7 @@
 #PROGRAMAS.
 # Criado por EdyLima (https://edylimatutoriais.blogspot.com/), pode ser usado em qualquer distro baseada em (Ubuntu).
 # OBS: o script faz uso de PPA,s, use-o por sua conta e risco.
-TIME=1
+TIME=2
 clear
 while true;do
 echo " "
