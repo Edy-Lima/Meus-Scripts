@@ -121,6 +121,7 @@ case $opcao in
                 clear
         echo Removendo pacotes desnecessários do sistema....
                 sudo apt autoremove -y
+                sudo apt autoclean -y
                 sudo apt autoremove --purge -y
                 clear
                 ;;
