@@ -6,7 +6,7 @@ TIME=2
 clear
 while true;do
 echo " "
-echo "SEJA BEM VINDO AO $0 PARA UBUNTU!"
+echo "BEM VINDO AO $0 PARA UBUNTU!"
 echo " "
 echo "Escolha uma opção abaixo para começar!    
 1 - Instalar Intel Graphics Driver 
