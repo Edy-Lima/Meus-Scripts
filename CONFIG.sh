@@ -116,7 +116,7 @@ case $opcao in
                 sudo rm -rf /var/tmp/*
                 sudo rm -vfr ~/.thumbnails/normal/*
                 sudo rm -f ~/.cache/thumbnails/normal/*
-                sudo rm -rf ${HOME}/.local/share/Trash/* 
+                sudo rm -rf ${HOME}/.local/share/Trash* 
                 sudo du -sh /var/cache/apt/archives/
                 clear
         echo Removendo pacotes desnecessários do sistema....
