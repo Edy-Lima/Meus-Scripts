@@ -84,7 +84,7 @@ case $opcao in
         echo Atualizando LibreOffice....
               # Estes comandos atualiza o LibreOffice para a versão mais recente.
                 sudo add-apt-repository -y ppa:libreoffice/ppa
-                sudo apt-get update
+                sudo apt-get update && sudo apt upgrade -y
                 clear
         echo Ativando ExFat....
               # Estes comandos instalam o suporte a Exfat no Ubuntu.-desktop.
@@ -93,7 +93,7 @@ case $opcao in
                 clear
         echo Instalando programar adicionais...
               # Este comando instala alguns programas extras em seu desktop.
-                sudo apt install htop neofetch mousepad qbittorrent blender gimp synaptic gufw testdisk glabels default-jre default-jdk -y
+                sudo apt install htop neofetch mousepad qbittorrent blender gimp synaptic gufw testdisk glabels default-jre gnome-tweak-tool dconf-editor -y
                 sudo apt install git p7zip-full python3-pip python3-wxgtk4.0 grub2-common -y
                 sudo apt install libgtk-3-dev git meson sassc -y
                 clear
