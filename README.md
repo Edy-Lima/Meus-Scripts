@@ -28,7 +28,7 @@ Vai pedir a senha do usuário para continuar , digite e depois (ENTER).
 
 ## 🟢 OBS: os scripts fazem uso de PPA,s, executem por sua conta e risco.
 
-🌎 Blog: https://fir3.net/Visite-nos
+🌎 Blog:https://fir3.net/Visite-nos
 
 
 
