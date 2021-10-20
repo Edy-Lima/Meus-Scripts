@@ -43,6 +43,7 @@ case $opcao in
                 sudo rm -vfr ~/.thumbnails/normal/*
                 sudo rm -f ~/.cache/thumbnails/normal/*
                 sudo rm -rf ${HOME}/.local/share/Trash/* 
+                sleep $TIME
                 clear
                 ;;
         4)
