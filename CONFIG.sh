@@ -84,7 +84,7 @@ case $opcao in
         echo Atualizando LibreOffice....
               # Estes comandos atualiza o LibreOffice para a versão mais recente.
                 sudo add-apt-repository -y ppa:libreoffice/ppa
-                sudo apt-get update && sudo apt upgrade -y
+                sudo apt update && sudo apt upgrade -y
                 clear
         echo Ativando ExFat....
               # Estes comandos instalam o suporte a Exfat no Ubuntu.-desktop.
