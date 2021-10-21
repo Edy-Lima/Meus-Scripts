@@ -111,13 +111,11 @@ case $opcao in
                 ;;
         5)
         echo Limpando o Sistema aguarde....
-                sleep $TIME
-                sudo du -sh /var/cache/apt/archives/ 
+                sleep $TIME 
                 sudo rm -rf /var/tmp/*
                 sudo rm -vfr ~/.thumbnails/normal/*
                 sudo rm -f ~/.cache/thumbnails/normal/*
                 sudo rm -rf ${HOME}/.local/share/Trash/* 
-                sudo du -sh /var/cache/apt/archives/
                 clear
         echo Removendo pacotes desnecessários do sistema....
                 sudo apt autoremove -y
