@@ -230,14 +230,13 @@ case $opcao in
         30)
         echo Limpando o Sistema....
                 sleep $TIME
-                sudo du -sh /var/cache/apt/archives/ 
                 sudo rm -rf /var/tmp/*
                 sudo rm -vfr ~/.thumbnails/normal/*
                 sudo rm -f ~/.cache/thumbnails/normal/*
                 sudo apt clean
                 sudo apt autoclean
-                sudo rm -rf ${HOME}/.local/share/Trash/* 
-                sudo du -sh /var/cache/apt/archives/
+                sudo rm -rf ${HOME}/.local/share/Trash/*
+                clear
         echo Removendo pacotes desnecessários do sistema....
                 sudo apt autoremove -y
                 sudo apt autoremove --purge -y
