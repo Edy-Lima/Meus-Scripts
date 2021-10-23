@@ -94,7 +94,7 @@ case $opcao in
         echo Instalando programar adicionais...
               # Este comando instala alguns programas extras em seu desktop.
                 sudo apt install htop neofetch mousepad qbittorrent blender gimp synaptic gufw testdisk glabels default-jre gnome-tweak-tool dconf-editor -y
-                sudo apt install git p7zip-full python3-pip python3-wxgtk4.0 grub2-common -y
+                sudo apt install stacer git p7zip-full python3-pip python3-wxgtk4.0 grub2-common -y
                 sudo apt install libgtk-3-dev git meson sassc -y
                 clear
         echo Instalando codecs multimidias....
