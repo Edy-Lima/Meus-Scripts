@@ -79,7 +79,7 @@ case $opcao in
         echo instalando OpenShot....
               # Estes comandos instalam o Openshot em seu desktop.
                 sudo add-apt-repository ppa:openshot.developers/libopenshot-daily -y
-                sudo apt-get update && sudo apt-get install openshot-qt python3-openshot -y
+                sudo apt update && sudo apt install openshot-qt python3-openshot -y
                 clear
         echo Atualizando LibreOffice....
               # Estes comandos atualiza o LibreOffice para a versão mais recente.
