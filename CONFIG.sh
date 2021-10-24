@@ -11,8 +11,8 @@ echo "BEM VINDO AO $0 PARA UBUNTU!"
 echo " "
 echo "Escolha uma opção abaixo para começar!
       
-      1 - Excluir Swap
-      2 - Remover Snap
+      1 - Remover Swap-file
+      2 - Remover suporte Snap
       3 - Configurar Desktop
       4 - Atualizar Sistema
       5 - Limpeza Sistema
