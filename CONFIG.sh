@@ -66,10 +66,8 @@ case $opcao in
                 clear 
         echo Instalando vs-code....
               # Estes comandos instalam o VS-Code em seu desktop.
-                sudo apt install software-properties-common apt-transport-https wget -y
-                wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-                sudo add-apt-repository "deb [arch=amd64] http://packages.microsoft.com/repos/code stable InRelease"
-                sudo apt install code -y
+                wget https://az764295.vo.msecnd.net/stable/6cba118ac49a1b88332f312a8f67186f7f3c1643/code_1.61.2-1634656828_amd64.deb
+                sudo dpkg -i code_1.61.2-1634656828_amd64.deb
                 clear 
         echo Instalando OBS-Studio....
               # Estes comandos instala o OBS-Studio em seu desktop.
