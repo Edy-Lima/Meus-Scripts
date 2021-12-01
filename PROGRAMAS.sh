@@ -20,7 +20,7 @@ Opção (1 e 2) apenas para hardwares Mais antigos!
 7 - Instalar AnyDesk               | 22- Instalar o Lutris Ubuntu
 8 - Instalar Git-GitHub            | 23- Instalar Wine Ubuntu
 9 - Instalar vs-code               | 24-
-10- Instalar prelink e preload     | 25- 
+10- Instalar prelink e preload     | 25- Corrigir pacotes quebrados
 11- Manual prelink                 | 26- Remover suporte ao Snap
 12- Instalar compton               | 27- Ativar suporte a ExFat no Ubuntu
 13- Manual compton                 | 28- Desativar e remover Swap-file
@@ -200,9 +200,20 @@ case $opcao in
 
                 ;;
         25)
-        echo
+        echo Corrigindo pacotes quegrados....
                 sleep $TIME
-
+                sudo apt-get –fix-broken install -y
+                sudo apt clean
+                sudo apt install -f -y
+                sudo dpkg –configure -a
+                sudo rm /var/lib/apt/lists/* -vf -y
+                sudo apt update
+                sudo apt clean
+                sudo apt autoclean
+                sudo apt autoremove -y
+                sudo dpkg –configure -a
+                sudo apt update && sudo apt dist-upgrade -y
+                clear
                 ;;
         26)
         echo Removendo suporte a Snap....
