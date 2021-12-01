@@ -15,7 +15,7 @@ echo "Escolha uma opção abaixo para começar!
       2 - Remover suporte Snap
       3 - Configurar Desktop
       4 - Atualizar Sistema
-      5 - Limpeza Sistema
+      5 - Limpeza do Sistema
       0 - Sair"
 echo " "
 echo -n "Opção escolhida: "
@@ -46,7 +46,7 @@ case $opcao in
                 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
                 sudo dpkg -i google-chrome-stable_current_amd64.deb
                 clear
-        echo Adicionando PPA do inkscape....
+        echo instalando inkscape....
               # Estes comandos instalam o Inkscape em seu desktop.
                 sudo add-apt-repository ppa:inkscape.dev/stable -y
                 sudo apt install inkscape -y
@@ -118,7 +118,7 @@ case $opcao in
         echo Removendo pacotes desnecessários do sistema....
                 sudo apt autoremove -y
                 sudo apt autoclean -y
-                sudo apt autoremove --purge -y
+                sudo apt clean -y
                 clear
                 ;;
         0)
