@@ -7,7 +7,7 @@ TIME=2
 clear
 while true;do
 echo " "
-echo "Bem Vindo ao $0 PARA Ubuntu!"
+echo "Bem Vindo ao $0 Para Ubuntu!"
 echo " "
 echo "Escolha uma opção abaixo para começar!
       
@@ -81,7 +81,7 @@ case $opcao in
                 clear
         echo Atualizando LibreOffice....
               # Este comando remove o libreoffice antigo do sistema.
-                sudo apt remove --purge libreoffice*
+                sudo apt remove --purge libreoffice* -y
               # Estes comandos instala o LibreOffice para a versão mais recente.
                 sudo add-apt-repository -y ppa:libreoffice/ppa
                 sudo apt update && sudo apt install libreoffice -y
