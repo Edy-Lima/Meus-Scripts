@@ -7,7 +7,7 @@ TIME=2
 clear
 while true;do
 echo " "
-echo "BEM VINDO AO $0 PARA UBUNTU!"
+echo "Bem Vindo ao $0 PARA Ubuntu!"
 echo " "
 echo "Escolha uma opção abaixo para começar!
       
@@ -80,9 +80,11 @@ case $opcao in
                 sudo apt update && sudo apt install openshot-qt python3-openshot -y
                 clear
         echo Atualizando LibreOffice....
-              # Estes comandos atualiza o LibreOffice para a versão mais recente.
+              # Este comando remove o libreoffice antigo do sistema.
+                sudo apt remove --purge libreoffice*
+              # Estes comandos instala o LibreOffice para a versão mais recente.
                 sudo add-apt-repository -y ppa:libreoffice/ppa
-                sudo apt update && sudo apt upgrade -y
+                sudo apt update && sudo apt install libreoffice -y
                 clear
         echo Ativando ExFat....
               # Estes comandos instalam o suporte a Exfat no Ubuntu.-desktop.
