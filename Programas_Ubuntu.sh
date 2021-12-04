@@ -218,6 +218,7 @@ case $opcao in
         26)
         echo Removendo suporte a Snap....
                 Sleep $TIME
+                sudo apt install gnome-software -y
                 sudo rm -rf /var/cache/snapd/
                 sudo apt autoremove --purge snapd gnome-software-plugin-snap -y
                 sudo rm -fr ~/snap
