@@ -1,12 +1,12 @@
 ## 🟢 ( Programas_Ubuntu.sh )
-Trata-se de um script (pessoal) , mas pode ser usado em qualquer distro baseada em (Ubuntu*),
+Trata-se de um script ( PESSOAL ) , mas pode ser usado em qualquer distro baseada em (Ubuntu*),
 criado para instalar alguns programas que requer o uso do "terminal".
 
 ! Atenção ! ao fazer a instalação do "Codecs de multimidia" haverá uma ação para ser confirmada,
 use a tecla ( TAB ) para chegar ate a opção correta e tecle (ENTER) para prosseguir.
 
 ## 🟢 ( Ubuntu_Posinstall.sh ) 
-Trata-se de um "Shell-Script" (pessoal) que possibilita a auto-configuração em meu "Desktop" Ubuntu,
+Trata-se de um "Shell-Script" ( PESSOAL ) que possibilita a auto-configuração em meu "Desktop" Ubuntu,
 que tambem pode ser usado em qualquer outra distro baseada ,
 sendo que o "script" foi criado baseado em "minhas nescessidades".
 
