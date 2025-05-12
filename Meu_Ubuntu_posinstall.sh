@@ -99,7 +99,7 @@ case $opcao in
                 sudo apt install htop neofetch mousepad qbittorrent blender gimp synaptic gufw testdisk glabels default-jre gnome-tweak-tool dconf-editor -y
                 sudo apt install stacer git p7zip-full python3-pip python3-wxgtk4.0 grub2-common -y
                 sudo apt install libgtk-3-dev git meson sassc -y
-                sudo apt remove thunderbird* -y
+                sudo apt purge thunderbird* -y
                 clear
         echo Instalando codecs multimidias....
               # Este comando instala o Ubuntu-restricted-extra em seu desktop.
