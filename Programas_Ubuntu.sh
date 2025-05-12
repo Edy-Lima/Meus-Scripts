@@ -232,7 +232,7 @@ case $opcao in
         28)
         echo Desativando Swap-file....
                 sleep $TIME
-                sudo sed -i.bak '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab && sudo swapoff -a && sudo rm -f -r /swapfile
+                sudo systemctl stop swap.img.swap && sudo systemctl mask swap.img.swap -y
                 ;;
         29)
         echo Buscando atualizaçõe....
