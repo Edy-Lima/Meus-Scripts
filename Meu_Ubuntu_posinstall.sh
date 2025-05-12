@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 #
 # MEU SCRIPT PESSOAL.
-# Este Shell-Script foi criado para uso pessoal,podendo tambem ser usado em qualquer distro baseada em Ubuntu. 
+# Este Shell-Script foi criado e editado para uso pessoal,podendo tambem ser usado em qualquer distro baseada em Ubuntu_20 e posrerior.
+# Este script tem como objetivo remover o Swap-file, remover o suporte a Snap, configurar o desktop, atualizar o sistema e limpar o sistema.
+# Este script foi criado e editado por Edy Lima.
+# Este script é de uso pessoal, não me responsabilizo por qualquer erro ou dano causado ao seu sistema.     
 # (Edy Lima) Blog: https://edylimatutoriais.blogspot.com/
 TIME=2
 clear
