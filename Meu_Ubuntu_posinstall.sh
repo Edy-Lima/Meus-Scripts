@@ -91,12 +91,13 @@ case $opcao in
                 clear
         echo Ativando ExFat....
               # Estes comandos instalam o suporte a Exfat no Ubuntu.-desktop.
-                sudo add-apt-repository universe -y
-                sudo apt update && sudo apt install exfat-fuse exfat-utils -y
+              # Reiniciar o sistema após a instalação.
+                sudo apt update && sudo apt upgrade -y
+                sudo apt install exfatprogs ffmpeg -y
                 clear
         echo Instalando programar adicionais...
               # Este comando instala alguns programas extras em seu desktop.
-                sudo apt install htop neofetch mousepad qbittorrent blender gimp synaptic gufw testdisk glabels default-jre gnome-tweak-tool dconf-editor -y
+                sudo apt install gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews' neofetch gimp synaptic testdisk glabels default-jre gnome-shell-extession-manager dconf-editor -y
                 sudo apt install stacer git p7zip-full python3-pip python3-wxgtk4.0 grub2-common -y
                 sudo apt install libgtk-3-dev git meson sassc -y
                 sudo apt purge thunderbird* -y
