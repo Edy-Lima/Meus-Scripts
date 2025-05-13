@@ -134,7 +134,7 @@ case $opcao in
                 exit 0
                 ;;
         *)
-        echo Opção inválida, tente novamente!
+        echo Opção inválida, pode tentar novamente!
                 ;;
 esac
 done
