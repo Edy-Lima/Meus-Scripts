@@ -68,7 +68,7 @@ case $opcao in
                 sudo apt install git -y
                 clear 
         echo Instalando extensões dognome....
-              # Estes comandos instalam o VS-Code em seu desktop
+              # Estes comandos instalam um greciador de extenssões do gnome em seu desktop
                 sudo apt update && sudo apt upgrade -y
                 sudo apt install gnome-shell-extession-manager dconf-editor -y       
                 clear 
