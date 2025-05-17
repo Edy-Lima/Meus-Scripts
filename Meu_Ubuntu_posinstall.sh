@@ -15,10 +15,10 @@ echo " "
 echo "Escolha uma opção abaixo para começar!
       
       1 - Remover Swap-file
-      2 - Remover suporte Snap
-      3 - Configurar Desktop
-      4 - Atualizar Sistema
-      5 - Limpeza do Sistema
+      2 - Remover suporte ao Snap
+      3 - Configurar meu Desktop
+      4 - Atualizar meu Sistema
+      5 - Limpeza do meu Sistema
       0 - Sair"
 echo " "
 echo -n "Opção escolhida: "
@@ -67,10 +67,10 @@ case $opcao in
                 sudo add-apt-repository ppa:git-core/ppa -y
                 sudo apt install git -y
                 clear 
-        echo Instalando vs-code....
-              # Estes comandos instalam o VS-Code em seu desktop.
-                wget https://az764295.vo.msecnd.net/stable/6cba118ac49a1b88332f312a8f67186f7f3c1643/code_1.61.2-1634656828_amd64.deb
-                sudo dpkg -i code_1.61.2-1634656828_amd64.deb
+        echo Instalando extensões dognome....
+              # Estes comandos instalam o VS-Code em seu desktop
+                sudo apt update && sudo apt upgrade -y
+                sudo apt install gnome-shell-extession-manager dconf-editor -y       
                 clear 
         echo Instalando OBS-Studio....
               # Estes comandos instala o OBS-Studio em seu desktop.
@@ -97,7 +97,7 @@ case $opcao in
                 clear
         echo Instalando programar adicionais...
               # Este comando instala alguns programas extras em seu desktop.
-                sudo apt install gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews' neofetch gimp synaptic testdisk glabels default-jre gnome-shell-extession-manager dconf-editor -y
+                sudo apt install gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews' neofetch synaptic testdisk glabels default-jre -y
                 sudo apt install stacer git p7zip-full python3-pip python3-wxgtk4.0 grub2-common -y
                 sudo apt install libgtk-3-dev git meson sassc -y
                 sudo apt purge thunderbird* -y
