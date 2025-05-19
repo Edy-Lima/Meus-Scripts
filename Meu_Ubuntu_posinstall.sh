@@ -15,7 +15,7 @@ echo " "
 echo "Escolha uma opção abaixo para começar!
       
       1 - Remover Swap-file
-      2 - Remover suporte ao Snap
+      2 - Em construção
       3 - Configurar meu Desktop
       4 - Atualizar meu Sistema
       5 - Limpeza do meu Sistema
@@ -32,13 +32,10 @@ case $opcao in
                 clear
                 ;;
         2)
-        echo Removendo Suporte ao Snap....
+        echo Em construção....
               # Este comando irá excluir todo suporte a Snap.
                 sleep $TIME
-                sudo apt install gnome-software -y
-                sudo rm -rf /var/cache/snapd/
-                sudo apt autoremove --purge snapd gnome-software-plugin-snap -y
-                sudo rm -fr ~/snap
+                sudo
                 clear
                 ;;
         3)
