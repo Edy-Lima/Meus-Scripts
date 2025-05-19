@@ -32,7 +32,7 @@ case $opcao in
                 clear
                 ;;
         2)
-        echo Em construção....
+        echo Instalando Flatpak....
               # Este comando irá excluir todo suporte a Snap.
                 sleep $TIME
                 sudo apt install flatpak -y
