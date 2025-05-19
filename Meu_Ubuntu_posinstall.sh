@@ -15,7 +15,7 @@ echo " "
 echo "Escolha uma opção abaixo para começar!
       
       1 - Remover Swap-file
-      2 - Em construção
+      2 - Instalar suporte a flatpak
       3 - Configurar meu Desktop
       4 - Atualizar meu Sistema
       5 - Limpeza do meu Sistema
@@ -35,7 +35,8 @@ case $opcao in
         echo Em construção....
               # Este comando irá excluir todo suporte a Snap.
                 sleep $TIME
-                sudo
+                sudo apt install flatpak -y
+                sudo apt install gnome-software-plugin-flatpak -y
                 clear
                 ;;
         3)
