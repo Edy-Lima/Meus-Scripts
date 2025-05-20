@@ -65,10 +65,10 @@ case $opcao in
                 sudo add-apt-repository ppa:git-core/ppa -y
                 sudo apt install git -y
                 clear 
-        echo Instalando extensões dognome....
+        echo Instalando extensões do gnome....
               # Estes comandos instalam um greciador de extenssões do gnome em seu desktop
                 sudo apt update && sudo apt upgrade -y
-                sudo apt install gnome-shell-extession-manager dconf-editor -y       
+                sudo apt install gnome-shell-extession-manager gnome-tweaks dconf-editor -y       
                 clear 
         echo Instalando OBS-Studio....
               # Estes comandos instala o OBS-Studio em seu desktop.
