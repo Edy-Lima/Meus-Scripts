@@ -62,13 +62,12 @@ case $opcao in
                 clear
         echo Instalando Git-GgitHub....
               # Estes comandos instalam o Git-GitHub em seu desktop.
-                sudo add-apt-repository ppa:git-core/ppa -y
                 sudo apt install git -y
                 clear 
         echo Instalando extensões do gnome....
               # Estes comandos instalam um greciador de extenssões do gnome em seu desktop
                 sudo apt update && sudo apt upgrade -y
-                sudo apt install gnome-shell-extession-manager gnome-tweaks dconf-editor -y       
+                sudo apt install gnome-shell-extession-manager gnome-tweaks -y       
                 clear 
         echo Instalando OBS-Studio....
               # Estes comandos instala o OBS-Studio em seu desktop.
@@ -80,12 +79,9 @@ case $opcao in
                 sudo add-apt-repository ppa:openshot.developers/libopenshot-daily -y
                 sudo apt update && sudo apt install openshot-qt python3-openshot -y
                 clear
-        echo Atualizando LibreOffice....
+        echo Removendo o LibreOffice....
               # Este comando remove o libreoffice antigo do sistema.
                 sudo apt remove --purge libreoffice* -y
-              # Estes comandos instala o LibreOffice para a versão mais recente.
-                sudo add-apt-repository -y ppa:libreoffice/ppa
-                sudo apt update && sudo apt install libreoffice -y
                 clear
         echo Ativando ExFat....
               # Estes comandos instalam o suporte a Exfat no Ubuntu.-desktop.
@@ -95,15 +91,14 @@ case $opcao in
                 clear
         echo Instalando programar adicionais...
               # Este comando instala alguns programas extras em seu desktop.
-                sudo apt install gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews' neofetch synaptic testdisk glabels default-jre -y
-                sudo apt install stacer git p7zip-full python3-pip python3-wxgtk4.0 grub2-common -y
-                sudo apt install libgtk-3-dev git meson sassc -y
+                sudo gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews' neofetch synaptic testdisk glabels default-jre -y
                 sudo apt purge thunderbird* -y
                 clear
         echo Instalando codecs multimidias....
               # Este comando instala o Ubuntu-restricted-extra em seu desktop.
                 sudo apt install ubuntu-restricted-extras -y
                 sudo apt install ffmpeg libavcodec-extra -y
+                sudo reboot -y
                 clear
                 ;;
         4)
