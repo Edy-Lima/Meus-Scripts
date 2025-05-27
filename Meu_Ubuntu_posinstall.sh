@@ -36,7 +36,6 @@ case $opcao in
               # Este comando irá excluir todo suporte a Snap.
                 sleep $TIME
                 sudo apt install flatpak -y
-                sudo apt install gnome-software-plugin-flatpak -y
                 clear
                 ;;
         3)
@@ -89,7 +88,7 @@ case $opcao in
                 sudo apt update && sudo apt upgrade -y
                 sudo apt install exfatprogs ffmpeg -y
                 clear
-        echo Instalando programar adicionais...
+        echo Instalando programas adicionais...
               # Este comando instala alguns programas extras em seu desktop.
                 sudo gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews' neofetch synaptic testdisk glabels default-jre -y
                 sudo apt purge thunderbird* -y
@@ -98,13 +97,12 @@ case $opcao in
               # Este comando instala o Ubuntu-restricted-extra em seu desktop.
                 sudo apt install ubuntu-restricted-extras -y
                 sudo apt install ffmpeg libavcodec-extra -y
-                sudo reboot -y
                 clear
                 ;;
         4)
         echo Instalando atualizações do Sistema...
               # Comandos para atualizar o Siatema Ubuntu.
-                sudo apt update && sudo apt dist-upgrade -y
+                sudo apt update && sudo apt full-upgrade -y
                 clear
                 ;;
         5)
