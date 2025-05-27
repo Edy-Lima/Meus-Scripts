@@ -14,8 +14,8 @@ echo "Bem Vindo ao $0 Para Ubuntu!"
 echo " "
 echo "Escolha uma opção abaixo para começar!
       
-      1 - Remover Swap-file
-      2 - Instalar suporte a flatpak
+      1 - Remover Swap-file - opcional
+      2 - Instalar flatpak - opcional
       3 - Configurar meu Desktop
       4 - Atualizar meu Sistema
       5 - Limpeza do meu Sistema
