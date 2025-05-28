@@ -36,6 +36,8 @@ case $opcao in
               # Este comando irá excluir todo suporte a Snap.
                 sleep $TIME
                 sudo apt install flatpak -y
+                sudo apt install gnome-software-plugin-flatpak -y
+                flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo -y
                 clear
                 ;;
         3)
