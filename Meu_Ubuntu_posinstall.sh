@@ -35,8 +35,10 @@ case $opcao in
         echo Instalando Flatpak....
               # Este comando irá excluir todo suporte a Snap e instalar suprte a flatpak com a gnome-software.
                 sleep $TIME
-                sudo apt remove snapd -y
+                sudo apt remove --purge snapd -y
+                sudo apt autoremove -y
                 clear
+                sudo apt update && sudo apt full-upgrade -y
                 sudo apt install flatpak -y
                 sudo apt install gnome-software-plugin-flatpak -y
                 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo -y
