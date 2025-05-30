@@ -15,7 +15,7 @@ echo " "
 echo "Escolha uma opção abaixo para começar!
       
       1 - Remover Swap-file - opcional
-      2 - Instalar flatpak - opcional
+      2 - Remover snap e Instalar flatpak - opcional
       3 - Configurar meu Desktop
       4 - Atualizar meu Sistema
       5 - Limpeza do meu Sistema
@@ -33,8 +33,10 @@ case $opcao in
                 ;;
         2)
         echo Instalando Flatpak....
-              # Este comando irá excluir todo suporte a Snap.
+              # Este comando irá excluir todo suporte a Snap e instalar suprte a flatpak com a gnome-software.
                 sleep $TIME
+                sudo apt remove snapd -y
+                clear
                 sudo apt install flatpak -y
                 sudo apt install gnome-software-plugin-flatpak -y
                 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo -y
