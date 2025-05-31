@@ -96,7 +96,8 @@ case $opcao in
                 clear
         echo Instalando programas adicionais...
               # Este comando instala alguns programas extras em seu desktop.
-                sudo gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews' neofetch synaptic testdisk glabels default-jre -y
+                sudo gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews' -y
+                sudo apt install  neofetch synaptic testdisk glabels default-jre -y
                 sudo apt purge thunderbird* -y
                 clear
         echo Instalando codecs multimidias....
