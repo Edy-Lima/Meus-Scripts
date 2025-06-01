@@ -16,7 +16,7 @@ echo "Escolha uma opção abaixo para começar!
       0 - Sair"
 echo " "
 echo -n "Opçao escolhida: "
-read opçao
+read opcao
 case $opcao in
      1)
 echo Removendo snap e instalando flatpak....
