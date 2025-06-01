@@ -57,3 +57,5 @@ echo Saindo....
      *)
 echo Opçao invalida, tente novamente!
          ;;
+esac
+done
