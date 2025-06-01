@@ -10,32 +10,32 @@ echo "Bem Vindo ao $0 Para Ubuntu!"
 echo " "
 echo "Escolha uma opção abaixo para começar!
 
-     1-Remover snap e instal flatpak
-     2-Limpeza geral e atualizações
-     3-Configurar meu Ubuntu
-     0-Sair
+      1 - Remover snap e instal flatpak
+      2 - Limpeza geral e atualizações
+      3 - Configurar meu Ubuntu
+      0 - Sair"
 echo " "
 echo -n "Opçao escolhida: "
 read opçao
 case $opcao in
      1)
-     echo 
-     # 
+echo "Removendo snap e instalando flatpak....
+     # Edte comando vai remover todo o suporte ao snap e instalar flatpak com o gnome-software
      sleep $TIME
      2)
-     echo
+echo "
      #
      sleep $TIME
      3)
-     echo
+echo "
      #
      sleep $TIME
      0)
-     echo Saindo....
+echo "Saindo....
      # Este comando encerra o programa!
          sleep $TIME
          exit 0
          ;;
      *)
-     echo Opçao invalida, tente novamente!
+echo Opçao invalida, tente novamente!
          ;;
