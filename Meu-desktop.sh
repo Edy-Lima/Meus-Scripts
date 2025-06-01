@@ -6,7 +6,7 @@ TIME=2
 clear
 while true;do
 echo " "
-echo "Bem Vindo ao $0 Para Ubuntu!"
+echo "Configurando meu $0 Ubuntu!"
 echo " "
 echo "Escolha uma opção abaixo para começar!
 
