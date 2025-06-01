@@ -29,7 +29,7 @@ echo Removendo snap e instalando flatpak....
       sudo apt install flatpak -y
       sudo apt install gnome-software-plugin-flatpak -y
       flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo -y
-     clear
+      clear
          ;;
      2)
 echo Fazendo limpeza e atualizabdo o Sistema....
@@ -41,21 +41,21 @@ echo Fazendo limpeza e atualizabdo o Sistema....
       sudo rm -rf ${HOME}/.local/share/Trash/* 
       sudo apt update && sudo apt full-upgrade -y
       clear
-      ;;
+         ;;
      3)
 echo Configurando seu desktop....
      # Este comando vai configurar seu sistema operacional. 
      sleep $TIME
       clear
-     ;;
+         ;;
      0)
 echo Saindo....
      # Este comando encerra o programa!
      sleep $TIME
-         exit 0
+     exit 0
          ;;
      *)
-echo Opçao invalida, tente novamente!
+     echo Opçao invalida, tente novamente!
          ;;
 esac
 done
