@@ -46,7 +46,8 @@ echo Fazendo limpeza e atualizabdo o Sistema....
 echo Configurando seu desktop....
      # Este comando vai configurar seu sistema operacional. 
      sleep $TIME
-     sudo apt update
+     sudo apt update && sudo apt full-upgrade -y
+     sudo apt remove --purge libreoffice* -y 
       clear
          ;;
      0)
