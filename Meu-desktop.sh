@@ -45,19 +45,47 @@ echo Fazendo limpeza e atualizabdo o Sistema....
      3)
 echo Configurando seu desktop....
      # Este comando vai configurar seu sistema operacional. 
-     sleep $TIME
-     sudo apt update && sudo apt full-upgrade -y
-     sudo apt remove --purge libreoffice* -y 
+      sleep $TIME
+      sudo apt update && sudo apt full-upgrade -y
+      sudo apt remove --purge libreoffice* -y 
       clear
+echo Desativar e excluir Swap....
+     # Este comando vai desativar e excluir o Swap do Ubuntu.
+      sleep $TIME
+      sudo sudo systemctl stop swap.img.swap -y
+      sudo sudo systemctl mask swap.img.swap -y
+      clear
+echo Instalando Codecs extras....
+     # Este comando vai instalar os codecs extras do Ubuntu.
+      sleep $TIME
+      sudo apt update && sudo apt upgrade -y
+      sudo apt install ubuntu-restricted-extras -y 
+      clear
+echo Ativando suporte a exfat no ubuntu....
+     # Este comando vai ativar o suporte a exfat no Ubuntu.
+      sleep $TIME
+      sudo apt install exfat-fuse exfat-utils -y
+      sudo apt install exfatprogs ffmpeg -y
+      clear
+echo Instalando programas essenciais....
+     # Este comando vai instalar programas essenciais no Ubuntu.
+      sleep $TIME
+      sudo apt install git synaptic gdebi gnome-shell-extension-manager ffmpeg testdisk glabels gnome-tweaks -y
+      gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'
+      clear
+echo Tudo pronto , agora vamos reinicar o computador!
+     # Este comando vai reiniciar o computador.
+      sleep $TIME
+      sudo reboot
          ;;
      0)
 echo Saindo....
      # Este comando encerra o programa!
-     sleep $TIME
-     exit 0
+      sleep $TIME
+      exit 0
          ;;
      *)
-     echo Opçao invalida, tente novamente!
+echo Opçao invalida, tente novamente!
          ;;
 esac
 done
