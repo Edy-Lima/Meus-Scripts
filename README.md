@@ -10,6 +10,9 @@ Trata-se de um "Shell-Script" ( PESSOAL ) que possibilita a auto-configuração 
 que tambem pode ser usado em qualquer outra distro baseada ,
 sendo que o "script" foi criado baseado em "minhas nescessidades".
 
+## 🟢 ( Meu-Desktop )
+Logo "em breve" irei falar sobre ele , por enquanto está em desenvolvimento. 
+
 
 ## 🟢 Como executa-lo :
 Após o download do "arquivo.zip" vá até o diretório onde ele foi baixado,
