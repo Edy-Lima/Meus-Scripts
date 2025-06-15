@@ -28,7 +28,8 @@ case $opcao in
         echo Desativando e excluindo Swap....
               # Este comando irá desativar e excluir o Swapfile.
                 sleep $TIME
-                sudo systemctl stop swap.img.swap && sudo systemctl mask swap.img.swap -y
+                sudo systemctl stop swap.img.swap -y
+                sudo systemctl mask swap.img.swap -y
                 clear
                 ;;
         2)
