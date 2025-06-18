@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-#
+# OBS: Este script é destinado a usuários do Ubuntu que desejam configurar seu sistema operacional de maneira rápida e eficiente.
 #
 TIME=2
 clear
