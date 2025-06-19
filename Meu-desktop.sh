@@ -22,7 +22,7 @@ case $opcao in
 echo Removendo snap e instalando flatpak....
      # Edte comando vai remover todo o suporte ao snap e instalar flatpak com o gnome-software.
      sleep $TIME
-      sudo apt remove --purge snapd -y
+      sudo apt remove --purge snapd* -y
       sudo apt autoremove -y
       clear
       sudo apt update && sudo apt full-upgrade -y
