@@ -52,8 +52,8 @@ echo Configurando seu desktop....
 echo Desativar e excluir Swap....
      # Este comando vai desativar e excluir o Swap do Ubuntu.
       sleep $TIME
-      sudo sudo systemctl stop swap.img.swap -y
-      sudo sudo systemctl mask swap.img.swap -y
+      sudo systemctl stop swap.img.swap -y
+      sudo systemctl mask swap.img.swap -y
       clear
 echo Instalando Codecs extras....
      # Este comando vai instalar os codecs extras do Ubuntu.
