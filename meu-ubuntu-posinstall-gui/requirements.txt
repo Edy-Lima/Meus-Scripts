@@ -1,0 +1,4 @@
+Tkinter
+PyQt5
+subprocess
+os
