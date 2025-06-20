@@ -58,51 +58,51 @@ case $opcao in
                 sudo add-apt-repository ppa:inkscape.dev/stable -y
                 sudo apt install inkscape -y
                 clear
-        echo Instalando AnyDesk....
-              # Estes comandos instala o Anydessk em seu desktop.
-                sudo wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -
-                sudo echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list
+        echo "Instalando AnyDesk...."
+              # Estes comandos instalam o AnyDesk em seu desktop.
+                wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo apt-key add -
+                echo "deb http://deb.anydesk.com/ all main" | sudo tee /etc/apt/sources.list.d/anydesk-stable.list
                 sudo apt update && sudo apt install anydesk -y
-              # Desabilita a inicialização do Anydesk com o sistema!.
+              # Desabilita a inicialização do AnyDesk com o sistema.
                 sudo systemctl disable anydesk.service
                 clear
-        echo Instalando Git-GgitHub....
-              # Estes comandos instalam o Git-GitHub em seu desktop.
+        echo "Instalando Git e GitHub...."
+              # Estes comandos instalam o Git em seu desktop.
                 sudo apt install git -y
                 clear 
-        echo Instalando extensões do gnome....
-              # Estes comandos instalam um greciador de extenssões do gnome em seu desktop
+        echo "Instalando extensões do GNOME...."
+              # Estes comandos instalam um gerenciador de extensões do GNOME em seu desktop.
                 sudo apt update && sudo apt upgrade -y
-                sudo apt install gnome-shell-extession-manager gnome-tweaks -y       
+                sudo apt install gnome-shell-extension-manager gnome-tweaks -y       
                 clear 
-        echo Instalando OBS-Studio....
-              # Estes comandos instala o OBS-Studio em seu desktop.
+        echo "Instalando OBS-Studio...."
+              # Estes comandos instalam o OBS-Studio em seu desktop.
                 sudo add-apt-repository ppa:obsproject/obs-studio -y
                 sudo apt update && sudo apt install obs-studio -y
                 clear
-        echo instalando OpenShot....
-              # Estes comandos instalam o Openshot em seu desktop.
+        echo "Instalando OpenShot...."
+              # Estes comandos instalam o OpenShot em seu desktop.
                 sudo add-apt-repository ppa:openshot.developers/libopenshot-daily -y
                 sudo apt update && sudo apt install openshot-qt python3-openshot -y
                 clear
-        echo Removendo o LibreOffice....
-              # Este comando remove o libreoffice antigo do sistema.
+        echo "Removendo o LibreOffice...."
+              # Este comando remove o LibreOffice antigo do sistema.
                 sudo apt remove --purge libreoffice* -y
                 clear
-        echo Ativando ExFat....
-              # Estes comandos instalam o suporte a Exfat no Ubuntu.-desktop.
+        echo "Ativando ExFAT...."
+              # Estes comandos instalam o suporte a ExFAT no Ubuntu desktop.
               # Reiniciar o sistema após a instalação.
                 sudo apt update && sudo apt upgrade -y
                 sudo apt install exfatprogs ffmpeg -y
                 clear
-        echo Instalando programas adicionais...
+        echo "Instalando programas adicionais..."
               # Este comando instala alguns programas extras em seu desktop.
-                sudo gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews' -y
-                sudo apt install  neofetch synaptic testdisk glabels default-jre -y
+                gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'
+                sudo apt install neofetch synaptic testdisk glabels default-jre -y
                 sudo apt purge thunderbird* -y
                 clear
-        echo Instalando codecs multimidias....
-              # Este comando instala o Ubuntu-restricted-extra em seu desktop.
+        echo "Instalando codecs multimídia...."
+              # Este comando instala o Ubuntu-restricted-extras em seu desktop.
                 sudo apt install ubuntu-restricted-extras -y
                 sudo apt install ffmpeg libavcodec-extra -y
                 clear
