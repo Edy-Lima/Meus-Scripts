@@ -11,7 +11,7 @@ que tambem pode ser usado em qualquer outra distro baseada ,
 sendo que o "script" foi criado baseado em "minhas nescessidades".
 
 ## 🟢 ( Meu-Desktop )
-Logo "em breve" irei falar sobre ele , por enquanto está em desenvolvimento. 
+ Trata-se de um script (PESSOAL) criado para automatizar a configuração e personalização do ambiente gráfico do meu Desktop Ubuntu, incluindo ajustes de aparência, instalação de extensões, temas, ícones e outras preferências pessoais. Pode ser adaptado para outras distros baseadas em Ubuntu, conforme a necessidade do usuário.
 
 
 ## 🟢 Como executa-lo :
