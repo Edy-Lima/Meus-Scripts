@@ -51,7 +51,7 @@ while true; do
             sudo apt install git synaptic gdebi gnome-shell-extension-manager ffmpeg testdisk glabels gnome-tweaks -y
             gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'
             # Definir plano de fundo temporário
-            gsettings set org.gnome.desktop.background picture-uri 'file:///CAMINHO/DA/IMAGEM.jpg'
+            gsettings set org.gnome.desktop.background picture-uri 'https://drive.google.com/file/d/1oqhn7T2FtY4H8KHqn7EuStb9kLh5tA3-/view?usp=drive_link'
             zenity --info --text="Configuração concluída! O computador será reiniciado."
             sleep $TIME
             sudo reboot
