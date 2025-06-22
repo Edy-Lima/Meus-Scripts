@@ -50,6 +50,8 @@ while true; do
             sudo apt install exfatprogs ffmpeg -y
             sudo apt install git synaptic gdebi gnome-shell-extension-manager ffmpeg testdisk glabels gnome-tweaks -y
             gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'
+            # Definir plano de fundo temporário
+            gsettings set org.gnome.desktop.background picture-uri 'file:///CAMINHO/DA/IMAGEM.jpg'
             zenity --info --text="Configuração concluída! O computador será reiniciado."
             sleep $TIME
             sudo reboot
