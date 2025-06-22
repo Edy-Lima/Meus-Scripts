@@ -2,7 +2,7 @@
 # Execute como Administrador
 
 # Atualizar drivers via Windows Update
-Write-Host "Atualizando drivers via Windows Update..." -ForegroundColor Cyan
+Write-Host "Atualizando seus drivers via Windows Update..." -ForegroundColor Cyan
 Install-Module -Name PSWindowsUpdate -Force -Scope CurrentUser
 Import-Module PSWindowsUpdate
 Get-WindowsUpdate -MicrosoftUpdate -Category Drivers -AcceptAll -Install -AutoReboot
