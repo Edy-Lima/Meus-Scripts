@@ -38,12 +38,14 @@ case $opcao in
         echo Instalando Intel Graphics Driver...
                 sleep $TIME
                 sudo add-apt-repository ppa:ubuntu-x-swat/intel-graphics-updates -y
+                sudo apt update
                 sudo apt upgrade -y 
                 ;;
         2)
         echo Instalando Kisak-mesa Driver...
                 sleep $TIME
                 sudo add-apt-repository ppa:kisak/kisak-mesa -y
+                sudo apt update
                 sudo apt upgrade -y
                 ;;
         3)
@@ -58,49 +60,53 @@ case $opcao in
         echo Instalando inkscape....
                 sleep $TIME
                 sudo add-apt-repository ppa:inkscape.dev/stable -y
+                sudo apt update
                 sudo apt install inkscape -y
                 ;;
         5)
         echo Instalando Cubic....
                 sleep $TIME
                 sudo add-apt-repository ppa:cubic-wizard/release -y
-                sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6494C6D6997C215E
+                sudo apt update
                 sudo apt install cubic curl -y
                 ;;
         6)
         echo Instalando Krita....
                 sleep $TIME
                 sudo add-apt-repository ppa:kritalime/ppa -y
-                sudo apt-get update && sudo apt-get install krita -y
+                sudo apt update
+                sudo apt install krita -y
         echo Instalando traduções....
-                sudo apt-get install krita-l10n -y
+                sudo apt install krita-l10n -y
                 ;;
         7)
         echo Instalando AnyDesk....
                 sleep $TIME
-                wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo apt-key add -
-                echo "deb http://deb.anydesk.com/ all main" | sudo tee /etc/apt/sources.list.d/anydesk-stable.list
+                sudo mkdir -p /etc/apt/keyrings
+                wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | gpg --dearmor | sudo tee /etc/apt/keyrings/anydesk.gpg > /dev/null
+                echo "deb [signed-by=/etc/apt/keyrings/anydesk.gpg] https://deb.anydesk.com/ all main" | sudo tee /etc/apt/sources.list.d/anydesk-stable.list
                 sudo apt update && sudo apt install anydesk -y
-                sudo systemctl disable anydesk.service
                 ;;
         8)
         echo Instalando Git-GitHub...
                 sleep $TIME
                 sudo add-apt-repository ppa:git-core/ppa -y
+                sudo apt update
                 sudo apt install git -y 
                 ;;
         9)
         echo Instalando vs-code...
                 sleep $TIME
-                sudo apt install software-properties-common apt-transport-https wget -y
-                wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-                sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+                sudo apt install software-properties-common wget -y
+                sudo mkdir -p /etc/apt/keyrings
+                wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/keyrings/microsoft.gpg > /dev/null
+                echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/microsoft.gpg] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
+                sudo apt update
                 sudo apt install code -y 
                 ;;
         10)
         echo Instalando prelink e preload...
                 sleep $TIME
-                sudo rm /var/lib/dpkg/lock-frontend; sudo rm /var/cache/apt/archives/lock ;
                 sudo apt install preload prelink -y
                 ;;
         11)
@@ -122,6 +128,7 @@ case $opcao in
         echo Instalando kdenlive...
                 sleep $TIME 
                 sudo add-apt-repository ppa:kdenlive/kdenlive-stable -y
+                sudo apt update
                 sudo apt install kdenlive -y
                 sudo apt install kde-style-breeze -y  
                 ;;
@@ -129,6 +136,7 @@ case $opcao in
         echo Instalando SimpleScreenRecorder...
                 sleep $TIME
                 sudo add-apt-repository ppa:maarten-baert/simplescreenrecorder -y
+                sudo apt update
                 sudo apt install simplescreenrecorder -y
                 ;;
         16)
@@ -141,6 +149,7 @@ case $opcao in
         echo Instalando Mainline...
                 sleep $TIME
                 sudo add-apt-repository ppa:cappelikan/ppa -y
+                sudo apt update
                 sudo apt install mainline -y
                 ;;
         18)
@@ -154,14 +163,15 @@ case $opcao in
         echo Instalando OpenShot....
                 sleep $TIME
                 sudo add-apt-repository ppa:openshot.developers/libopenshot-daily -y
-                sudo apt-get update && sudo apt-get install openshot-qt python3-openshot -y
+                sudo apt update
+                sudo apt install openshot-qt python3-openshot -y
                 ;;
         20)
         echo Instalando LibreOffice....
                 sleep $TIME
                 sudo add-apt-repository ppa:libreoffice/ppa -y
-                sudo apt-get update
-                sudo apt-get install libreoffice libreoffice-style-breeze -y
+                sudo apt update
+                sudo apt install libreoffice libreoffice-style-breeze -y
                 ;;
         21)
         echo Instalando codecs de multimídia....
@@ -180,9 +190,12 @@ case $opcao in
                 sleep $TIME
                 sudo dpkg --add-architecture i386
                 wget -nc https://dl.winehq.org/wine-builds/winehq.key
-                sudo apt-key add winehq.key
-                sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
-                sudo apt-get update && sudo apt-get install --install-recommends winehq-stable -y
+                sudo mkdir -p /etc/apt/keyrings
+                gpg --dearmor < winehq.key | sudo tee /etc/apt/keyrings/winehq.gpg > /dev/null
+                # Substitua "focal" pela sua versão do Ubuntu, se necessário (ex: jammy, noble)
+                UBUNTU_CODENAME=$(lsb_release -cs)
+                echo "deb [signed-by=/etc/apt/keyrings/winehq.gpg] https://dl.winehq.org/wine-builds/ubuntu/ $UBUNTU_CODENAME main" | sudo tee /etc/apt/sources.list.d/winehq.list
+                sudo apt update && sudo apt install --install-recommends winehq-stable -y
                 ;;
         24)
         echo "Nenhuma ação definida para esta opção."
@@ -195,12 +208,9 @@ case $opcao in
                 sudo apt clean
                 sudo apt install -f -y
                 sudo dpkg --configure -a
-                sudo rm -vf /var/lib/apt/lists/*
                 sudo apt update
-                sudo apt clean
                 sudo apt autoclean
                 sudo apt autoremove -y
-                sudo dpkg --configure -a
                 sudo apt update && sudo apt dist-upgrade -y
                 clear
                 ;;
@@ -234,7 +244,6 @@ case $opcao in
         echo Limpando o Sistema....
                 sleep $TIME
                 sudo rm -rf /var/tmp/*
-                sudo rm -vf ~/.thumbnails/normal/*
                 sudo rm -f ~/.cache/thumbnails/normal/*
                 sudo apt clean
                 sudo apt autoclean
@@ -242,7 +251,6 @@ case $opcao in
                 clear
         echo Removendo pacotes desnecessários do sistema....
                 sudo apt autoremove -y
-                sudo apt autoremove --purge -y
                 ;;
         0)
         echo Saindo do sistema...
