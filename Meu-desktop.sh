@@ -10,6 +10,7 @@ while true; do
     echo "1 - Remover snap e instalar flatpak"
     echo "2 - Limpeza geral e atualizações"
     echo "3 - Configurar meu Ubuntu"
+    echo "4 - Procurar atualizações disponíveis"
     echo "0 - Sair"
     echo "=============================="
     read -rp "Escolha uma opção: " opcao
@@ -57,6 +58,11 @@ while true; do
             echo "Configuração concluída! O computador será reiniciado."
             sleep $TIME
             sudo reboot
+            ;;
+        4)
+            echo "Procurando por atualizações disponíveis..."
+            sleep $TIME
+            sudo apt update
             ;;
         0)
             echo "Saindo..."
