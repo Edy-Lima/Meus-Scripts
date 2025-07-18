@@ -51,6 +51,7 @@ while true; do
             sudo apt update && sudo apt upgrade -y
             sudo apt install ubuntu-restricted-extras -y
             sudo apt install exfatprogs ffmpeg -y
+            sudo apt install -y mesa-utils mesa-vulkan-drivers intel-media-va-driver firmware-misc-nonfree -y
             sudo apt install git synaptic gdebi gnome-shell-extension-manager ffmpeg testdisk glabels gnome-tweaks -y
             gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'
             # Definir plano de fundo temporário (exemplo de caminho local)
