@@ -32,6 +32,9 @@ sudo apt update && sudo apt full-upgrade -y
 git config --global user.name "Edy-Lima"
 git config --global user.email edivaldolima603@gmail.com
 sudo apt update && sudo apt full-upgrade -y
+sudo add-apt-repository ppa:obsproject/obs-studio -y
+sudo apt update
+sudo apt install obs-studio -y
 
 # Reinicia o sistema para aplicar as mudanças
 echo "Reiniciando o sistema para aplicar as mudanças..."
