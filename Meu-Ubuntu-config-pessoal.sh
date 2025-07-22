@@ -4,11 +4,13 @@
 echo "Removendo o Snap do Ubuntu..."
 
 # Remove o snapd e todos os pacotes relacionados
+echo "Parando e removendo o Snap..."
 sudo systemctl stop snapd
 sudo apt remove --purge snapd -y
 sudo apt autoremove -y
 
 # Remove pastas residuais do snap
+echo "Removendo pastas residuais do Snap..."
 sudo rm -rf ~/snap -y
 sudo rm -rf /snap -y
 sudo rm -rf /var/snap -y
@@ -18,6 +20,7 @@ sudo apt remove --purge libreoffice* -y
 sudo apt autoremove -y
 
 # Iniciando as instalações de programas e configurações pessoais
+echo "Instalando programas e configurando o sistema..."
 sudo apt update
 sudo apt install ubuntu-restricted-extras -y
 sudo apt install git synaptic gdebi p7zip-full gnome-shell-extension-manager ffmpeg testdisk glabels gnome-tweaks -y
