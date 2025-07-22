@@ -14,6 +14,9 @@ sendo que o "script" foi criado baseado em "minhas nescessidades".
  Trata-se de um script (PESSOAL) criado para automatizar a configuração e personalização do ambiente gráfico do meu Desktop Ubuntu, incluindo ajustes de aparência, instalação de extensões, temas, ícones e outras preferências pessoais. Pode ser adaptado para outras distros baseadas em Ubuntu, conforme a necessidade do usuário.
 
 
+## 🟢 ( Meu-Ubuntu--config-pessoal.sh)
+Trata-se de um script (PESSOAL) criado para configurar meu Desktop "Ubuntu".
+
 ## 🟢 Como executa-lo :
 Após o download do "arquivo.zip" vá até o diretório onde ele foi baixado,
 Após extrair abra a basta e em um local vazio clique com o botão direito do mouse e celecione:
