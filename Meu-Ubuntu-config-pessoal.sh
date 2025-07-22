@@ -29,6 +29,9 @@ sudo apt install gnome-software-plugin-flatpak -y
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'
 sudo apt update && sudo apt full-upgrade -y
+git config --global user.name "Edy-Lima"
+git config --global user.email edivaldolima603@gmail.com
+sudo apt update && sudo apt full-upgrade -y
 
 # Reinicia o sistema para aplicar as mudanças
 echo "Reiniciando o sistema para aplicar as mudanças..."
