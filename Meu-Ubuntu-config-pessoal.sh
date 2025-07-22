@@ -16,12 +16,19 @@ sudo rm -rf /var/lib/snapd -y
 sudo rm -rf /var/cache/snapd -y
 sudo apt remove --purge libreoffice* -y
 sudo apt autoremove -y
+
+# Iniciando as instalações de programas e configurações pessoais
+sudo apt update
+sudo apt install ubuntu-restricted-extras -y
 sudo apt install git synaptic gdebi p7zip-full gnome-shell-extension-manager ffmpeg testdisk glabels gnome-tweaks -y
 sudo apt install flatpak -y
 sudo apt install gnome-software-plugin-flatpak -y
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'
 sudo apt update && sudo apt full-upgrade -y
+
+# Reinicia o sistema para aplicar as mudanças
+echo "Reiniciando o sistema para aplicar as mudanças..."
 sudo reboot
 
 echo "Snap removido com sucesso!"
