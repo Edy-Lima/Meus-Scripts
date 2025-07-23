@@ -40,4 +40,4 @@ sudo apt install obs-studio -y
 echo "Reiniciando o sistema para aplicar as mudanças..."
 sudo reboot
 
-echo "Snap removido com sucesso!"
+echo "Configurações efetuadas com sucesso!"
