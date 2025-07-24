@@ -35,9 +35,16 @@ sudo apt update && sudo apt full-upgrade -y
 sudo add-apt-repository ppa:obsproject/obs-studio -y
 sudo apt update
 sudo apt install obs-studio -y
+echo "Instalando Google Chrome...."
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+sudo apt-get --fix-broken install -y
+rm google-chrome-stable_current_amd64.deb
 
-# Reinicia o sistema para aplicar as mudanças
+echo "Configurações efetuadas com sucesso!"
+
+# Reinicia o sistema para aplicar as mudança
 echo "Reiniciando o sistema para aplicar as mudanças..."
 sudo reboot
 
-echo "Configurações efetuadas com sucesso!"
+
