@@ -13,6 +13,7 @@ PROGRAMAS=$(zenity --list --checklist \
   FALSE "gimp" "Editor de imagens" \
   FALSE "vlc" "Reprodutor de mídia" \
   FALSE "neofetch" "Visualizador do sistema" \
+  FALSE "Atualização de sistema" "Atualiza o sistema" \
   --separator=" ")
 
 # Verifica se o usuário selecionou algum programa
