@@ -6,7 +6,7 @@ echo "Removendo o Snap do Ubuntu..."
 # Remove o snapd e todos os pacotes relacionados
 echo "Parando e removendo o Snap..."
 sudo systemctl stop snapd
-sudo apt remove --purge snapd -y
+sudo apt remove --purge snapd* -y
 sudo apt autoremove -y
 
 # Remove pastas residuais do snap
