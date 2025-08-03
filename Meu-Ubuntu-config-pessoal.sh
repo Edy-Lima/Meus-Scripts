@@ -54,6 +54,11 @@ rm google-chrome-stable_current_amd64.deb
 # Atualizar o sistema
 echo "Atualizando o sistema..."
 sudo apt update && sudo apt full-upgrade -y
+#
+# Excluindo swap
+echo "Desativando e removendo a partição de swap..."
+sudo systemctl stop swap.img.swap
+sudo systemctl mask swap.img.swap
 
 echo "Configurações efetuadas com sucesso!"
 
