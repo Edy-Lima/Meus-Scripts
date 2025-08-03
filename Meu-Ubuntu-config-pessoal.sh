@@ -59,6 +59,11 @@ sudo apt update && sudo apt full-upgrade -y
 echo "Desativando e removendo a partição de swap..."
 sudo systemctl stop swap.img.swap
 sudo systemctl mask swap.img.swap
+# Ativar suporte a exFAT
+echo "Ativando suporte a exFAT..."
+sudo apt update && sudo apt upgrade -y
+sudo apt install exfatprogs ffmpeg -y
+
 
 echo "Configurações efetuadas com sucesso!"
 
