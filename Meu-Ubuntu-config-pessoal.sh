@@ -25,7 +25,7 @@ sudo apt update && sudo apt full-upgrade -y
 # Instalação de programas essenciais
 echo "Instalando programas essenciais..."
 sudo apt install ubuntu-restricted-extras -y
-sudo apt install git synaptic gdebi p7zip-full gnome-shell-extension-manager ffmpeg testdisk glabels gnome-tweaks steam gparted -y
+sudo apt install git synaptic gdebi p7zip-full gnome-shell-extension-manager ffmpeg testdisk glabels gnome-tweaks steam gparted neofetch -y
 # Instalação do suporte ao Flatpak
 echo "Instalando suporte ao Flatpak..."
 sudo apt install flatpak -y
