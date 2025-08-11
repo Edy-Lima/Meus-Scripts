@@ -1,11 +1,28 @@
 #!/usr/bin/env python3
 import os
 
+def print_banner():
+    print("="*60)
+    print("        MEU UBUNTU CONFIG PESSOAL - by Edy Lima")
+    print("="*60)
+    print("""
+     _    _                 _    _       _   _       _       
+    | |  | |               | |  | |     | | (_)     | |      
+    | |  | | ___  _ __ ___ | |  | |_ __ | |_ _  __ _| | ___  
+    | |  | |/ _ \| '_ ` _ \| |  | | '_ \| __| |/ _` | |/ _ \ 
+    | |__| | (_) | | | | | | |__| | | | | |_| | (_| | |  __/ 
+     \____/ \___/|_| |_| |_|\____/|_| |_|\__|_|\__, |_|\___| 
+                                               __/ |        
+                                              |___/         
+    """)
+    print("="*60)
+
 def run(cmd):
     print(f"Executando: {cmd}")
     os.system(cmd)
 
 def main():
+    print_banner()
     print("Removendo o Snap do Ubuntu...")
 
     # Remove o snapd e todos os pacotes relacionados
