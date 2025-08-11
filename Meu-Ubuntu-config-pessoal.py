@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
+import subprocess
 import os
+import sys
 
 def print_banner():
     ORANGE = "\033[38;5;208m"
@@ -32,76 +34,83 @@ ossyNMMMNyMMhsssssssssssssshmmmhssssssso
 """ + RESET)
     print(ORANGE + "="*60 + RESET)
 
-def run(cmd):
+def run(cmd, check=True):
     print(f"Executando: {cmd}")
-    os.system(cmd)
+    try:
+        subprocess.run(cmd, shell=True, check=check)
+    except subprocess.CalledProcessError as e:
+        print(f"Erro ao executar: {cmd}\n{e}")
+        if check:
+            sys.exit(1)
 
 def main():
+    if os.geteuid() != 0:
+        print("Este script precisa ser executado como root. Use: sudo python3 Meu-Ubuntu-config-pessoal.py")
+        sys.exit(1)
+
     print_banner()
     print("Removendo o Snap do Ubuntu...")
 
     # Remove o snapd e todos os pacotes relacionados
-    run("sudo systemctl stop snapd")
-    run("sudo apt remove --purge snapd* -y")
-    run("sudo apt autoremove -y")
+    run("systemctl stop snapd", check=False)
+    run("apt remove --purge snapd* -y")
+    run("apt autoremove -y")
 
     # Remove pastas residuais do snap
-    run("sudo rm -rf ~/snap")
-    run("sudo rm -rf /snap")
-    run("sudo rm -rf /var/snap")
-    run("sudo rm -rf /var/lib/snapd")
-    run("sudo rm -rf /var/cache/snapd")
-    run("sudo apt remove --purge libreoffice* -y")
-    run("sudo apt autoremove -y")
+    run("rm -rf /home/$SUDO_USER/snap")
+    run("rm -rf /snap")
+    run("rm -rf /var/snap")
+    run("rm -rf /var/lib/snapd")
+    run("rm -rf /var/cache/snapd")
+    run("apt remove --purge libreoffice* -y")
+    run("apt autoremove -y")
 
     # Instalação de programas e configurações pessoais
     print("Instalando programas e configurando o sistema...")
-    run("sudo apt update && sudo apt full-upgrade -y")
+    run("apt update && apt full-upgrade -y")
 
     # Instalação de programas essenciais
     print("Instalando programas essenciais...")
-    run("sudo apt install ubuntu-restricted-extras -y")
-    run("sudo apt install git synaptic gdebi p7zip-full gnome-shell-extension-manager ffmpeg testdisk glabels gnome-tweaks steam gparted -y")
+    run("apt install ubuntu-restricted-extras -y")
+    run("apt install git synaptic gdebi p7zip-full gnome-shell-extension-manager ffmpeg testdisk glabels gnome-tweaks steam gparted -y")
 
     # Instalação do suporte ao Flatpak
     print("Instalando suporte ao Flatpak...")
-    run("sudo apt install flatpak -y")
-    run("sudo apt install gnome-software-plugin-flatpak -y")
-    run("sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo")
+    run("apt install flatpak -y")
+    run("apt install gnome-software-plugin-flatpak -y")
+    run("flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo")
 
     # Configurando janelas do GNOME
     print("Configurando janelas do GNOME...")
-    run("gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'")
+    run("gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'", check=False)
 
     # Configurando o GitHub
     print("Configurando o GitHub...")
-    run("sudo apt update && sudo apt full-upgrade -y")
-    run('git config --global user.name "Edy-Lima"')
-    run('git config --global user.email edivaldolima603@gmail.com')
-    run("sudo apt update && sudo apt full-upgrade -y")
+    run('git config --global user.name "Edy-Lima"', check=False)
+    run('git config --global user.email edivaldolima603@gmail.com', check=False)
 
     # Instalar o obs-studio
     print("Instalando OBS Studio...")
-    run("sudo add-apt-repository ppa:obsproject/obs-studio -y")
-    run("sudo apt update")
-    run("sudo apt install obs-studio -y")
+    run("add-apt-repository ppa:obsproject/obs-studio -y")
+    run("apt update")
+    run("apt install obs-studio -y")
 
     # Instalar Google Chrome
     print("Instalando Google Chrome....")
     run("wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb")
-    run("sudo dpkg -i google-chrome-stable_current_amd64.deb")
-    run("sudo apt-get --fix-broken install -y")
-    run("rm google-chrome-stable_current_amd64.deb")
+    run("dpkg -i google-chrome-stable_current_amd64.deb", check=False)
+    run("apt-get --fix-broken install -y")
+    run("rm -f google-chrome-stable_current_amd64.deb")
 
     # Atualizar o sistema
     print("Atualizando o sistema...")
-    run("sudo apt update && sudo apt full-upgrade -y")
+    run("apt update && apt full-upgrade -y")
 
     print("Configurações efetuadas com sucesso!")
 
     # Reinicia o sistema para aplicar as mudanças
     print("Reiniciando o sistema para aplicar as mudanças...")
-    run("sudo reboot")
+    run("reboot", check=False)
 
 if __name__ == "__main__":
     main()
