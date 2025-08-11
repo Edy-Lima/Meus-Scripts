@@ -34,7 +34,12 @@ ossyNMMMNyMMhsssssssssssssshmmmhssssssso
 """ + RESET)
     print(ORANGE + "="*60 + RESET)
 
-def run(cmd, check=True):
+def run(cmd, check=True, interativo=False):
+    if interativo:
+        resposta = input(f"\nDeseja executar o comando abaixo? [s/N]\n{cmd}\n> ").strip().lower()
+        if resposta != "s":
+            print("Comando ignorado pelo usuário.\n")
+            return
     print(f"Executando: {cmd}")
     try:
         subprocess.run(cmd, shell=True, check=check)
@@ -48,69 +53,59 @@ def main():
         print("Este script precisa ser executado como root. Use: sudo python3 Meu-Ubuntu-config-pessoal.py")
         sys.exit(1)
 
+    # Ative o modo interativo aqui:
+    interativo = True
+
     print_banner()
     print("Removendo o Snap do Ubuntu...")
 
-    # Remove o snapd e todos os pacotes relacionados
-    run("systemctl stop snapd", check=False)
-    run("apt remove --purge snapd* -y")
-    run("apt autoremove -y")
+    run("systemctl stop snapd", check=False, interativo=interativo)
+    run("apt remove --purge snapd* -y", interativo=interativo)
+    run("apt autoremove -y", interativo=interativo)
+    run("rm -rf /home/$SUDO_USER/snap", interativo=interativo)
+    run("rm -rf /snap", interativo=interativo)
+    run("rm -rf /var/snap", interativo=interativo)
+    run("rm -rf /var/lib/snapd", interativo=interativo)
+    run("rm -rf /var/cache/snapd", interativo=interativo)
+    run("apt remove --purge libreoffice* -y", interativo=interativo)
+    run("apt autoremove -y", interativo=interativo)
 
-    # Remove pastas residuais do snap
-    run("rm -rf /home/$SUDO_USER/snap")
-    run("rm -rf /snap")
-    run("rm -rf /var/snap")
-    run("rm -rf /var/lib/snapd")
-    run("rm -rf /var/cache/snapd")
-    run("apt remove --purge libreoffice* -y")
-    run("apt autoremove -y")
-
-    # Instalação de programas e configurações pessoais
     print("Instalando programas e configurando o sistema...")
-    run("apt update && apt full-upgrade -y")
+    run("apt update && apt full-upgrade -y", interativo=interativo)
 
-    # Instalação de programas essenciais
     print("Instalando programas essenciais...")
-    run("apt install ubuntu-restricted-extras -y")
-    run("apt install git synaptic gdebi p7zip-full gnome-shell-extension-manager ffmpeg testdisk glabels gnome-tweaks steam gparted -y")
+    run("apt install ubuntu-restricted-extras -y", interativo=interativo)
+    run("apt install git synaptic gdebi p7zip-full gnome-shell-extension-manager ffmpeg testdisk glabels gnome-tweaks steam gparted -y", interativo=interativo)
 
-    # Instalação do suporte ao Flatpak
     print("Instalando suporte ao Flatpak...")
-    run("apt install flatpak -y")
-    run("apt install gnome-software-plugin-flatpak -y")
-    run("flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo")
+    run("apt install flatpak -y", interativo=interativo)
+    run("apt install gnome-software-plugin-flatpak -y", interativo=interativo)
+    run("flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo", interativo=interativo)
 
-    # Configurando janelas do GNOME
     print("Configurando janelas do GNOME...")
-    run("gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'", check=False)
+    run("gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'", check=False, interativo=interativo)
 
-    # Configurando o GitHub
     print("Configurando o GitHub...")
-    run('git config --global user.name "Edy-Lima"', check=False)
-    run('git config --global user.email edivaldolima603@gmail.com', check=False)
+    run('git config --global user.name "Edy-Lima"', check=False, interativo=interativo)
+    run('git config --global user.email edivaldolima603@gmail.com', check=False, interativo=interativo)
 
-    # Instalar o obs-studio
     print("Instalando OBS Studio...")
-    run("add-apt-repository ppa:obsproject/obs-studio -y")
-    run("apt update")
-    run("apt install obs-studio -y")
+    run("add-apt-repository ppa:obsproject/obs-studio -y", interativo=interativo)
+    run("apt update", interativo=interativo)
+    run("apt install obs-studio -y", interativo=interativo)
 
-    # Instalar Google Chrome
     print("Instalando Google Chrome....")
-    run("wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb")
-    run("dpkg -i google-chrome-stable_current_amd64.deb", check=False)
-    run("apt-get --fix-broken install -y")
-    run("rm -f google-chrome-stable_current_amd64.deb")
+    run("wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb", interativo=interativo)
+    run("dpkg -i google-chrome-stable_current_amd64.deb", check=False, interativo=interativo)
+    run("apt-get --fix-broken install -y", interativo=interativo)
+    run("rm -f google-chrome-stable_current_amd64.deb", interativo=interativo)
 
-    # Atualizar o sistema
     print("Atualizando o sistema...")
-    run("apt update && apt full-upgrade -y")
+    run("apt update && apt full-upgrade -y", interativo=interativo)
 
     print("Configurações efetuadas com sucesso!")
-
-    # Reinicia o sistema para aplicar as mudanças
     print("Reiniciando o sistema para aplicar as mudanças...")
-    run("reboot", check=False)
+    run("reboot", check=False, interativo=interativo)
 
 if __name__ == "__main__":
     main()
