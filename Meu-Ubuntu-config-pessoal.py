@@ -2,20 +2,35 @@
 import os
 
 def print_banner():
-    print("="*60)
-    print("        MEU UBUNTU CONFIG PESSOAL - by Edy Lima")
-    print("="*60)
-    print("""
-     _    _                 _    _       _   _       _       
-    | |  | |               | |  | |     | | (_)     | |      
-    | |  | | ___  _ __ ___ | |  | |_ __ | |_ _  __ _| | ___  
-    | |  | |/ _ \| '_ ` _ \| |  | | '_ \| __| |/ _` | |/ _ \ 
-    | |__| | (_) | | | | | | |__| | | | | |_| | (_| | |  __/ 
-     \____/ \___/|_| |_| |_|\____/|_| |_|\__|_|\__, |_|\___| 
-                                               __/ |        
-                                              |___/         
-    """)
-    print("="*60)
+    ORANGE = "\033[38;5;208m"
+    WHITE = "\033[97m"
+    RESET = "\033[0m"
+    print(ORANGE + "="*60 + RESET)
+    print(ORANGE + "        MEU UBUNTU CONFIG PESSOAL - by Edy Lima" + RESET)
+    print(ORANGE + "="*60 + RESET)
+    print(WHITE + r"""
+           .-/+oossssoo+/-.           
+       `:+ssssssssssssssssss+:`       
+     -+ssssssssssssssssssyyssss+-     
+   .ossssssssssssssssssdMMMNysssso.   
+  /ssssssssssshdmmNNmmyNMMMMhssssss/  
+ +ssssssssshmydMMMMMMMNddddyssssssss+ 
+/sssssssshNMMMyhhyyyyhmNMMMNhssssssss/
+.ssssssssdMMMNhsssssssssshNMMMdsssssss.
++sssshhhyNMMNyssssssssssssyNMMMysssssss+
+ossyNMMMNyMMhsssssssssssssshmmmhssssssso
+ossyNMMMNyMMhsssssssssssssshmmmhssssssso
++sssshhhyNMMNyssssssssssssyNMMMysssssss+
+.ssssssssdMMMNhsssssssssshNMMMdsssssss.
+ /sssssssshNMMMyhhyyyyhdNMMMNhssssssss/
+  +sssssssssdmydMMMMMMMMddddyssssssss+ 
+   /ssssssssssshdmNNNNmyNMMMMhssssss/  
+    .ossssssssssssssssssdMMMNysssso.   
+      -+sssssssssssssssssyyyssss+-     
+        `:+ssssssssssssssssss+:`       
+            .-/+oossssoo+/-.
+""" + RESET)
+    print(ORANGE + "="*60 + RESET)
 
 def run(cmd):
     print(f"Executando: {cmd}")
