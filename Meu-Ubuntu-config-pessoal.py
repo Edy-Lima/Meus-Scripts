@@ -42,18 +42,21 @@ def run(cmd, check=True, interativo=False):
             return
     print(f"Executando: {cmd}")
     try:
-        subprocess.run(cmd, shell=True, check=check)
+        result = subprocess.run(cmd, shell=True, check=check, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        if result.stdout:
+            print(result.stdout)
+        if result.stderr:
+            print(result.stderr, file=sys.stderr)
     except subprocess.CalledProcessError as e:
-        print(f"Erro ao executar: {cmd}\n{e}")
+        print(f"Erro ao executar: {cmd}\n{e.stderr}", file=sys.stderr)
         if check:
             sys.exit(1)
 
 def main():
     if os.geteuid() != 0:
-        print("Este script precisa ser executado como root. Use: sudo python3 Meu-Ubuntu-config-pessoal.py")
+        print(f"Este script precisa ser executado como root. Use: sudo {sys.argv[0]}")
         sys.exit(1)
 
-    # Ative o modo interativo aqui:
     interativo = True
 
     print_banner()
@@ -62,7 +65,14 @@ def main():
     run("systemctl stop snapd", check=False, interativo=interativo)
     run("apt remove --purge snapd* -y", interativo=interativo)
     run("apt autoremove -y", interativo=interativo)
-    run("rm -rf /home/$SUDO_USER/snap", interativo=interativo)
+
+    # Remover diretórios do snap do usuário e do sistema
+    home_dir = os.environ.get("SUDO_USER")
+    if home_dir:
+        user_home = os.path.expanduser(f"~{home_dir}")
+    else:
+        user_home = os.path.expanduser("~")
+    run(f"rm -rf {user_home}/snap", interativo=interativo)
     run("rm -rf /snap", interativo=interativo)
     run("rm -rf /var/snap", interativo=interativo)
     run("rm -rf /var/lib/snapd", interativo=interativo)
