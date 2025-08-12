@@ -62,7 +62,18 @@ echo "Desativando e removendo a partição de swap..."
 echo "Ativando suporte a exFAT..."
      sudo apt update && sudo apt upgrade -y
      sudo apt install exfatprogs ffmpeg -y
-
+# Atualizar drivers Intel no Ubuntu 24.04
+echo "Atualizando lista de pacotes..."
+     sudo apt update
+echo "Instalando dependências necessárias..."
+     sudo apt install -y wget software-properties-common
+echo "Adicionando repositório oficial de drivers Intel..."
+     sudo add-apt-repository ppa:oibaf/graphics-drivers -y
+echo "Atualizando lista de pacotes novamente..."
+     sudo apt update
+echo "Atualizando drivers Intel..."
+     sudo apt full-upgrade -y
+echo "Drivers Intel atualizados! Reinicie o computador para aplicar as mudanças."
 
 echo "Configurações efetuadas com sucesso!"
 
