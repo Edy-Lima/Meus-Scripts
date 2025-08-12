@@ -1,109 +1,134 @@
 import subprocess
+import platform
+import shutil
+import sys
 
 def run(cmd, shell=True):
     print(f"Executando: {cmd}")
     subprocess.run(cmd, shell=shell, check=True)
 
+def detect_package_manager():
+    if shutil.which("apt"):
+        return "apt"
+    elif shutil.which("dnf"):
+        return "dnf"
+    elif shutil.which("yum"):
+        return "yum"
+    elif shutil.which("zypper"):
+        return "zypper"
+    elif shutil.which("pacman"):
+        return "pacman"
+    else:
+        print("Gerenciador de pacotes não suportado.")
+        sys.exit(1)
+
 def main():
-    print("Removendo o Snap do Ubuntu...")
+    distro = platform.linux_distribution()[0].lower() if hasattr(platform, "linux_distribution") else ""
+    pkg = detect_package_manager()
 
-    # Remove o snapd e todos os pacotes relacionados
-    print("Parando e removendo o Snap...")
-    run("sudo systemctl stop snapd")
-    run("sudo apt remove --purge 'snapd*' -y")
-    run("sudo apt autoremove -y")
+    print(f"Detectado gerenciador de pacotes: {pkg}")
 
-    # Remove pastas residuais do snap
-    print("Removendo pastas residuais do Snap...")
-    run("sudo rm -rf ~/snap")
-    run("sudo rm -rf /snap")
-    run("sudo rm -rf /var/snap")
-    run("sudo rm -rf /var/lib/snapd")
-    run("sudo rm -rf /var/cache/snapd")
-    run("sudo apt remove --purge 'libreoffice*' -y")
-    run("sudo apt autoremove -y")
+    # Remover Snap (apenas Ubuntu/Debian)
+    if pkg == "apt":
+        print("Removendo o Snap do Ubuntu/Debian...")
+        run("sudo systemctl stop snapd")
+        run("sudo apt remove --purge 'snapd*' -y")
+        run("sudo apt autoremove -y")
+        run("sudo rm -rf ~/snap /snap /var/snap /var/lib/snapd /var/cache/snapd")
+        run("sudo apt remove --purge 'libreoffice*' -y")
+        run("sudo apt autoremove -y")
 
-    # Instalação de programas e configurações pessoais
-    print("Instalando programas e configurando o sistema...")
-    run("sudo apt update && sudo apt full-upgrade -y")
+    # Atualizar sistema
+    print("Atualizando o sistema...")
+    if pkg == "apt":
+        run("sudo apt update && sudo apt full-upgrade -y")
+    elif pkg == "dnf":
+        run("sudo dnf upgrade --refresh -y")
+    elif pkg == "yum":
+        run("sudo yum update -y")
+    elif pkg == "zypper":
+        run("sudo zypper refresh && sudo zypper update -y")
+    elif pkg == "pacman":
+        run("sudo pacman -Syu --noconfirm")
 
-    # Instalação de programas essenciais
+    # Instalar programas essenciais (exemplo para cada gerenciador)
     print("Instalando programas essenciais...")
-    run("sudo apt install ubuntu-restricted-extras -y")
-    run("sudo apt install git gufw synaptic gdebi p7zip-full gnome-shell-extension-manager ffmpeg testdisk glabels gnome-tweaks steam gparted neofetch -y")
+    essentials = [
+        "git", "gufw", "p7zip", "ffmpeg", "testdisk", "gparted", "neofetch"
+    ]
+    if pkg == "apt":
+        run("sudo apt install ubuntu-restricted-extras synaptic gdebi gnome-shell-extension-manager glabels gnome-tweaks steam " + " ".join(essentials) + " -y")
+    elif pkg == "dnf":
+        run("sudo dnf install " + " ".join(essentials) + " -y")
+    elif pkg == "yum":
+        run("sudo yum install " + " ".join(essentials) + " -y")
+    elif pkg == "zypper":
+        run("sudo zypper install " + " ".join(essentials) + " -y")
+    elif pkg == "pacman":
+        run("sudo pacman -S --noconfirm " + " ".join(essentials))
 
-    # Instalação do suporte ao Flatpak
+    # Instalar Flatpak
     print("Instalando suporte ao Flatpak...")
-    run("sudo apt install flatpak -y")
-    run("sudo apt install gnome-software-plugin-flatpak -y")
+    if pkg == "apt":
+        run("sudo apt install flatpak gnome-software-plugin-flatpak -y")
+    elif pkg == "dnf":
+        run("sudo dnf install flatpak -y")
+    elif pkg == "yum":
+        run("sudo yum install flatpak -y")
+    elif pkg == "zypper":
+        run("sudo zypper install flatpak -y")
+    elif pkg == "pacman":
+        run("sudo pacman -S --noconfirm flatpak")
     run("sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo")
 
-    # Configurando janelas do GNOME
-    print("Configurando janelas do GNOME...")
-    run("gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'")
+    # Configurações GNOME (opcional, só se GNOME estiver presente)
+    if shutil.which("gsettings"):
+        print("Configurando janelas do GNOME...")
+        run("gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'")
 
-    # Configurando o github
-    print("Configurando o GitHub...")
-    run("sudo apt update && sudo apt full-upgrade -y")
+    # Configuração do Git
+    print("Configurando o Git...")
     run("git config --global user.name 'Edy-Lima'")
     run("git config --global user.email edivaldolima603@gmail.com")
-    run("sudo apt update && sudo apt full-upgrade -y")
 
-    # Instalar o obs-studio 
+    # Instalar OBS Studio (exemplo para apt/dnf/pacman)
     print("Instalando OBS Studio...")
-    run("sudo add-apt-repository ppa:obsproject/obs-studio -y")
-    run("sudo apt update")
-    run("sudo apt install obs-studio -y")
+    if pkg == "apt":
+        run("sudo add-apt-repository ppa:obsproject/obs-studio -y")
+        run("sudo apt update")
+        run("sudo apt install obs-studio -y")
+    elif pkg == "dnf":
+        run("sudo dnf install obs-studio -y")
+    elif pkg == "yum":
+        run("sudo yum install obs-studio -y")
+    elif pkg == "zypper":
+        run("sudo zypper install obs-studio -y")
+    elif pkg == "pacman":
+        run("sudo pacman -S --noconfirm obs-studio")
 
-    # Instalar vs-code
-    print("Instalando Visual Studio Code...")
-    run("wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg")
-    run("sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/")
-    run("sudo sh -c 'echo \"deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main\" > /etc/apt/sources.list.d/vscode.list'")
-    run("sudo apt install apt-transport-https -y")
-    run("sudo apt update && sudo apt full-upgrade -y")
-    run("sudo apt install code -y")
-    run("rm -f packages.microsoft.gpg") # Remove o arquivo de chave baixado após a instalação do VS Code.
+    # Instalar VS Code (Flatpak como alternativa universal)
+    print("Instalando Visual Studio Code via Flatpak...")
+    run("flatpak install flathub com.visualstudio.code -y")
 
-    # Instalar Google Chrome
-    print("Instalando Google Chrome....")
-    run("wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb")
-    run("sudo dpkg -i google-chrome-stable_current_amd64.deb")
-    run("sudo apt-get --fix-broken install -y")
-    run("rm google-chrome-stable_current_amd64.deb")
-
-    # Atualizar o sistema
-    print("Atualizando o sistema...")
-    run("sudo apt update && sudo apt full-upgrade -y")
-
-    # Excluindo swap
-    print("Desativando e removendo a partição de swap...")
-    run("sudo systemctl stop swap.img.swap")
-    run("sudo systemctl mask swap.img.swap")
+    # Instalar Google Chrome (Flatpak como alternativa universal)
+    print("Instalando Google Chrome via Flatpak...")
+    run("flatpak install flathub com.google.Chrome -y")
 
     # Ativar suporte a exFAT
     print("Ativando suporte a exFAT...")
-    run("sudo apt update && sudo apt upgrade -y")
-    run("sudo apt install exfatprogs ffmpeg -y")
-
-    # Atualizar drivers Intel no Ubuntu 24.04
-    print("Atualizando lista de pacotes...")
-    run("sudo apt update")
-    print("Instalando dependências necessárias...")
-    run("sudo apt install -y wget software-properties-common")
-    print("Adicionando repositório oficial de drivers Intel...")
-    run("sudo add-apt-repository ppa:oibaf/graphics-drivers -y")
-    print("Atualizando lista de pacotes novamente...")
-    run("sudo apt update")
-    print("Atualizando drivers Intel...")
-    run("sudo apt full-upgrade -y")
-    print("Drivers Intel atualizados! Reinicie o computador para aplicar as mudanças.")
+    if pkg == "apt":
+        run("sudo apt install exfatprogs -y")
+    elif pkg == "dnf":
+        run("sudo dnf install exfatprogs -y")
+    elif pkg == "yum":
+        run("sudo yum install exfatprogs -y")
+    elif pkg == "zypper":
+        run("sudo zypper install exfatprogs -y")
+    elif pkg == "pacman":
+        run("sudo pacman -S --noconfirm exfatprogs")
 
     print("Configurações efetuadas com sucesso!")
-
-    # Reinicia o sistema para aplicar as mudanças
-    print("Reiniciando o sistema para aplicar as mudanças...")
-    run("sudo reboot")
+    print("Reinicie o sistema para aplicar as mudanças.")
 
 if __name__ == "__main__":
     main()
