@@ -9,7 +9,7 @@ que tambem pode ser usado em qualquer outra distro baseada ,
 sendo que o "script" foi criado baseado em "minhas nescessidades".
 
 
-## 🟢 ( Meu-Ubuntu--config-pessoal.sh)
+## 🟢 ( Meu-Ubuntu ou Fedora--config-pessoal.sh)
 Trata-se de um script (PESSOAL) criado para configurar meu Desktop "Ubuntu".
 
 ## 🟢 Como executa-lo :
