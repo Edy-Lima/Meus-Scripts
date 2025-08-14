@@ -78,7 +78,12 @@ echo "Drivers Intel atualizados! Reinicie o computador para aplicar as mudanças
 echo "Configurações efetuadas com sucesso!"
 
 # Reinicia o sistema para aplicar as mudança
-echo "Reiniciando o sistema para aplicar as mudanças..."
-     sudo reboot
+#echo "Reiniciando o sistema para aplicar as mudanças..."
+     #sudo reboot
+# Fim do script
+echo "Script de remoção do Snap e configuração do Ubuntu concluído!"
+echo "Obrigado por usar este script!"
+echo "Sinta-se à vontade para modificar e personalizar conforme necessário."
+echo "Até a próxima!"
 
 
