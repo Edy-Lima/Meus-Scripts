@@ -51,9 +51,27 @@ echo "Instalando Google Chrome...."
      sudo dpkg -i google-chrome-stable_current_amd64.deb
      sudo apt-get --fix-broken install -y
      rm google-chrome-stable_current_amd64.deb
+# Instalar Anydesk
+echo "Instalando AnyDesk..."
+     sudo apt update
+     sudo apt install ca-certificates curl apt-transport-https
+     sudo install -m 0755 -d /etc/apt/keyrings
+     sudo curl -fsSL https://keys.anydesk.com/repos/DEB-GPG-KEY -o /etc/apt/keyrings/keys.anydesk.com.asc
+     sudo chmod a+r /etc/apt/keyrings/keys.anydesk.com.asc
+# Add the AnyDesk apt repository
+echo "deb [signed-by=/etc/apt/keyrings/keys.anydesk.com.asc] https://deb.anydesk.com all main" | sudo tee /etc/apt/sources.list.d/anydesk-stable.list > /dev/null
+# Update apt caches and install the AnyDesk client
+     sudo apt update
+     sudo apt install anydesk -y
 # Atualizar o sistema
 echo "Atualizando o sistema..."
      sudo apt update && sudo apt full-upgrade -y
+# Instalaar o vscode
+echo "Instalando Visual Studio Code..."
+     wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/microsoft.gpg
+     sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" -y
+     sudo apt update
+     sudo apt install code -y
 # Excluindo swap
 echo "Desativando e removendo a partição de swap..."
      sudo systemctl stop swap.img.swap
