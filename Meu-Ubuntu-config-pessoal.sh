@@ -6,13 +6,12 @@ echo "Removendo o Snap do Ubuntu..."
 # Remove o snapd e todos os pacotes relacionados
 echo "Parando e removendo o Snap..."
       sudo systemctl stop snapd
-      sudo apt remove --purge snapd* -y
+      sudo apt remove --purge 'snapd*' -y
       sudo apt autoremove -y
 
 # Remove pastas residuais do snap
 echo "Removendo pastas residuais do Snap..."
-     sudo rm -rf ~/snap -y
-     sudo rm -rf /snap -y
+     sudo rm -rf /snap
      sudo rm -rf /var/snap -y
      sudo rm -rf /var/lib/snapd -y
      sudo rm -rf /var/cache/snapd -y
@@ -21,13 +20,14 @@ echo "Removendo pastas residuais do Snap..."
 
 # Instalação de programas e configurações pessoais
 echo "Instalando programas e configurando o sistema..."
-     sudo apt update && sudo apt full-upgrade -y
+     sudo apt update
 # Instalação de programas essenciais
 echo "Instalando programas essenciais..."
      sudo apt install ubuntu-restricted-extras -y
      sudo apt install git gufw synaptic gdebi p7zip-full gnome-shell-extension-manager ffmpeg testdisk glabels gnome-tweaks steam gparted neofetch -y
 # Instalação do suporte ao Flatpak
 echo "Instalando suporte ao Flatpak..."
+     sudo apt update
      sudo apt install flatpak -y
      sudo apt install gnome-software-plugin-flatpak -y
      sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
@@ -36,7 +36,7 @@ echo "Configurando janelas do GNOME..."
      gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'
 # Configurando o github
 echo "Configurando o GitHub..."
-     sudo apt update && sudo apt full-upgrade -y
+     sudo apt update
      git config --global user.name "Edy-Lima"
      git config --global user.email edivaldolima603@gmail.com
      sudo apt update && sudo apt full-upgrade -y
@@ -54,7 +54,7 @@ echo "Instalando Google Chrome...."
 # Instalar Anydesk
 echo "Instalando AnyDesk..."
      sudo apt update
-     sudo apt install ca-certificates curl apt-transport-https
+     sudo apt install ca-certificates curl apt-transport-https -y
      sudo install -m 0755 -d /etc/apt/keyrings
      sudo curl -fsSL https://keys.anydesk.com/repos/DEB-GPG-KEY -o /etc/apt/keyrings/keys.anydesk.com.asc
      sudo chmod a+r /etc/apt/keyrings/keys.anydesk.com.asc
@@ -65,7 +65,7 @@ echo "deb [signed-by=/etc/apt/keyrings/keys.anydesk.com.asc] https://deb.anydesk
      sudo apt install anydesk -y
 # Atualizar o sistema
 echo "Atualizando o sistema..."
-     sudo apt update && sudo apt full-upgrade -y
+     sudo apt update 
 # Instalaar o vscode
 echo "Instalando Visual Studio Code..."
      wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/microsoft.gpg
@@ -78,7 +78,7 @@ echo "Desativando e removendo a partição de swap..."
      sudo systemctl mask swap.img.swap
 # Ativar suporte a exFAT
 echo "Ativando suporte a exFAT..."
-     sudo apt update && sudo apt upgrade -y
+     sudo apt update
      sudo apt install exfatprogs ffmpeg -y
 # Atualizar drivers Intel no Ubuntu 24.04
 echo "Atualizando lista de pacotes..."
@@ -93,7 +93,9 @@ echo "Atualizando drivers Intel..."
      sudo apt full-upgrade -y
 echo "Drivers Intel atualizados! Reinicie o computador para aplicar as mudanças."
 
-echo "Configurações efetuadas com sucesso!"
+echo "Atualização  geral do sistema..."
+# Finaliza com uma atualização geral do sistema
+     sudo apt update && sudo apt full-upgrade -y
 echo "Reinicie o computador para aplicar todas as mudanças."
 
 # Reinicia o sistema para aplicar as mudança
