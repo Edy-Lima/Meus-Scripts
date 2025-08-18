@@ -57,8 +57,8 @@ clear
 echo "Configurando o GitHub..."
 sleep 3
      sudo apt update
-     git config --global user.name "-----"
-     git config --global user.email "-----"
+     git config --global user.name "Edy-Lima"
+     git config --global user.email edivaldolima603@gmail.com
      sudo apt update
 clear
 # Instalar o obs-studio 
