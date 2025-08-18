@@ -37,8 +37,8 @@ echo "Configurando janelas do GNOME..."
 # Configurando o github
 echo "Configurando o GitHub..."
      sudo apt update
-     git config --global user.name "Edy-Lima"
-     git config --global user.email edivaldolima603@gmail.com
+     git config --global user.name "-----"
+     git config --global user.email "-----"
      sudo apt update && sudo apt full-upgrade -y
 # Instalar o obs-studio 
 echo "Instalando OBS Studio..."
