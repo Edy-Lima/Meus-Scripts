@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
-# filepath: remover-snap.sh
+# filepath: Meu-Ubuntu-config-pessoal.sh
 
 echo "Iniciando as configurações..."
 sleep 3
 clear
 #
 # Remove o snapd e todos os pacotes relacionados
+# Obs: Este comando remove o snap e todos os pacotes relacionados, incluindo o LibreOffice, faça por sua conta e risco.
 echo "Parando e removendo o Snap..."
 sleep 3
       sudo systemctl stop snapd
