@@ -59,7 +59,7 @@ sleep 3
      sudo apt update
      git config --global user.name "-----"
      git config --global user.email "-----"
-     sudo apt update && sudo apt full-upgrade -y
+     sudo apt update
 clear
 # Instalar o obs-studio 
 echo "Instalando OBS Studio..."
@@ -116,9 +116,10 @@ sleep 3
 # Finaliza com uma atualização geral do sistema
      sudo apt update && sudo apt full-upgrade -y
 clear
-echo "Reinicie o computador para aplicar todas as mudanças."
+echo "configurações concluidas com sucesso!."
 sleep 3
 clear
+echo "Reibiciando o sistema para aplicar as mudanças..."
 
 # Reinicia o sistema para aplicar as mudança
 #echo "Reiniciando o sistema para aplicar as mudanças..."
