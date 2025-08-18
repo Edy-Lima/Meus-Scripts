@@ -16,7 +16,7 @@ sleep 3
 clear
 
 # Remove pastas residuais do snap
-# obs: caso não queira remover as pastas residuais, comente as linhas abaixo
+# obs: caso não queira remover as pastas residuais, comente as linhas abaixo incluinto ( # ) no começo da linha.
 echo "Removendo pastas residuais do Snap..."
 sleep 3
      sudo rm -rf /snap
@@ -37,8 +37,8 @@ echo "Instalando programas essenciais..."
 sleep 3
      sudo apt install ubuntu-restricted-extras -y
 clear
-# Instalação de programas adicionais
-echo "Instalando programas adicionais..."
+# Instalação de programas adicionais com base no Ubuntu.deb
+echo "Instalando programas adicionais com base no Ubuntu.deb..."
 sleep 3
      sudo apt install git gufw synaptic gdebi p7zip-full gnome-shell-extension-manager ffmpeg testdisk glabels gnome-tweaks steam gparted neofetch -y
 clear
@@ -50,12 +50,14 @@ sleep 3
      sudo apt install gnome-software-plugin-flatpak -y
      sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 clear
-# Configurando janelas do GNOME
+# Configurando janelas do GNOME essa configuração é para que o clique no dock minimize ou mostre as prévias das janelas.
 echo "Configurando janelas do GNOME..."
 sleep 3
-     gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'
+     gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'   
 clear
-# Configurando o github
+# Configurando o github, esse comando configura o usuário e o email do GitHub.
+# Altere os valores de acordo com suas informações pessoais.
+# Exemplo: git config --global user.name "Seu-Nome" e git config --global user.email "
 echo "Configurando o GitHub..."
 sleep 3
      sudo apt update
