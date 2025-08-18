@@ -10,6 +10,7 @@ echo "Parando e removendo o Snap..."
       sudo apt autoremove -y
 
 # Remove pastas residuais do snap
+# obs: caso não queira remover as pastas residuais, comente as linhas abaixo
 echo "Removendo pastas residuais do Snap..."
      sudo rm -rf /snap
      sudo rm -rf /var/snap -y
@@ -24,6 +25,8 @@ echo "Instalando programas e configurando o sistema..."
 # Instalação de programas essenciais
 echo "Instalando programas essenciais..."
      sudo apt install ubuntu-restricted-extras -y
+# Instalação de programas adicionais
+echo "Instalando programas adicionais..."
      sudo apt install git gufw synaptic gdebi p7zip-full gnome-shell-extension-manager ffmpeg testdisk glabels gnome-tweaks steam gparted neofetch -y
 # Instalação do suporte ao Flatpak
 echo "Instalando suporte ao Flatpak..."
@@ -51,18 +54,6 @@ echo "Instalando Google Chrome...."
      sudo dpkg -i google-chrome-stable_current_amd64.deb
      sudo apt-get --fix-broken install -y
      rm google-chrome-stable_current_amd64.deb
-# Instalar Anydesk
-echo "Instalando AnyDesk..."
-     sudo apt update
-     sudo apt install ca-certificates curl apt-transport-https -y
-     sudo install -m 0755 -d /etc/apt/keyrings
-     sudo curl -fsSL https://keys.anydesk.com/repos/DEB-GPG-KEY -o /etc/apt/keyrings/keys.anydesk.com.asc
-     sudo chmod a+r /etc/apt/keyrings/keys.anydesk.com.asc
-# Add the AnyDesk apt repository
-echo "deb [signed-by=/etc/apt/keyrings/keys.anydesk.com.asc] https://deb.anydesk.com all main" | sudo tee /etc/apt/sources.list.d/anydesk-stable.list > /dev/null
-# Update apt caches and install the AnyDesk client
-     sudo apt update
-     sudo apt install anydesk -y
 # Atualizar o sistema
 echo "Atualizando o sistema..."
      sudo apt update 
@@ -73,6 +64,8 @@ echo "Instalando Visual Studio Code..."
      sudo apt update
      sudo apt install code -y
 # Excluindo swap
+# observação: O comando abaixo desativa e remove a partição de swap, o que pode não ser recomendado em todos os sistemas. Use com cautela.
+# caso deseje manter a partição de swap, comente as linhas abaixo.
 echo "Desativando e removendo a partição de swap..."
      sudo systemctl stop swap.img.swap
      sudo systemctl mask swap.img.swap
@@ -80,19 +73,12 @@ echo "Desativando e removendo a partição de swap..."
 echo "Ativando suporte a exFAT..."
      sudo apt update
      sudo apt install exfatprogs ffmpeg -y
-# Atualizar drivers Intel no Ubuntu 24.04
-echo "Atualizando lista de pacotes..."
-     sudo apt update
-echo "Instalando dependências necessárias..."
-     sudo apt install -y wget software-properties-common
-echo "Adicionando repositório oficial de drivers Intel..."
-     sudo add-apt-repository ppa:oibaf/graphics-drivers -y
-echo "Atualizando lista de pacotes novamente..."
-     sudo apt update
-echo "Atualizando drivers Intel..."
-     sudo apt full-upgrade -y
-echo "Drivers Intel atualizados! Reinicie o computador para aplicar as mudanças."
-
+# Instala esses programas via Flatpak
+echo Instando gimp , inkscape , onlyoffice e shotcut via flatpak
+     flatpak install flathub org.gimp.GIMP -y
+     flatpak install flathub org.inkscape.Inkscape -y
+     flatpak install flathub org.onlyoffice.desktopeditors -y
+     flatpak install flathub org.shotcut.Shotcut -y  
 echo "Atualização  geral do sistema..."
 # Finaliza com uma atualização geral do sistema
      sudo apt update && sudo apt full-upgrade -y
