@@ -11,7 +11,7 @@ echo "Certifique-se de qque leu e analizou todos os comandos deste script antes 
 echo "Parando pa remover o Snap por favor digite a senha de administrador para começar..."
 sleep 3
       sudo systemctl stop snapd
-      sudo apt remove --purge 'snapd*' -y
+      sudo apt remove --purge snapd* -y
       sudo apt autoremove -y
 clear
 
