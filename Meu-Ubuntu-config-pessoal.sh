@@ -114,6 +114,7 @@ sleep 3
      flatpak install flathub org.inkscape.Inkscape -y
      flatpak install flathub org.onlyoffice.desktopeditors -y
      flatpak install flathub org.shotcut.Shotcut -y  
+     flatpak install flathub org.openshot.OpenShot -y
 clear
 echo "Atualização  geral do sistema..."
 sleep 3
