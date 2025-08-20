@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 # filepath: Meu-Ubuntu-config-pessoal.sh
+# Este script é destinado a configurar o Ubuntu de acordo com as preferências pessoais do usuário.
+# Ele remove o snapd e instala uma série de programas essenciais e adicionais, além de realizar
+# algumas configurações específicas do sistema.
+# Certifique-se de que você tem permissões de administrador para executar este script.
+# Useo-o por sua conta e risco, pois ele remove o snapd e todos os pacotes relacionados, incluindo o LibreOffice.
 
 echo "Iniciando as configurações..."
 sleep 3
