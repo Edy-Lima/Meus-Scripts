@@ -136,7 +136,7 @@ clear
 echo "configurações concluidas com sucesso!."
 sleep 3
 clear
-echo "Reibiciando o sistema para aplicar as mudanças..."
+echo "Reinicie o sistema para aplicar as mudanças..."
 
 # Reinicia o sistema para aplicar as mudança
 #echo "Reiniciando o sistema para aplicar as mudanças..."
