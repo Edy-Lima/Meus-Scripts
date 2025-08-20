@@ -20,7 +20,7 @@ echo "Preparando para iniciar as configurações......."
 sleep 3
 clear
 # Solicita a senha de administrador para continuar
-echo Por favor digite a senha de administrador para começar..."
+echo "Por favor digite a senha de administrador para começar..."
 sleep 3
       sudo systemctl stop snapd
       sudo apt remove --purge snapd* -y
