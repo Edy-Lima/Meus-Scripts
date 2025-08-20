@@ -14,8 +14,13 @@ clear
 # Obs: Este comando remove o snap e todos os pacotes relacionados, incluindo o LibreOffice, faça por sua conta e risco.
 echo "Certifique-se de que 
 leu e analizou todos os comandos inclusos neste script antes de executá-lo."
-echo "Preparando para iniciar as configurações....... 
-Por favor digite a senha de administrador para começar..."
+sleep 3
+clear
+echo "Preparando para iniciar as configurações......." 
+sleep 3
+clear
+# Solicita a senha de administrador para continuar
+echo Por favor digite a senha de administrador para começar..."
 sleep 3
       sudo systemctl stop snapd
       sudo apt remove --purge snapd* -y
