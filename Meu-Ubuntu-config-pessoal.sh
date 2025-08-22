@@ -53,6 +53,7 @@ clear
 echo "Instalando programas adicionais com base no Ubuntu.deb..."
 sleep 3
      sudo apt install git gufw synaptic gdebi p7zip-full gnome-shell-extension-manager ffmpeg testdisk glabels gnome-tweaks steam gparted neofetch -y
+     sudo apt install ubntu-advantage-tools -y
 clear
 # Instalação do suporte ao Flatpak
 echo "Instalando suporte ao Flatpak..."
