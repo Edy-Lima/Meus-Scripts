@@ -19,11 +19,21 @@ clear
 echo "Preparando para iniciar as configurações......." 
 sleep 3
 clear
+# Esse comando ativa o Ubuntu pro
+echo "Iniciando a ativação do Ubuntu pro"
+sleep 3
+     sudo apt install ubuntu-advantage-tools -y
+clear
+echo "Ativando o Ubuntu via token"
+sleep 3
+     sudo pro attach <SEU-TOKEN-AQUI>
+echo "Ubuntu pro ativado com sucesso"
+clear      
 # Solicita a senha de administrador para continuar
-echo "Por favor digite a senha de administrador para começar..."
+echo "Removendo o suporte ao Snap..."
 sleep 3
       sudo systemctl stop snapd
-      sudo apt remove --purge snapd* -y
+      sudo apt remove --purge snapd -y
       sudo apt autoremove -y
 clear
 
@@ -35,6 +45,7 @@ sleep 3
      sudo rm -rf /var/snap -y
      sudo rm -rf /var/lib/snapd -y
      sudo rm -rf /var/cache/snapd -y
+     sudo apt remove --purge snapd -y
      sudo apt remove --purge libreoffice* -y
      sudo apt autoremove -y
 clear
@@ -62,6 +73,8 @@ sleep 3
      sudo apt install flatpak -y
      sudo apt install gnome-software-plugin-flatpak -y
      sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+     sudo apt remove --purge snapd -y
+     sudo apt autoremove -y
 clear
 # Configurando janelas do GNOME essa configuração é para que o clique no dock minimize ou mostre as prévias das janelas.
 echo "Configurando janelas do GNOME..."
@@ -134,15 +147,18 @@ echo "Atualização  geral do sistema..."
 sleep 3
 # Finaliza com uma atualização geral do sistema
      sudo apt update && sudo apt full-upgrade -y
+     sudo apt autoremove -y   
 clear
 echo "configurações concluidas com sucesso!."
 sleep 3
 clear
 echo "Reinicie o sistema para aplicar as mudanças..."
-
+sleep 3
+clear
 # Reinicia o sistema para aplicar as mudança
-#echo "Reiniciando o sistema para aplicar as mudanças..."
-     #sudo reboot
+echo "Reiniciando o sistema para aplicar as mudanças..."
+sleep 5
+    sudo reboot
 # Fim do script
 
 
