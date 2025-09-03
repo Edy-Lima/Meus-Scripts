@@ -26,7 +26,7 @@ sleep 3
 clear
 echo "Ativando o Ubuntu via token"
 sleep 3
-     sudo pro attach <SEU-TOKEN-AQUI>
+     sudo pro attach C12ci2N6WZBZhiMLJnNvzxSj2kfs58
 echo "Ubuntu pro ativado com sucesso"
 clear      
 # Solicita a senha de administrador para continuar
