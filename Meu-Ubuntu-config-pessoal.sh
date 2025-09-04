@@ -148,6 +148,8 @@ sleep 3
      flatpak install flathub org.shotcut.Shotcut -y  
      flatpak install flathub org.openshot.OpenShot -y
      Flatpak install flathub discord -y
+     flatpak install flathub com.obsproject.Studio -y
+     flatpak run com.obsproject.Studio
 clear
 echo "Atualização  geral do sistema..."
 sleep 3
