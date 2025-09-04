@@ -97,13 +97,6 @@ sleep 3
      git config --global user.email edivaldolima603@gmail.com
      sudo apt update
 clear
-# Instalar o obs-studio 
-echo "Instalando OBS Studio..."
-sleep 3
-     sudo add-apt-repository ppa:obsproject/obs-studio -y
-     sudo apt update
-     sudo apt install obs-studio -y
-clear
 # Instalar Google Chrome
 echo "Instalando Google Chrome...."
 sleep 3
@@ -113,7 +106,7 @@ sleep 3
      rm google-chrome-stable_current_amd64.deb
 clear
 # Atualizar o sistema
-echo "Atualizando o sistema..."
+echo "Atualizando o repositório..."
 sleep 3
      sudo apt update 
 clear
