@@ -103,10 +103,23 @@ clear
 # Instalaar o vscode
 echo "Instalando Visual Studio Code..."
 sleep 3
-     wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/microsoft.gpg
-     sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" -y
+# Atualiza a lista de pacotes
      sudo apt update
-     sudo apt install code -y
+# Instala dependências necessárias
+     sudo apt install -y wget gpg
+# Importa a chave GPG do repositório do VS Code
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+     sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+rm microsoft.gpg
+# Adiciona o repositório do VS Code
+echo "deb [arch=$(dpkg --print-architecture)] https://packages.microsoft.com/repos/code stable main" | \
+     sudo tee /etc/apt/sources.list.d/vscode.list
+# Atualiza a lista de pacotes novamente
+     sudo apt update
+# Instala o VS Code
+     sudo apt install -y code
+echo "Instalação do VS Code concluída!"
+sleep 3
 clear
 # Excluindo swap
 # observação: O comando abaixo desativa e remove a partição de swap, o que pode não ser recomendado em todos os sistemas. Use com cautela.
