@@ -22,6 +22,7 @@ clear
 # Esse comando ativa o Ubuntu pro
 echo "Iniciando a ativação do Ubuntu pro"
 sleep 3
+     sudo apt update
      sudo apt install ubuntu-advantage-tools -y
 clear
 echo "Ativando o Ubuntu via token"
@@ -36,7 +37,6 @@ sleep 3
       sudo apt remove --purge snapd -y
       sudo apt autoremove -y
 clear
-
 # Remove pastas residuais do snap
 # obs: caso não queira remover as pastas residuais, comente as linhas abaixo incluinto ( # ) no começo da linha.
 echo "Removendo pastas residuais do Snap..."
@@ -49,7 +49,6 @@ sleep 3
      sudo apt remove --purge libreoffice* -y
      sudo apt autoremove -y
 clear
-
 # Instalação de programas e configurações pessoais
 echo "Instalando programas e configurando o sistema..."
 sleep 3
@@ -66,11 +65,7 @@ sleep 3
      sudo apt install git gufw synaptic gdebi p7zip-full gnome-shell-extension-manager ffmpeg testdisk glabels gnome-tweaks steam gparted neofetch -y
      sudo apt install ubntu-advantage-tools -y
      sudo apt install mesa-utils -y
-     sudo apt update
-sudo apt install \
-  intel-opencl-icd \
-  intel-level-zero-gpu level-zero \
-  intel-media-va-driver-non-free libmfx1 -y
+     sudo apt install intel-opencl-icd intel-level-zero-gpu level-zero intel-media-va-driver-non-free libmfx1 -y
 clear
 # Instalação do suporte ao Flatpak
 echo "Instalando suporte ao Flatpak..."
@@ -94,21 +89,16 @@ echo "Configurando o GitHub..."
 sleep 3
      sudo apt update
      git config --global user.name "Edy-Lima"
-     git config --global user.email edivaldolima603@gmail.com
-     sudo apt update
+     git config --global user.email edivaldolima603@gmail.com   
 clear
 # Instalar Google Chrome
 echo "Instalando Google Chrome...."
 sleep 3
+     sudo apt update
      wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
      sudo dpkg -i google-chrome-stable_current_amd64.deb
      sudo apt-get --fix-broken install -y
      rm google-chrome-stable_current_amd64.deb
-clear
-# Atualizar o sistema
-echo "Atualizando o repositório..."
-sleep 3
-     sudo apt update 
 clear
 # Instalaar o vscode
 echo "Instalando Visual Studio Code..."
@@ -142,12 +132,13 @@ sleep 3
      flatpak install flathub org.openshot.OpenShot -y
      Flatpak install flathub discord -y
      flatpak install flathub com.obsproject.Studio -y
-     flatpak run com.obsproject.Studio
 clear
 echo "Atualização  geral do sistema..."
 sleep 3
 # Finaliza com uma atualização geral do sistema
      sudo apt update && sudo apt full-upgrade -y
+     sudo apt remove --purge snapd -y
+     sudo apt autoclean -y
      sudo apt autoremove -y   
 clear
 echo "configurações concluidas com sucesso!."
