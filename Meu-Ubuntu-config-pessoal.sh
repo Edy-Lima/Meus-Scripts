@@ -142,7 +142,7 @@ sleep 3
      flatpak install flathub org.onlyoffice.desktopeditors -y
      flatpak install flathub org.shotcut.Shotcut -y  
      flatpak install flathub org.openshot.OpenShot -y
-     Flatpak install flathub discord -y
+     flatpak install flathub com.discordapp.Discord -y
      flatpak install flathub com.obsproject.Studio -y
 clear
 echo "Atualização  geral do sistema..."
