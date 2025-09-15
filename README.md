@@ -7,10 +7,7 @@ Ao instalar os **Codecs de multimídia**, será necessário confirmar uma ação
 
 ## 🟢 Scripts Disponíveis
 
-### 1. `Meu_Ubuntu_posinstall.sh`
-Script pessoal para auto-configuração do Ubuntu Desktop, também compatível com outras distribuições baseadas em Ubuntu. O script foi criado de acordo com minhas necessidades específicas, mas pode ser adaptado para outros usos.
-
-### 2. `Meu-Ubuntu-config-pessoal.sh`
+### 1. `Meu-Ubuntu-config-pessoal.sh`
 Script pessoal para configuração do Ubuntu Desktop, focado em ajustes e personalizações do sistema.
 
 ---
@@ -26,8 +23,6 @@ Script pessoal para configuração do Ubuntu Desktop, focado em ajustes e person
 	```
 5. Execute o script desejado:
 	```bash
-	./Meu_Ubuntu_posinstall.sh
-	# ou
 	./Meu-Ubuntu-config-pessoal.sh
 	```
 6. Siga as instruções exibidas no terminal. Será solicitada a senha do usuário para continuar; digite-a e pressione **ENTER**.
