@@ -27,7 +27,10 @@ sleep 3
 clear
 echo "Ativando o Ubuntu via token"
 sleep 3
-     sudo pro attach C12ci2N6WZBZhiMLJnNvzxSj2kfs58
+# Substitua <token> pelo seu token do Ubuntu Pro
+echo "Por favor, insira seu token do Ubuntu Pro:"
+read -r token
+     sudo pro attach <token>
 echo "Ubuntu pro ativado com sucesso"
 clear      
 # Solicita a senha de administrador para continuar
