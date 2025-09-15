@@ -1,4 +1,4 @@
-# Copilot Instructions for Meus-Scripts
+# Instructions for Meus-Scripts
 
 ## Visão Geral
 Este repositório contém scripts pessoais para pós-instalação e configuração do Ubuntu Desktop, podendo ser adaptados para outras distribuições baseadas em Ubuntu. Os scripts automatizam tarefas de configuração e instalação de softwares, incluindo PPAs e codecs multimídia.
