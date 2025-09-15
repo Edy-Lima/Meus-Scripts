@@ -1,5 +1,4 @@
 
-após abrir o terminal digite: ./nome do arquivo.sh  e depois (ENTER)
 
 # ⚠️ Atenção!
 Ao instalar os **Codecs de multimídia**, será necessário confirmar uma ação durante o processo. Use a tecla **TAB** para navegar até a opção correta e pressione **ENTER** para prosseguir.
