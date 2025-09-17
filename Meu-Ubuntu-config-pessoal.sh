@@ -147,6 +147,7 @@ sleep 3
      flatpak install flathub org.openshot.OpenShot -y
      flatpak install flathub com.discordapp.Discord -y
      flatpak install flathub com.obsproject.Studio -y
+     flatpak install flathub com.valvesoftware.Steam -y
 clear
 echo "Atualização  geral do sistema..."
 sleep 3
