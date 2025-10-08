@@ -43,9 +43,9 @@ clear
 echo "Removendo pastas residuais do Snap..."
 sleep 3
      sudo rm -rf /snap
-     sudo rm -rf /var/snap -y
-     sudo rm -rf /var/lib/snapd -y
-     sudo rm -rf /var/cache/snapd -y
+     sudo rm -rf /var/snap
+     sudo rm -rf /var/lib/snapd
+     sudo rm -rf /var/cache/snapd
      sudo apt remove --purge snapd -y
      sudo apt remove --purge libreoffice* -y
      sudo apt autoremove -y
