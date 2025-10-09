@@ -7,7 +7,7 @@
 # Useo-o por sua conta e risco, pois ele remove o snapd e todos os pacotes relacionados, incluindo o LibreOffice.
 
 echo "Iniciando o sscript..."
-sleep 3
+sleep 5
 clear
 #
 # Remove o snapd e todos os pacotes relacionados
@@ -17,23 +17,25 @@ leu e analizou todos os comandos inclusos neste script antes de executá-lo."
 sleep 5
 clear
 echo "Preparando para iniciar as configurações......." 
-sleep 3
+sleep 5
 clear
 # Esse comando ativa o Ubuntu pro
 echo "Iniciando a ativação do Ubuntu pro"
-sleep 3
+sleep 5
      sudo apt update
      sudo apt install ubuntu-advantage-tools -y
 clear
 echo "Ativando o Ubuntu via token"
-sleep 3
+sleep 5
 # Substitua <token> pelo seu token real do Ubuntu Pro
      sudo pro attach <token>
 echo "Ubuntu pro ativado com sucesso"
+sleep 5
 clear      
 # Solicita a senha de administrador para continuar
 echo "Removendo o suporte ao Snap..."
-sleep 3
+sleep 5
+      sudo apt update
       sudo systemctl stop snapd
       sudo apt remove --purge snapd -y
       sudo apt autoremove -y
@@ -41,7 +43,7 @@ clear
 # Remove pastas residuais do snap
 # obs: caso não queira remover as pastas residuais, comente as linhas abaixo incluinto ( # ) no começo da linha.
 echo "Removendo pastas residuais do Snap..."
-sleep 3
+sleep 5
      sudo rm -rf /snap
      sudo rm -rf /var/snap
      sudo rm -rf /var/lib/snapd
@@ -52,24 +54,24 @@ sleep 3
 clear
 # Instalação de programas e configurações pessoais
 echo "Instalando programas e configurando o sistema..."
-sleep 3
+sleep 5
      sudo apt update
 clear
 # Instalação de programas essenciais
 echo "Instalando programas essenciais..."
-sleep 3
+sleep 5
      sudo apt install ubuntu-restricted-extras -y
 clear
 # Instalação de programas adicionais com base no Ubuntu.deb
 echo "Instalando programas adicionais com base no Ubuntu.deb..."
-sleep 3
+sleep 5
      sudo apt install git gufw synaptic gdebi p7zip-full gnome-shell-extension-manager ffmpeg testdisk glabels gnome-tweaks gparted neofetch -y
      sudo apt install mesa-utils -y
      sudo apt install intel-opencl-icd intel-level-zero-gpu level-zero intel-media-va-driver-non-free libmfx1 -y
 clear
 # Instalação do suporte ao Flatpak
 echo "Instalando suporte ao Flatpak..."
-sleep 3
+sleep 5
      sudo apt update
      sudo apt install flatpak -y
      sudo apt install gnome-software-plugin-flatpak -y
@@ -79,21 +81,21 @@ sleep 3
 clear
 # Configurando janelas do GNOME essa configuração é para que o clique no dock minimize ou mostre as prévias das janelas.
 echo "Configurando janelas do GNOME..."
-sleep 3
+sleep 5
      gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'   
 clear
 # Configurando o github, esse comando configura o usuário e o email do GitHub.
 # Altere os valores de acordo com suas informações pessoais.
 # Exemplo: git config --global user.name "Seu-Nome" e git config --global user.email "
 echo "Configurando o GitHub..."
-sleep 3
+sleep 5
      sudo apt update
      git config --global user.name "Edy-Lima"
      git config --global user.email edivaldolima603@gmail.com   
 clear
 # Instalar Google Chrome
 echo "Instalando Google Chrome...."
-sleep 3
+sleep 5
      sudo apt update
      wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
      sudo dpkg -i google-chrome-stable_current_amd64.deb
@@ -102,7 +104,7 @@ sleep 3
 clear
 # Instalaar o vscode
 echo "Instalando Visual Studio Code..."
-sleep 3
+sleep 5
 # Atualiza a lista de pacotes
      sudo apt update
 # Instala dependências necessárias
@@ -119,25 +121,25 @@ echo "deb [arch=$(dpkg --print-architecture)] https://packages.microsoft.com/rep
 # Instala o VS Code
      sudo apt install -y code
 echo "Instalação do VS Code concluída!"
-sleep 3
+sleep 5
 clear
 # Excluindo swap
 # observação: O comando abaixo desativa e remove a partição de swap, o que pode não ser recomendado em todos os sistemas. Use com cautela.
 # caso deseje manter a partição de swap, comente as linhas abaixo.
 echo "Desativando e removendo a partição de swap..."
-sleep 3
+sleep 5
      sudo systemctl stop swap.img.swap
      sudo systemctl mask swap.img.swap
 clear
 # Ativar suporte a exFAT
 echo "Ativando suporte a exFAT..."
-sleep 3
+sleep 5
      sudo apt update
      sudo apt install exfatprogs ffmpeg -y
 clear
 # Instala esses programas via Flatpak
-echo Instando gimp , openshot , inkscape , Obs-Studio , onlyoffice e shotcut via flatpak
-sleep 3
+echo "Instando gimp , openshot , inkscape , Obs-Studio , onlyoffice e shotcut via flatpak"
+sleep 5
      flatpak install flathub org.gimp.GIMP -y
      flatpak install flathub org.inkscape.Inkscape -y
      flatpak install flathub org.onlyoffice.desktopeditors -y
@@ -147,19 +149,26 @@ sleep 3
      flatpak install flathub com.obsproject.Studio -y
      flatpak install flathub com.valvesoftware.Steam -y
 clear
-echo "Atualização  geral do sistema..."
-sleep 3
+echo "Atualização e limpeza geral do sistema..."
+sleep 5
 # Finaliza com uma atualização geral do sistema
      sudo apt update && sudo apt full-upgrade -y
      sudo apt remove --purge snapd -y
      sudo apt autoclean -y
      sudo apt autoremove -y   
 clear
+# Atualização de kernel
+echo "Instalando suporte para atualização de kernel do sistema..."
+sleep 5
+    sudo add-apt-repository ppa:cappelikan/ppa -y
+    sudo apt update
+    sudo apt install mainline -y
+clear
 echo "configurações concluidas com sucesso!."
-sleep 3
+sleep 5
 clear
 echo "Reinicie o sistema para aplicar as mudanças..."
-sleep 3
+sleep 5
 clear
 # Reinicia o sistema para aplicar as mudança
 echo "Reiniciando o sistema para aplicar as mudanças..."
