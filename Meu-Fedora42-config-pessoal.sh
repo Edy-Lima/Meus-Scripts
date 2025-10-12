@@ -9,6 +9,9 @@
 echo "Iniciando o script para Fedora 42..."
 sleep 5
 clear
+echo "instalando fontes Microsoft..."
+sleep 5
+sudo dnf install https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 # Configurando o GitHub
 echo "Configurando o GitHub..."
 sleep 5
