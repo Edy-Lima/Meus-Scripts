@@ -75,5 +75,5 @@ sleep 5
 clear
 echo "Reiniciando o sistema para aplicar as mudanças..."
 sleep 5
-sudo reboot
+sudo systemctl reboot
 # Fim do script
