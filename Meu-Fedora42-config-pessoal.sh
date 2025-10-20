@@ -9,6 +9,14 @@
 echo "Iniciando o script para Fedora 42..."
 sleep 5
 clear
+echo Desabilitar Zram e swap.
+sleep 5
+sudo swapoff -a
+sudo systemctl disable zram-swap.service -y
+sudo dnf remove zram-generator-defaults -y
+clear
+echo "Zram e swap desabilitados."
+sleep 5
 echo "instalando fontes Microsoft..."
 sleep 5
 sudo dnf install https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
@@ -33,6 +41,13 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo
 sudo dnf check-update
 sudo dnf install --assumeyes code
+clear
+# Instalando drivers e codecs multimídia
+echo "Instalando drivers e codecs multimídia..."
+sleep 5
+sudo dnf swap ffmpeg-free ffmpeg --allowerasing -y
+sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugins -y
+sudo dnf install libva-intel-driver -y
 clear
 # Instala programas via Flatpak
 echo "Instalando apps via Flatpak..."
