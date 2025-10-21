@@ -19,7 +19,7 @@ echo "Zram e swap desabilitados."
 sleep 5
 echo "instalando fontes Microsoft..."
 sleep 5
-sudo dnf install https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+sudo dnf install https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm -y
 # Configurando o GitHub
 echo "Configurando o GitHub..."
 sleep 5
