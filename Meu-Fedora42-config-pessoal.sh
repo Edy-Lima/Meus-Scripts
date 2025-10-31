@@ -56,7 +56,6 @@ flatpak install flathub org.gimp.GIMP -y
 flatpak install flathub org.inkscape.Inkscape -y
 flatpak install flathub org.onlyoffice.desktopeditors -y
 flatpak install flathub org.shotcut.Shotcut -y
-flatpak install flathub org.openshot.OpenShot -y
 flatpak install flathub com.discordapp.Discord -y
 flatpak install flathub com.obsproject.Studio -y
 flatpak install flathub com.valvesoftware.Steam -y
