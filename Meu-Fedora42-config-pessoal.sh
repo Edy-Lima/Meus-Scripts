@@ -59,6 +59,7 @@ flatpak install flathub org.shotcut.Shotcut -y
 flatpak install flathub com.discordapp.Discord -y
 flatpak install flathub com.obsproject.Studio -y
 flatpak install flathub com.valvesoftware.Steam -y
+flatpak install flathub io.github.flattool.Warehouse -y
 clear
 echo "Atualização e limpeza geral do sistema..."
 sleep 5
