@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# filepath: Meu-Fedora42-config-pessoal.sh
+# filepath: Meu-Fedora43-config-pessoal.sh
 # Este script é destinado a configurar o Fedora 42 de acordo com as preferências pessoais do usuário.
-# Ele remove o snapd (se existir) e instala uma série de programas essenciais e adicionais, além de realizar
+# Instala uma série de programas essenciais e adicionais, além de realizar
 # algumas configurações específicas do sistema.
 # Certifique-se de que você tem permissões de administrador para executar este script.
 # Use-o por sua conta e risco.
@@ -17,9 +17,6 @@ sudo dnf remove zram-generator-defaults -y
 clear
 echo "Zram e swap desabilitados."
 sleep 5
-echo "instalando fontes Microsoft..."
-sleep 5
-sudo dnf install https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm -y
 # Configurando o GitHub
 echo "Configurando o GitHub..."
 sleep 5
