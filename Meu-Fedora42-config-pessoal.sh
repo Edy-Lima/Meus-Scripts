@@ -42,13 +42,6 @@ echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com
 sudo dnf check-update
 sudo dnf install --assumeyes code
 clear
-# Instalando drivers e codecs multimídia
-echo "Instalando drivers e codecs multimídia..."
-sleep 5
-sudo dnf swap ffmpeg-free ffmpeg --allowerasing -y
-sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugins -y
-sudo dnf install libva-intel-driver -y
-clear
 # Instala programas via Flatpak
 echo "Instalando apps via Flatpak..."
 sleep 5
@@ -60,9 +53,12 @@ flatpak install flathub com.discordapp.Discord -y
 flatpak install flathub com.obsproject.Studio -y
 flatpak install flathub com.valvesoftware.Steam -y
 flatpak install flathub io.github.flattool.Warehouse -y
+
 clear
 echo "Atualização e limpeza geral do sistema..."
 sleep 5
+sudo dnf5 upgrade --refresh -y
+sudo flatpak upgrade -y
 sudo dnf upgrade --assumeyes
 sudo dnf autoremove --assumeyes
 sudo dnf clean all
