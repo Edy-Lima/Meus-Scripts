@@ -42,15 +42,14 @@ clear
 # Instala programas via Flatpak
 echo "Instalando apps via Flatpak..."
 sleep 5
+sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo -y
+sudo dnf5 install steam -y
 flatpak install flathub org.gimp.GIMP -y
 flatpak install flathub org.inkscape.Inkscape -y
 flatpak install flathub org.onlyoffice.desktopeditors -y
 flatpak install flathub org.shotcut.Shotcut -y
 flatpak install flathub com.discordapp.Discord -y
 flatpak install flathub com.obsproject.Studio -y
-flatpak install flathub com.valvesoftware.Steam -y
-flatpak install flathub io.github.flattool.Warehouse -y
-
 clear
 echo "Atualização e limpeza geral do sistema..."
 sleep 5
