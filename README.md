@@ -12,6 +12,21 @@ Script pessoal para configuração do Ubuntu Desktop, focado em ajustes e person
 
 ---
 
+### 2. `Meu-Fedora43-config-pessoal.sh`
+Script para configurar um sistema Fedora 43 otimizado para jogos e para remover swap com segurança.
+
+**Uso rápido:**
+
+```bash
+sudo bash Meu-Fedora43-config-pessoal.sh
+```
+
+Opções disponíveis:
+- `--yes` ou `-y`: assume "sim" para todas as confirmações (não interativo)
+- `--no-reboot`: não reinicia automaticamente ao final
+
+Resumo do que o script realiza: habilitação do RPM Fusion e Flathub, instalação de Steam/Lutris/Wine/vulkan/mangohud/gamemode, detecção de GPU (e instalação de drivers) e remoção segura de swap (backup do `/etc/fstab` antes de alterações).
+
 ## 🟢 Como Executar os Scripts
 
 1. Faça o download do arquivo `.zip` deste repositório.
