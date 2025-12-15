@@ -103,15 +103,13 @@ install_gaming_packages() {
 	sudo dnf upgrade --refresh -y || true
 
 	# Pacotes principais
-	sudo dnf install -y steam lutris gamemode mangohud vkd3d vkd3d-proton vulkan-tools mesa-vulkan-drivers mesa-dri-drivers vulkan-loader || true
-
-	# Instalar suporte a 32-bits quando disponível
-	sudo dnf install -y wine wine-*.i686 || true || true
+	sudo dnf install -y steam gamemode mangohud vkd3d vkd3d-proton vulkan-tools mesa-vulkan-drivers mesa-dri-drivers vulkan-loader || true
 
 	# Flatpaks úteis
 	flatpak install flathub com.valvesoftware.Steam -y || true
-	flatpak install flathub net.lutris.Lutris -y || true
 }
+
+ 
 
 detect_and_install_gpu_drivers() {
 	log "Detectando GPU..."
