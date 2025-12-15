@@ -103,10 +103,25 @@ install_gaming_packages() {
 	sudo dnf upgrade --refresh -y || true
 
 	# Pacotes principais
-	sudo dnf install -y steam gamemode mangohud vkd3d vkd3d-proton vulkan-tools mesa-vulkan-drivers mesa-dri-drivers vulkan-loader || true
+	sudo dnf install -y steam glabels gamemode mangohud vkd3d vkd3d-proton vulkan-tools mesa-vulkan-drivers mesa-dri-drivers vulkan-loader || true
 
-	# Flatpaks úteis
-	flatpak install flathub com.valvesoftware.Steam -y || true
+	# Flatpaks úteis (nenhuma instalação automática de Steam)
+}
+
+install_google_chrome() {
+	log "Instalando Google Chrome (stable)..."
+	# Tenta instalar diretamente via DNF apontando para o RPM direto
+	if ! sudo dnf install -y https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm; then
+		err "Falha na instalação direta via DNF. Tentando baixar e instalar manualmente..."
+		tmpfile=$(mktemp -t google-chrome-XXXXXX.rpm) || tmpfile=/tmp/google-chrome.rpm
+		if curl -fsSL -o "$tmpfile" https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm; then
+			sudo dnf install -y "$tmpfile" || err "Falha ao instalar $tmpfile"
+			rm -f "$tmpfile"
+		else
+			err "Falha ao baixar o pacote do Google Chrome." || true
+			return 1
+		fi
+	fi
 }
 
  
@@ -167,6 +182,10 @@ main() {
 
 	setup_repos_and_flatpak
 	install_gaming_packages
+
+	if confirm "Instalar Google Chrome (stable)?"; then
+		install_google_chrome
+	fi
 	detect_and_install_gpu_drivers
 	performance_tweaks
 	post_actions
