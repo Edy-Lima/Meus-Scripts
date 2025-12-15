@@ -10,6 +10,16 @@ Ao instalar os **Codecs de multimídia**, será necessário confirmar uma ação
 ### 1. `Meu-Ubuntu-config-pessoal.sh`
 Script pessoal para configuração do Ubuntu Desktop, focado em ajustes e personalizações do sistema.
 
+Opções principais:
+
+- `--profile <pessoal|trabalho|both>`: seleciona o conjunto de pacotes a instalar (padrão: `pessoal`).
+- `--remove-snap`: remove `snapd` (opção destrutiva; pede confirmação).
+- `--remove-swap`: desativa/mascara swap (opção destrutiva; pede confirmação).
+- `--token <token>`: anexa Ubuntu Pro com token.
+- `--dry-run`: mostra as ações sem executá-las.
+- `--yes`: assume respostas afirmativas para todas as confirmações.
+- `--reboot`: reinicia automaticamente ao final (requer `--yes`).
+
 ---
 
 ### 2. `Meu-Fedora43-config-pessoal.sh`
