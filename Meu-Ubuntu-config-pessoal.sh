@@ -181,11 +181,10 @@ final_updates() {
 
 main() {
      parse_args "$@"
+     attach_ubuntu_pro
 
      info "Perfil selecionado: $PROFILE"
      if $DRY_RUN; then info "Modo dry-run ativado: nenhuma ação será executada"; fi
-
-     attach_ubuntu_pro
      install_common
 
      if [[ "$PROFILE" == "pessoal" || "$PROFILE" == "both" ]]; then
