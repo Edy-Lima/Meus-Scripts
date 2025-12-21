@@ -59,7 +59,16 @@ flatpak install flathub com.discordapp.Discord -y
 clear
 echo "Instalando programas via DNF 5..."
 sleep 5
-sudo dnf5 install -y steam obs-studio shotcut glabels gnome-tweaks gnome-extensions-app gnome-shell-extension-dash-to-dock gnome-shell-extension-user-themes fastfetch htop curl wget gparted
+sudo dnf5 install steam -y 
+sudo dnf5 install shotcut -y
+sudo dnf5 install glabels -y
+sudo dnf5 install gnome-tweaks -y
+sudo dnf5 install gnome-extensions-app -y
+sudo dnf5 install gnome-shell-extension-dash-to-dock -y
+sudo dnf5 install gnome-shell-extension-user-themes -y
+sudo dnf5 install fastfetch -y
+sudo dnf5 install curl -y
+sudo dnf5 install gparted -y
 clear
 echo "Atualização e limpeza geral do sistema..."
 sleep 5
