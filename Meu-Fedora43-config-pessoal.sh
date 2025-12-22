@@ -69,6 +69,7 @@ sudo dnf5 install gnome-shell-extension-user-themes -y
 sudo dnf5 install fastfetch -y
 sudo dnf5 install curl -y
 sudo dnf5 install gparted -y
+sudo dnf5 install fuse fuse-libs -y
 clear
 echo "Atualização e limpeza geral do sistema..."
 sleep 5
