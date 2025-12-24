@@ -1,223 +1,178 @@
 #!/usr/bin/env bash
 # filepath: Meu-Ubuntu-config-pessoal.sh
-# Script atualizado para configurar o Ubuntu para uso 'pessoal' e 'trabalho'.
-# Agora suporta perfis, confirmações para ações destrutivas e modo dry-run.
+# Este script é destinado a configurar o Ubuntu de acordo com as preferências pessoais do usuário.
+# Ele remove o snapd e instala uma série de programas essenciais e adicionais, além de realizar
+# algumas configurações específicas do sistema.
+# Certifique-se de que você tem permissões de administrador para executar este script.
+# Useo-o por sua conta e risco, pois ele remove o snapd e todos os pacotes relacionados, incluindo o LibreOffice.
 
-set -euo pipefail
-
-DRY_RUN=false
-FORCE=false
-PROFILE="pessoal"
-REBOOT=false
-REMOVE_SNAP=false
-REMOVE_SWAP=false
-UBUNTU_PRO_TOKEN=""
-
-log() { echo -e "[INFO] $*"; }
-err() { echo -e "[ERROR] $*" >&2; }
-info() { log "$*"; }
-
-run() {
-     if $DRY_RUN; then
-          echo "+ $*"
-     else
-          eval "$@"
-     fi
-}
-
-usage() {
-     cat <<EOF
-Uso: $0 [opções]
-
-Opções:
-  --profile <pessoal|trabalho|both>   Perfil de instalação (default: pessoal)
-  --remove-snap                       Remove snapd (opção destrutiva)
-  --remove-swap                       Desativa e remove swap (opção destrutiva)
-  --token <token>                     Anexa Ubuntu Pro com token
-  --yes                               Assume 'sim' para confirmações
-  --dry-run                           Mostra ações sem executá-las
-  --reboot                            Reinicia ao final (somente com --yes)
-  -h, --help                          Mostra esta ajuda
-EOF
-}
-
-confirm() {
-     local msg="$1"
-     if $FORCE; then
-          return 0
-     fi
-     read -p "$msg [s/N]: " resp
-     case "$resp" in
-          [sS]|[yY]) return 0 ;;
-          *) return 1 ;;
-     esac
-}
-
-parse_args() {
-     while (( "$#" )); do
-          case "$1" in
-               --profile)
-                    PROFILE="$2"; shift 2;;
-               --remove-snap)
-                    REMOVE_SNAP=true; shift;;
-               --remove-swap)
-                    REMOVE_SWAP=true; shift;;
-               --token)
-                    UBUNTU_PRO_TOKEN="$2"; shift 2;;
-               --yes)
-                    FORCE=true; shift;;
-               --dry-run)
-                    DRY_RUN=true; shift;;
-               --reboot)
-                    REBOOT=true; shift;;
-               -h|--help)
-                    usage; exit 0;;
-               *) err "Opção desconhecida: $1"; usage; exit 1;;
-          esac
-     done
-}
-
-install_common() {
-     info "Atualizando repositórios e instalando pacotes básicos..."
-     run sudo apt update
-     run sudo apt install -y git gufw synaptic gdebi p7zip-full gnome-shell-extension-manager ffmpeg testdisk gnome-tweaks gparted neofetch ubuntu-restricted-extras
-     run sudo apt install -y mesa-utils || true
-}
-
-install_flatpaks_personal() {
-     info "Instalando aplicativos pessoais via Flatpak..."
-     run sudo apt install -y flatpak
-     run sudo apt install -y gnome-software-plugin-flatpak || true
-     run sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-     run flatpak install -y flathub org.gimp.GIMP org.inkscape.Inkscape org.onlyoffice.desktopeditors org.shotcut.Shotcut org.openshot.OpenShot com.discordapp.Discord com.obsproject.Studio com.valvesoftware.Steam
-}
-
-install_chrome() {
-     info "Instalando Google Chrome..."
-     run wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /tmp/google-chrome-stable_current_amd64.deb
-     run sudo dpkg -i /tmp/google-chrome-stable_current_amd64.deb || true
-     run sudo apt-get --fix-broken install -y
-     run rm -f /tmp/google-chrome-stable_current_amd64.deb
-}
-
-install_vscode() {
-     info "Instalando Visual Studio Code..."
-     run sudo apt update
-     run sudo apt install -y wget gpg
-    run bash -lc 'wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /tmp/microsoft.gpg'
-     run sudo install -o root -g root -m 644 /tmp/microsoft.gpg /etc/apt/trusted.gpg.d/ || true
-     run rm -f /tmp/microsoft.gpg
-     run bash -lc 'echo "deb [arch=$(dpkg --print-architecture)] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list'
-     run sudo apt update
-     run sudo apt install -y code
-}
-
-remove_snap() {
-     if $REMOVE_SNAP; then
-          if confirm "Remover snapd e pacotes relacionados? Isto também pode remover LibreOffice. Continuar?"; then
-               info "Removendo snapd e pastas residuais..."
-               run sudo systemctl stop snapd || true
-               run sudo apt remove --purge -y snapd
-               run sudo rm -rf /snap /var/snap /var/lib/snapd /var/cache/snapd || true
-               run sudo apt autoremove -y
-          else
-               info "Pular remoção do snapd"
-          fi
-     fi
-}
-
-remove_swap() {
-     if $REMOVE_SWAP; then
-          if confirm "Desativar e mascarar swap (pode causar problemas em sistemas com pouca RAM). Continuar?"; then
-               info "Desativando swap..."
-               run sudo swapoff -a || true
-               # Não remove arquivos de swap automaticamente, apenas desativa e mascara se gerenciado por systemd
-               run sudo systemctl mask swap.img.swap || true
-          else
-               info "Pular remoção de swap"
-          fi
-     fi
-}
-
-configure_gnome() {
-     info "Configurando comportamento do dock do GNOME..."
-     run gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews' || true
-}
-
-configure_git() {
-     info "Configurando Git para o perfil: $PROFILE"
-     if [[ "$PROFILE" == "pessoal" ]]; then
-          run git config --global user.name "Edy-Lima"
-          run git config --global user.email "edivaldolima603@gmail.com"
-     else
-          # Valores de exemplo para trabalho; ajuste conforme necessário
-          run git config --global user.name "Edy (Trabalho)"
-          run git config --global user.email "edy.trabalho@example.com"
-     fi
-}
-
-attach_ubuntu_pro() {
-     if [[ -n "$UBUNTU_PRO_TOKEN" ]]; then
-          info "Instalando ubuntu-advantage-tools e anexando token..."
-          run sudo apt update
-          run sudo apt install -y ubuntu-advantage-tools
-          run sudo pro attach "$UBUNTU_PRO_TOKEN"
-     fi
-}
-
-kernel_mainline_support() {
-     info "Instalando ferramenta 'mainline' para gerenciar kernels (opcional)..."
-     run sudo add-apt-repository ppa:cappelikan/ppa -y
-     run sudo apt update
-     run sudo apt install -y mainline || true
-}
-
-final_updates() {
-     info "Executando atualização e limpeza final..."
-     run sudo apt update && sudo apt full-upgrade -y
-     run sudo apt autoclean -y
-     run sudo apt autoremove -y
-}
-
-main() {
-     parse_args "$@"
-     attach_ubuntu_pro
-
-     info "Perfil selecionado: $PROFILE"
-     if $DRY_RUN; then info "Modo dry-run ativado: nenhuma ação será executada"; fi
-     install_common
-
-     if [[ "$PROFILE" == "pessoal" || "$PROFILE" == "both" ]]; then
-          install_flatpaks_personal
-          install_chrome
-     fi
-
-     if [[ "$PROFILE" == "trabalho" || "$PROFILE" == "both" ]]; then
-          install_vscode
-          # Pacotes de trabalho comuns (descomente se quiser instalar automaticamente)
-          run sudo apt install -y remmina docker.io || true
-     fi
-
-     remove_snap
-     remove_swap
-     configure_gnome
-     configure_git
-     kernel_mainline_support
-     final_updates
-
-     if $REBOOT; then
-          if $FORCE || confirm "Reiniciar agora para aplicar mudanças?"; then
-               info "Reiniciando sistema..."
-               run sudo reboot
-          else
-               info "Reinício cancelado"
-          fi
-     else
-          info "Concluído. Reinicie o sistema manualmente se necessário."
-     fi
-}
-
-main "$@"
-
-
+echo "Iniciando o sscript..."
+sleep 5
+clear
+#
+# Remove o snapd e todos os pacotes relacionados
+# Obs: Este comando remove o snap e todos os pacotes relacionados, incluindo o LibreOffice, faça por sua conta e risco.
+echo "Certifique-se de que 
+leu e analizou todos os comandos inclusos neste script antes de executá-lo."
+sleep 5
+clear
+echo "Preparando para iniciar as configurações......." 
+sleep 5
+clear
+# Esse comando ativa o Ubuntu pro
+echo "Iniciando a ativação do Ubuntu pro"
+sleep 5
+     sudo apt update
+     sudo apt install ubuntu-advantage-tools -y
+clear
+echo "Ativando o Ubuntu via token"
+sleep 5
+# Substitua <token> pelo seu token real do Ubuntu Pro
+     sudo pro attach <token>
+echo "Ubuntu pro ativado com sucesso"
+sleep 5
+clear      
+# Solicita a senha de administrador para continuar
+echo "Removendo o suporte ao Snap..."
+sleep 5
+      sudo apt update
+      sudo systemctl stop snapd
+      sudo apt remove --purge snapd -y
+      sudo apt autoremove -y
+clear
+# Remove pastas residuais do snap
+# obs: caso não queira remover as pastas residuais, comente as linhas abaixo incluinto ( # ) no começo da linha.
+echo "Removendo pastas residuais do Snap..."
+sleep 5
+     sudo rm -rf /snap
+     sudo rm -rf /var/snap
+     sudo rm -rf /var/lib/snapd
+     sudo rm -rf /var/cache/snapd
+     sudo apt remove --purge snapd -y
+     sudo apt remove --purge libreoffice* -y
+     sudo apt autoremove -y
+clear
+# Instalação de programas e configurações pessoais
+echo "Instalando programas e configurando o sistema..."
+sleep 5
+     sudo apt update
+clear
+# Instalação de programas essenciais
+echo "Instalando programas essenciais..."
+sleep 5
+     sudo apt install ubuntu-restricted-extras -y
+clear
+# Instalação de programas adicionais com base no Ubuntu.deb
+echo "Instalando programas adicionais com base no Ubuntu.deb..."
+sleep 5
+     sudo apt install git gufw synaptic gdebi p7zip-full gnome-shell-extension-manager ffmpeg testdisk glabels gnome-tweaks gparted neofetch -y
+     sudo apt install mesa-utils -y
+     sudo apt install intel-opencl-icd intel-level-zero-gpu level-zero intel-media-va-driver-non-free libmfx1 -y
+clear
+# Instalação do suporte ao Flatpak
+echo "Instalando suporte ao Flatpak..."
+sleep 5
+     sudo apt update
+     sudo apt install flatpak -y
+     sudo apt install gnome-software-plugin-flatpak -y
+     sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+     sudo apt remove --purge snapd -y
+     sudo apt autoremove -y
+clear
+# Configurando janelas do GNOME essa configuração é para que o clique no dock minimize ou mostre as prévias das janelas.
+echo "Configurando janelas do GNOME..."
+sleep 5
+     gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'   
+clear
+# Configurando o github, esse comando configura o usuário e o email do GitHub.
+# Altere os valores de acordo com suas informações pessoais.
+# Exemplo: git config --global user.name "Seu-Nome" e git config --global user.email "
+echo "Configurando o GitHub..."
+sleep 5
+     sudo apt update
+     git config --global user.name "Edy-Lima"
+     git config --global user.email edivaldolima603@gmail.com   
+clear
+# Instalar Google Chrome
+echo "Instalando Google Chrome...."
+sleep 5
+     sudo apt update
+     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+     sudo dpkg -i google-chrome-stable_current_amd64.deb
+     sudo apt-get --fix-broken install -y
+     rm google-chrome-stable_current_amd64.deb
+clear
+# Instalaar o vscode
+echo "Instalando Visual Studio Code..."
+sleep 5
+# Atualiza a lista de pacotes
+     sudo apt update
+# Instala dependências necessárias
+     sudo apt install -y wget gpg
+# Importa a chave GPG do repositório do VS Code
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+     sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+rm microsoft.gpg
+# Adiciona o repositório do VS Code
+echo "deb [arch=$(dpkg --print-architecture)] https://packages.microsoft.com/repos/code stable main" | \
+     sudo tee /etc/apt/sources.list.d/vscode.list
+# Atualiza a lista de pacotes novamente
+     sudo apt update
+# Instala o VS Code
+     sudo apt install -y code
+echo "Instalação do VS Code concluída!"
+sleep 5
+clear
+# Excluindo swap
+# observação: O comando abaixo desativa e remove a partição de swap, o que pode não ser recomendado em todos os sistemas. Use com cautela.
+# caso deseje manter a partição de swap, comente as linhas abaixo.
+echo "Desativando e removendo a partição de swap..."
+sleep 5
+     sudo systemctl stop swap.img.swap
+     sudo systemctl mask swap.img.swap
+clear
+# Ativar suporte a exFAT
+echo "Ativando suporte a exFAT..."
+sleep 5
+     sudo apt update
+     sudo apt install exfatprogs ffmpeg -y
+clear
+# Instala esses programas via Flatpak
+echo "Instando gimp , openshot , inkscape , Obs-Studio , onlyoffice e shotcut via flatpak"
+sleep 5
+     flatpak install flathub org.gimp.GIMP -y
+     flatpak install flathub org.inkscape.Inkscape -y
+     flatpak install flathub org.onlyoffice.desktopeditors -y
+     flatpak install flathub org.shotcut.Shotcut -y  
+     flatpak install flathub org.openshot.OpenShot -y
+     flatpak install flathub com.discordapp.Discord -y
+     flatpak install flathub com.obsproject.Studio -y
+     flatpak install flathub com.valvesoftware.Steam -y
+clear
+echo "Atualização e limpeza geral do sistema..."
+sleep 5
+# Finaliza com uma atualização geral do sistema
+     sudo apt update && sudo apt full-upgrade -y
+     sudo apt remove --purge snapd -y
+     sudo apt autoclean -y
+     sudo apt autoremove -y   
+clear
+# Atualização de kernel
+echo "Instalando suporte para atualização de kernel do sistema..."
+sleep 5
+    sudo add-apt-repository ppa:cappelikan/ppa -y
+    sudo apt update
+    sudo apt install mainline -y
+clear
+echo "configurações concluidas com sucesso!."
+sleep 5
+clear
+echo "Reinicie o sistema para aplicar as mudanças..."
+sleep 5
+clear
+# Reinicia o sistema para aplicar as mudança
+echo "Reiniciando o sistema para aplicar as mudanças..."
+sleep 5
+    sudo reboot
+# Fim do script
 
