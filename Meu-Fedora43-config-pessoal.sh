@@ -75,9 +75,9 @@ sudo dnf5 install fuse fuse-libs -y
 clear
 echo "Atualização e limpeza geral do sistema..."
 sleep 5
-sudo dnf upgrade --assumeyes
-sudo dnf autoremove --assumeyes
-sudo dnf clean all
+sudo dnf5 upgrade --assumeyes
+sudo dnf5 autoremove --assumeyes
+sudo dnf5 clean all
 clear
 echo "Configurações concluídas com sucesso!"
 sleep 5
