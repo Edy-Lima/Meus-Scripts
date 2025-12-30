@@ -68,6 +68,7 @@ sudo dnf5 install gnome-shell-extension-dash-to-dock -y
 sudo dnf5 install gnome-shell-extension-user-themes -y
 sudo dnf5 install gnome-shell-extension-compact-top-bar -y
 sudo dnf5 install gnome-shell-extension-blur-my-shell -y
+sudo dnf5 install gnome-shell-extension-gsconnect -y
 sudo dnf5 install fastfetch -y
 sudo dnf5 install curl -y
 sudo dnf5 install gparted -y
