@@ -17,16 +17,21 @@ sudo dnf remove zram-generator-defaults -y
 clear
 echo "Zram e swap desabilitados."
 sleep 5
-echo "instalando fontes Microsoft..."
+# Adiciona repositório flathub!
+echo "Adicionando repositório Flathub..."
 sleep 5
-sudo dnf install https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm -y
-# Configurando o GitHub
+sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+clear
+echo "Repositório Flathub adicionado."
+sleep 5
+clear
+# Configura o GitHub!
 echo "Configurando o GitHub..."
 sleep 5
 git config --global user.name "Edy-Lima"
 git config --global user.email edivaldolima603@gmail.com
 clear
-# Instalar Google Chrome
+# Instalar Google Chrome!
 echo "Instalando Google Chrome..."
 sleep 5
 sudo dnf install --assumeyes wget
@@ -34,7 +39,7 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
 sudo dnf install --assumeyes ./google-chrome-stable_current_x86_64.rpm
 rm google-chrome-stable_current_x86_64.rpm
 clear
-# Instalar Visual Studio Code
+# Instalar Visual Studio Code!
 echo "Instalando Visual Studio Code..."
 sleep 5
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -42,7 +47,7 @@ echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com
 sudo dnf check-update
 sudo dnf install --assumeyes code
 clear
-# Instala programas via Flatpak
+# Instala programas via Flatpak!
 echo "Instalando apps via Flatpak..."
 sleep 5
 flatpak upgrade -y
