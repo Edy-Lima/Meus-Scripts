@@ -68,6 +68,7 @@ sleep 5
      sudo apt install git gufw synaptic gdebi p7zip-full gnome-shell-extension-manager ffmpeg testdisk glabels gnome-tweaks gparted neofetch -y
      sudo apt install mesa-utils -y
      sudo apt install intel-opencl-icd intel-level-zero-gpu level-zero intel-media-va-driver-non-free libmfx1 -y
+     sudo apt install -y steam
 clear
 # Instalação do suporte ao Flatpak
 echo "Instalando suporte ao Flatpak..."
@@ -143,11 +144,7 @@ sleep 5
      flatpak install flathub org.gimp.GIMP -y
      flatpak install flathub org.inkscape.Inkscape -y
      flatpak install flathub org.onlyoffice.desktopeditors -y
-     flatpak install flathub org.shotcut.Shotcut -y  
-     flatpak install flathub org.openshot.OpenShot -y
      flatpak install flathub com.discordapp.Discord -y
-     flatpak install flathub com.obsproject.Studio -y
-     flatpak install flathub com.valvesoftware.Steam -y
 clear
 echo "Atualização e limpeza geral do sistema..."
 sleep 5
