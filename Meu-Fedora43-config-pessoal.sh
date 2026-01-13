@@ -12,8 +12,8 @@ clear
 echo Desabilitar Zram e swap.
 sleep 5
 sudo swapoff -a
-sudo systemctl disable zram-swap.service -y
-sudo dnf remove zram-generator-defaults -y
+sudo systemctl disable zram-swap.service
+sudo dnf remove zram-generator-defaults --assumeyes
 clear
 echo "Zram e swap desabilitados."
 sleep 5
@@ -51,29 +51,29 @@ clear
 echo "Instalando apps via Flatpak..."
 sleep 5
 flatpak upgrade -y
-flatpak install flathub org.gimp.GIMP -y
-flatpak install flathub org.inkscape.Inkscape -y
-flatpak install flathub org.onlyoffice.desktopeditors -y
-flatpak install flathub com.discordapp.Discord -y
+flatpak install -y flathub org.gimp.GIMP
+flatpak install -y flathub org.inkscape.Inkscape
+flatpak install -y flathub org.onlyoffice.desktopeditors
+flatpak install -y flathub com.discordapp.Discord
 clear
 # Instala programas via dnf5
 echo "Instalando programas via DNF 5..."
 sleep 5
 sudo dnf5 up --refresh -y
-sudo dnf5 install steam -y 
-sudo dnf5 install shotcut -y
-sudo dnf5 install glabels -y
-sudo dnf5 install gnome-tweaks -y
-sudo dnf5 install gnome-extensions-app -y
-sudo dnf5 install gnome-shell-extension-dash-to-dock -y
-sudo dnf5 install gnome-shell-extension-user-themes -y
-sudo dnf5 install gnome-shell-extension-compact-top-bar -y
-sudo dnf5 install gnome-shell-extension-blur-my-shell -y
-sudo dnf5 install gnome-shell-extension-gsconnect -y
-sudo dnf5 install fastfetch -y
-sudo dnf5 install curl -y
-sudo dnf5 install gparted -y
-sudo dnf5 install fuse fuse-libs -y
+sudo dnf5 install -y steam
+sudo dnf5 install -y shotcut
+sudo dnf5 install -y glabels
+sudo dnf5 install -y gnome-tweaks
+sudo dnf5 install -y gnome-extensions-app
+sudo dnf5 install -y gnome-shell-extension-dash-to-dock
+sudo dnf5 install -y gnome-shell-extension-user-themes
+sudo dnf5 install -y gnome-shell-extension-compact-top-bar
+sudo dnf5 install -y gnome-shell-extension-blur-my-shell
+sudo dnf5 install -y gnome-shell-extension-gsconnect
+sudo dnf5 install -y fastfetch
+sudo dnf5 install -y curl
+sudo dnf5 install -y gparted
+sudo dnf5 install -y fuse fuse-libs
 clear
 echo "Atualização e limpeza geral do sistema..."
 sleep 5
