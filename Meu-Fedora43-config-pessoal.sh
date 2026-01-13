@@ -55,6 +55,7 @@ flatpak install -y flathub org.gimp.GIMP
 flatpak install -y flathub org.inkscape.Inkscape
 flatpak install -y flathub org.onlyoffice.desktopeditors
 flatpak install -y flathub com.discordapp.Discord
+flatpak install -y flathub org.freedownloadmanager.Manager
 clear
 # Instala programas via dnf5
 echo "Instalando programas via DNF 5..."
