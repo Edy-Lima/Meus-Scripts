@@ -139,7 +139,7 @@ sleep 5
      sudo apt install exfatprogs ffmpeg -y
 clear
 # Instala esses programas via Flatpak
-echo "Instando gimp , openshot , inkscape , Obs-Studio , onlyoffice e shotcut via flatpak"
+echo "Instando gimp , inkscape , onlyoffice e Discord via flatpak"
 sleep 5
      flatpak install flathub org.gimp.GIMP -y
      flatpak install flathub org.inkscape.Inkscape -y
