@@ -82,6 +82,7 @@ sudo dnf5 up --refresh -y
 sudo dnf5 upgrade --assumeyes
 sudo dnf5 autoremove --assumeyes
 sudo dnf5 clean all
+gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'
 clear
 echo "Configurações concluídas com sucesso!"
 sleep 5
