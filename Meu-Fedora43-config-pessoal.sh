@@ -17,6 +17,12 @@ sudo dnf remove zram-generator-defaults --assumeyes
 clear
 echo "Zram e swap desabilitados."
 sleep 5
+# Confira o rpm fusium
+echo "Alumas configuraçãoes iniciais"
+sleep 5
+sudo dnf instalar https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1 -y
+clear
 # Adiciona repositório flathub!
 echo "Adicionando repositório Flathub..."
 sleep 5
