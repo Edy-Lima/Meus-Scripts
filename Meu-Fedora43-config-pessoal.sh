@@ -13,15 +13,15 @@ echo Desabilitar Zram e swap.
 sleep 5
 sudo swapoff -a
 sudo systemctl disable zram-swap.service
-sudo dnf remove zram-generator-defaults --assumeyes
+sudo dnf5 remove zram-generator-defaults --assumeyes
 clear
 echo "Zram e swap desabilitados."
 sleep 5
 # Confira o rpm fusium
 echo "Alumas configuraçãoes iniciais"
 sleep 5
-sudo dnf instalar https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
-sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1 -y
+sudo dnf5 install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+sudo dnf5 config-manager setopt fedora-cisco-openh264.enabled=1 -y
 clear
 # Adiciona repositório flathub!
 echo "Adicionando repositório Flathub..."
@@ -40,9 +40,9 @@ clear
 # Instalar Google Chrome!
 echo "Instalando Google Chrome..."
 sleep 5
-sudo dnf install --assumeyes wget
+sudo dnf5 install --assumeyes wget
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
-sudo dnf install --assumeyes ./google-chrome-stable_current_x86_64.rpm
+sudo dnf5 install --assumeyes ./google-chrome-stable_current_x86_64.rpm
 rm google-chrome-stable_current_x86_64.rpm
 clear
 # Instalar Visual Studio Code!
@@ -50,8 +50,8 @@ echo "Instalando Visual Studio Code..."
 sleep 5
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo
-sudo dnf check-update
-sudo dnf install --assumeyes code
+sudo dnf5 check-update
+sudo dnf5 install --assumeyes code
 clear
 # Instala programas via Flatpak!
 echo "Instalando apps via Flatpak..."
