@@ -82,6 +82,7 @@ sudo dnf5 install -y curl
 sudo dnf5 install -y gparted
 sudo dnf5 install -y fuse fuse-libs
 sudo dnf5 install -y libva-utils
+sudo dnf5 group install multimedia -y
 clear
 echo "Atualização e limpeza geral do sistema..."
 sleep 5
