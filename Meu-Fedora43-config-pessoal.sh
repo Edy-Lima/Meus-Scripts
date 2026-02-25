@@ -17,12 +17,6 @@ sudo dnf5 remove zram-generator-defaults --assumeyes
 clear
 echo "Zram e swap desabilitados."
 sleep 5
-# Confira o rpm fusium
-echo "Alumas configuraçãoes iniciais"
-sleep 5
-sudo dnf5 install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
-sudo dnf5 config-manager setopt fedora-cisco-openh264.enabled=1 -y
-clear
 # Adiciona repositório flathub!
 echo "Adicionando repositório Flathub..."
 sleep 5
@@ -81,7 +75,6 @@ sudo dnf5 install -y curl
 sudo dnf5 install -y gparted
 sudo dnf5 install -y fuse fuse-libs
 sudo dnf5 install -y libva-utils
-sudo dnf5 group install multimedia -y
 clear
 echo "Atualização e limpeza geral do sistema..."
 sleep 5
