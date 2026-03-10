@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# filepath: Meu-Fedora42-config-pessoal.sh
-# Este script é destinado a configurar o Fedora 42 de acordo com as preferências pessoais do usuário.
+# filepath: Meu-Fedora43-config-pessoal.sh
+# Este script é destinado a configurar o Fedora 43 de acordo com as preferências pessoais do usuário.
 # Ele remove o snapd (se existir) e instala uma série de programas essenciais e adicionais, além de realizar
 # algumas configurações específicas do sistema.
 # Certifique-se de que você tem permissões de administrador para executar este script.
 # Use-o por sua conta e risco.
 
-echo "Iniciando o script para Fedora 42..."
+echo "Iniciando o script para Fedora 43..."
 sleep 5
 clear
 echo Desabilitar Zram e swap.
