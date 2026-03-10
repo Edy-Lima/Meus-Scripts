@@ -28,8 +28,8 @@ clear
 # Configura o GitHub!
 echo "Configurando o GitHub..."
 sleep 5
-git config --global user.name "Edy-Lima"
-git config --global user.email edivaldolima603@gmail.com
+git config --global user.name "Seu Nome" 
+git config --global user.email "seu.email@exemplo.com"
 clear
 # Instalar Visual Studio Code!
 echo "Instalando Visual Studio Code..."
