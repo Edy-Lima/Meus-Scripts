@@ -31,14 +31,6 @@ sleep 5
 git config --global user.name "Edy-Lima"
 git config --global user.email edivaldolima603@gmail.com
 clear
-# Instalar Google Chrome!
-echo "Instalando Google Chrome..."
-sleep 5
-sudo dnf5 install --assumeyes wget
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
-sudo dnf5 install --assumeyes ./google-chrome-stable_current_x86_64.rpm
-rm google-chrome-stable_current_x86_64.rpm
-clear
 # Instalar Visual Studio Code!
 echo "Instalando Visual Studio Code..."
 sleep 5
@@ -58,7 +50,8 @@ clear
 # Instala programas via dnf5
 echo "Instalando programas via DNF 5..."
 sleep 5
-sudo dnf5 up --refresh -y
+sudo dnf5 upgrade -y
+sudo dnf5 install -y google-chrome-stable
 sudo dnf5 install -y steam
 sudo dnf5 install -y shotcut
 sudo dnf5 install -y glabels
@@ -77,9 +70,8 @@ sudo dnf5 install -y libva-utils
 clear
 echo "Atualização e limpeza geral do sistema..."
 sleep 5
-sudo dnf5 up --refresh -y
-sudo dnf5 upgrade --assumeyes
-sudo dnf5 autoremove --assumeyes
+sudo dnf5 upgrade -y
+sudo dnf5 autoremove -y
 sudo dnf5 clean all
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'
 clear
