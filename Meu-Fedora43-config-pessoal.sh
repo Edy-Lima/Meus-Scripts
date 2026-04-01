@@ -43,6 +43,7 @@ echo "Instalando apps via Flatpak..."
 sleep 5
 flatpak upgrade -y
 flatpak install -y flathub org.gimp.GIMP
+flatpak install -y flathub com.vysp3r.ProtonPlus
 flatpak install -y flathub org.inkscape.Inkscape
 flatpak install -y flathub org.onlyoffice.desktopeditors
 flatpak install -y flathub com.discordapp.Discord
@@ -64,6 +65,7 @@ sudo dnf5 install -y gnome-shell-extension-blur-my-shell
 sudo dnf5 install -y gnome-shell-extension-gsconnect
 sudo dnf5 install -y fastfetch
 sudo dnf5 install -y curl
+sudo dnf5 install -y gedit
 sudo dnf5 install -y gparted
 sudo dnf5 install -y fuse fuse-libs
 sudo dnf5 install -y libva-utils
