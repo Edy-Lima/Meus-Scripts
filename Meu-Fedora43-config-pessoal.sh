@@ -52,7 +52,7 @@ clear
 # Instala programas via dnf5
 echo "Instalando programas via DNF 5..."
 sleep 5
-sudo dnf5 upgrade -y
+sudo dnf5 update -y
 sudo dnf5 install -y google-chrome-stable
 sudo dnf5 install -y steam
 sudo dnf5 install -y shotcut
