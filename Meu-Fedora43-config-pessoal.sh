@@ -45,6 +45,7 @@ flatpak upgrade -y
 flatpak install -y flathub org.gimp.GIMP
 flatpak install -y flathub com.vysp3r.ProtonPlus
 flatpak install -y flathub org.inkscape.Inkscape
+flatpak install -y flathub org.cutwire.Drift
 flatpak install -y flathub org.onlyoffice.desktopeditors
 flatpak install -y flathub com.discordapp.Discord
 clear
